@@ -49,7 +49,6 @@ public class Clock : MonoBehaviour {
 		_sun.transform.Rotate (_angle, 0, 0);
 	}
 	private void DisplayTime(){
-		Debug.Log ("display");
 		if (_hour < 10) {
 			if (_min < 10) {
 				_text.text = "0" + _clock[0].ToString () + ":0" + _clock[1].ToString ();

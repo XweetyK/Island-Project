@@ -7,13 +7,23 @@ public class DialogManager : MonoBehaviour {
 
 	[SerializeField] private Text _nameTxt;
 	[SerializeField] private Text _dialogTxt;
-	[SerializeField] private Animator _anim;
+	private Animator _talkAnim;
+	private Animator _anim;
 	private Queue <string> _chats;
 
+	void Awake(){
+		_anim = GameObject.FindGameObjectWithTag ("TextBox").GetComponent<Animator>();
+	}
 	void Start(){
 		_chats = new Queue<string> ();
 	}
-	public void StartDialog(Dialog dial){
+	public void StartDialog(Dialog dial,Animator talkAnim){
+		_talkAnim = talkAnim;
+		switch (dial._face) {
+		case Face.SmileTalk:
+			_talkAnim.SetBool ("IsTalking", true);
+			break;
+		}
 		_anim.SetBool ("IsOpen", true);
 		_nameTxt.text = dial._name;
 		_chats.Clear ();
@@ -34,5 +44,6 @@ public class DialogManager : MonoBehaviour {
 	}
 	void EndDialog(){
 		_anim.SetBool ("IsOpen", false);
+		_talkAnim.SetBool ("IsTalking", false);
 	}
 }
