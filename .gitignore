@@ -1,7 +1,7 @@
 
-Island-Project/Library/
-Island-Project/.vs/
-Island-Project/obj/
+Island Project/Library/
+Island Project/.vs/
+Island Project/obj/
 
 .consulo/
 *.csproj
@@ -16,3 +16,4 @@ Island-Project/obj/
 *.svd
 *.pdb
 *.opendb
+
