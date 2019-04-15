@@ -8,6 +8,12 @@ public class PlayerMov : MonoBehaviour {
 	[SerializeField]private float _turnSmoothTime;
 	[SerializeField]private float _speedSmoothTime;
 	[SerializeField]private float _animationWaitTime;
+	[SerializeField]private int _waterRateMin;
+	[SerializeField]private int _waterRateMax;
+
+	ParticleSystem _water;
+	[SerializeField]ParticleSystem _splash;
+
 
 	float _turnSmoothVel;
 	float _speedSmoothVel;
@@ -17,6 +23,7 @@ public class PlayerMov : MonoBehaviour {
 	bool _isWalking;
 	bool _isSit;
 	bool _isCrouch;
+	bool _isJesus;
 
 	float _timer = 0;
 	bool _counting = false;
@@ -26,6 +33,8 @@ public class PlayerMov : MonoBehaviour {
 	void Start () {
 		_isWalking = _isRunning = _isCrouch = _isSit = false;
 		_animator = GetComponent<Animator> ();
+		_water = GetComponent<ParticleSystem> ();
+		_isJesus = false;
 	}
 
 	void Update () {
@@ -33,7 +42,7 @@ public class PlayerMov : MonoBehaviour {
 		Movement ();
 		UpdateAnimator ();
 		AnimTimer ();
-		Debug.Log (_timer);
+		WaterAnim ();
 	}
 
 	void Movement(){
@@ -53,6 +62,7 @@ public class PlayerMov : MonoBehaviour {
 	}
 
 	void KeyInput(){
+
 		if (Input.GetButton ("Space")) {
 			_isRunning = true;
 		} else {
@@ -96,6 +106,44 @@ public class PlayerMov : MonoBehaviour {
 		case false:
 			_timer = 0;
 			break;
+		}
+	}
+
+	void WaterAnim(){
+		var _emission = _water.emission;
+		if (_isJesus) {
+			if (_isRunning) {
+				_emission.rateOverTime = _waterRateMax;
+				if (_water.isPlaying == false) {
+					_water.Play ();
+				}
+			}
+			if (_isWalking && _isRunning == false) {
+				if (_water.isPlaying == false) {
+					_water.Play ();
+				}
+				_emission.rateOverTime = _waterRateMin;
+			}
+			if (_isWalking == true) {
+				if (_splash.isPlaying == false) {
+					_splash.Play ();
+				}
+			}
+			if (_isWalking == false) {
+				_emission.rateOverTime = 2;
+				_splash.Stop ();
+			}
+		} else {
+			_water.Stop ();
+			_splash.Stop ();
+		}
+	}
+
+	void OnTriggerEnter(Collider water) {
+		if (water.tag == "Water") {
+			_isJesus = true;
+		} else {
+			_isJesus = false;
 		}
 	}
 }

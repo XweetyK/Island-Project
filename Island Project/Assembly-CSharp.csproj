@@ -53,18 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AngleDetector.cs" />
-     <Compile Include="Assets\Scripts\Arrow.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
-     <Compile Include="Assets\Scripts\CharaMov2d.cs" />
-     <Compile Include="Assets\Scripts\Clock.cs" />
      <Compile Include="Assets\Scripts\CombatInput.cs" />
      <Compile Include="Assets\Scripts\DialogSystem\Dialog.cs" />
      <Compile Include="Assets\Scripts\DialogSystem\DialogManager.cs" />
      <Compile Include="Assets\Scripts\DialogSystem\DialogTrigger.cs" />
+     <Compile Include="Assets\Scripts\Discard\AngleDetector.cs" />
+     <Compile Include="Assets\Scripts\Discard\Arrow.cs" />
+     <Compile Include="Assets\Scripts\Discard\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Discard\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\Discard\CharaMov2d.cs" />
+     <Compile Include="Assets\Scripts\Discard\Clock.cs" />
+     <Compile Include="Assets\Scripts\Discard\Orbit.cs" />
+     <Compile Include="Assets\Scripts\DolphinMov.cs" />
+     <Compile Include="Assets\Scripts\DolphinSpawn.cs" />
      <Compile Include="Assets\Scripts\GlitchFace.cs" />
-     <Compile Include="Assets\Scripts\Orbit.cs" />
      <Compile Include="Assets\Scripts\PlayerMov.cs" />
      <None Include="Assets\Imported Assets\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
  <Reference Include="UnityEditor.StandardEvents">
