@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour {
         _rotY = _speedY * Input.GetAxis("Mouse X") * Time.deltaTime;
         _rotX = Mathf.Clamp(_rotX, -10.0f, 40.0f);
 
-        _childX.transform.localRotation = Quaternion.Euler(_rotX, 0, 0);
+        _childX.transform.localRotation = Quaternion.Euler(-_rotX, 0, 0);
         gameObject.transform.Rotate(0.0f, _rotY, 0.0f);
     }
 }

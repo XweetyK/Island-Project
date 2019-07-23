@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementTest : MonoBehaviour {
+public class CharacterController: MonoBehaviour {
     [SerializeField] float _movSpeed;
     [SerializeField] float _rotSpeed;
     [SerializeField] Transform _cam;

@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8638382977124463854}
   - component: {fileID: 152924214961096423}
   - component: {fileID: 2074018066690284674}
-  - component: {fileID: 1362342495228823308}
+  - component: {fileID: 8338487109686799592}
   - component: {fileID: 1866426563}
   - component: {fileID: 1866426567}
   - component: {fileID: 1866426568}
   m_Layer: 0
-  m_Name: HERO 1
+  m_Name: HERO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,14 +72,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be23b1ba328332b4cb6d20dabb147e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 4
-  _runSpeed: 12
-  _turnSmoothTime: 0.3
-  _speedSmoothTime: 0.1
+  _cameraSystem: {fileID: 0}
   _animationWaitTime: 2
   _waterRateMin: 5
   _waterRateMax: 10
   _splash: {fileID: 2125336532}
+  _movSpeed: 0
+  _rotSpeed: 0
 --- !u!54 &2074018066690284674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -96,8 +95,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &1362342495228823308
-BoxCollider:
+--- !u!136 &8338487109686799592
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,9 +105,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 7.8, z: 2}
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Radius: 1
+  m_Height: 8
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.1, z: 0}
 --- !u!65 &1866426563
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4,10 +4,6 @@ using System.Collections;
 public class PlayerMov : MonoBehaviour {
     [SerializeField] private Transform _cameraSystem;
 
-	[SerializeField]private float _walkSpeed;
-	[SerializeField]private float _runSpeed;
-	[SerializeField]private float _turnSmoothTime;
-	[SerializeField]private float _speedSmoothTime;
 	[SerializeField]private float _animationWaitTime;
 	[SerializeField]private int _waterRateMin;
 	[SerializeField]private int _waterRateMax;
@@ -15,10 +11,13 @@ public class PlayerMov : MonoBehaviour {
 	ParticleSystem _water;
 	[SerializeField]ParticleSystem _splash;
 
+    [SerializeField] float _movSpeed;
+    [SerializeField] float _rotSpeed;
+    Vector3 MovementDirection;
+    Rigidbody _rb;
+    float _angle;
 
-	float _turnSmoothVel;
-	float _speedSmoothVel;
-	float _currentSpeed;
+    float _currentSpeed;
 
 	bool _isRunning;
 	bool _isWalking;
@@ -35,7 +34,8 @@ public class PlayerMov : MonoBehaviour {
 		_isWalking = _isRunning = _isCrouch = _isSit = false;
 		_animator = GetComponent<Animator> ();
 		_water = GetComponent<ParticleSystem> ();
-		_isJesus = false;
+        _rb = gameObject.GetComponent<Rigidbody>();
+        _isJesus = false;
 	}
 
 	void Update () {
@@ -46,20 +46,21 @@ public class PlayerMov : MonoBehaviour {
 		WaterAnim ();
 	}
 
-	void Movement(){
+    void FixedUpdate() {
+        Vector3 gravity = -9.8f * 2.0f * Vector3.up;
+        _rb.AddForce(gravity, ForceMode.Acceleration);
+    }
+
+    void Movement(){
+        _currentSpeed = _isRunning ? _movSpeed * 2 : _movSpeed;
 		if (_counting==false || _isSit==true) {
-			Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-			Vector2 inputDir = input.normalized;
+            MovementDirection = (Input.GetAxis("Horizontal") * _cameraSystem.right + Input.GetAxis("Vertical") * _cameraSystem.forward) * _currentSpeed;
+            _rb.velocity = new Vector3(MovementDirection.x, _rb.velocity.y, MovementDirection.z);
 
-			if (inputDir != Vector2.zero) {
-				float targetRotation = Mathf.Atan2 (inputDir.x, inputDir.y) * Mathf.Rad2Deg;
-				transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref _turnSmoothVel, _turnSmoothTime);
-			}
-
-			float targetSpeed = ((_isRunning) ? _runSpeed : _walkSpeed) * inputDir.magnitude;
-			_currentSpeed = Mathf.SmoothDamp (_currentSpeed, targetSpeed, ref _speedSmoothVel, _speedSmoothTime);
-			transform.Translate (_cameraSystem.forward * _currentSpeed * Time.deltaTime, Space.World);
-		}
+            if (_rb.velocity != Vector3.zero) {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(_rb.velocity.x, 0, _rb.velocity.z)), Time.deltaTime * _rotSpeed);
+            }
+        }
 	}
 
 	void KeyInput(){
