@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerMov : MonoBehaviour {
+    [SerializeField] private Transform _cameraSystem;
 
 	[SerializeField]private float _walkSpeed;
 	[SerializeField]private float _runSpeed;
@@ -57,7 +58,7 @@ public class PlayerMov : MonoBehaviour {
 
 			float targetSpeed = ((_isRunning) ? _runSpeed : _walkSpeed) * inputDir.magnitude;
 			_currentSpeed = Mathf.SmoothDamp (_currentSpeed, targetSpeed, ref _speedSmoothVel, _speedSmoothTime);
-			transform.Translate (transform.forward * _currentSpeed * Time.deltaTime, Space.World);
+			transform.Translate (_cameraSystem.forward * _currentSpeed * Time.deltaTime, Space.World);
 		}
 	}
 

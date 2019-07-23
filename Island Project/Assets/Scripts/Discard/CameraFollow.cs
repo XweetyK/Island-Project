@@ -3,16 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
+    [SerializeField] Transform _target;
+    [SerializeField] float _speedX;
+    [SerializeField] float _speedY;
+    private Transform _childX;
+    float _rotX;
+    float _rotY;
 
-	[SerializeField] Transform _target;
-	[SerializeField] float _smooth;
-	[SerializeField] Vector3 _offset;
+    void Start() {
+        _childX = transform.GetChild(0);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    void Update() {
+        CamMouseLook();
+        gameObject.transform.position = _target.position;
+    }
 
+    void CamMouseLook() {
 
-	void LateUpdate () {
-		Vector3 lastPos = _target.position + _offset;
-		Vector3 smoothPos = Vector3.Lerp (transform.position, lastPos, _smooth*Time.deltaTime);
-		transform.position = smoothPos;
+        _rotX += _speedX * Input.GetAxis("Mouse Y") * Time.deltaTime;
+        _rotY = _speedY * Input.GetAxis("Mouse X") * Time.deltaTime;
+        _rotX = Mathf.Clamp(_rotX, -10.0f, 40.0f);
 
-	}
+        _childX.transform.localRotation = Quaternion.Euler(_rotX, 0, 0);
+        gameObject.transform.Rotate(0.0f, _rotY, 0.0f);
+    }
 }

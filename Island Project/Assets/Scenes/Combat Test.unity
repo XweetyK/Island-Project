@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 247782268}
   - component: {fileID: 247782267}
   - component: {fileID: 247782266}
+  - component: {fileID: 247782269}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -697,8 +698,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 858372889}
+  m_Children: []
   m_Father: {fileID: 944990086}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -767,6 +767,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &247782269
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247782264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6cc273c3c9c5144ea85ff2ce8d2fa46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &292421451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1020,7 @@ GameObject:
   - component: {fileID: 423292902}
   - component: {fileID: 423292901}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1319,7 +1338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 97.6, y: 0}
+  m_AnchoredPosition: {x: 97.600006, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567366846
@@ -1398,7 +1417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 97.6, y: 0}
+  m_AnchoredPosition: {x: 97.600006, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606329214
@@ -1710,7 +1729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 97.6, y: 0}
+  m_AnchoredPosition: {x: 97.600006, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840953916
@@ -1769,7 +1788,7 @@ GameObject:
   - component: {fileID: 858372891}
   - component: {fileID: 858372890}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LoadingBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1782,13 +1801,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858372888}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423292900}
-  m_Father: {fileID: 247782265}
-  m_RootOrder: 0
+  m_Father: {fileID: 1709732939}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2080,8 +2099,8 @@ Canvas:
   m_GameObject: {fileID: 944990082}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1905702226}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2635,9 +2654,11 @@ MonoBehaviour:
   _level: 10
   _limitTime: 0
   _arrowFilled: {fileID: 0}
+  _arrowCommon: {fileID: 0}
   _attackArrows: []
   _defenseArrows: []
   _specialArrows: []
+  _timerBarFill: {fileID: 0}
   _arrowOpacity: 0
   _UiAnimator: {fileID: 0}
 --- !u!65 &1486807085
@@ -3117,6 +3138,7 @@ RectTransform:
   - {fileID: 711677574}
   - {fileID: 1991743631}
   - {fileID: 1275867860}
+  - {fileID: 858372889}
   m_Father: {fileID: 944990086}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3198,8 +3220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: 5
-  _limitTime: 0
+  _limitTime: 5
   _arrowFilled: {fileID: 21300016, guid: 1420daf029ac8914e9591fec206b37f0, type: 3}
+  _arrowCommon: {fileID: 21300002, guid: 1420daf029ac8914e9591fec206b37f0, type: 3}
   _attackArrows:
   - {fileID: 164100125}
   - {fileID: 1554650223}
@@ -3233,7 +3256,8 @@ MonoBehaviour:
   - {fileID: 556330459}
   - {fileID: 107969226}
   - {fileID: 744407286}
-  _arrowOpacity: 0.5
+  _timerBarFill: {fileID: 423292901}
+  _arrowOpacity: 0.4
   _UiAnimator: {fileID: 1709732944}
 --- !u!95 &1709732944
 Animator:

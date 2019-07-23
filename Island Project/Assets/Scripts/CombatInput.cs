@@ -10,9 +10,11 @@ public class CombatInput : MonoBehaviour {
     [SerializeField] int _level;
     [SerializeField] private float _limitTime;
     [SerializeField] private Sprite _arrowFilled;
+    [SerializeField] private Sprite _arrowCommon;
     [SerializeField] private Image[] _attackArrows;
     [SerializeField] private Image[] _defenseArrows;
     [SerializeField] private Image[] _specialArrows;
+    [SerializeField] private Image _timerBarFill;
     [SerializeField] [Range(0.0f, 1.0f)] private float _arrowOpacity;
     [SerializeField] Animator _UiAnimator;
 
@@ -29,7 +31,8 @@ public class CombatInput : MonoBehaviour {
     InputCombo _iCombo = InputCombo.NONE;
     private bool _miss = false;
     private bool _endTurn = false;
-    float _timer;
+    private float _time;
+    private bool _firstCommand = false;
 
     private Color _opacityBack;
     private Color _opacityHeld;
@@ -37,7 +40,7 @@ public class CombatInput : MonoBehaviour {
     private void Start() {
         _opacityBack = _opacityHeld = Color.white;
         _opacityBack.a = _arrowOpacity;
-
+        _time = _limitTime;
         if (_level < 10) {
             for (int i = _level; i < 10; i++) {
                 _attackArrows[i].gameObject.SetActive(false);
@@ -55,11 +58,13 @@ public class CombatInput : MonoBehaviour {
 
     void Update() {
         InputCheck();
-        //Timer ();
-        //if (_timer >= _limitTime) {
-        //	EndTurn ();
-        //}
-        Debug.Log(_cont);
+        if (_firstCommand) {
+            Timer();
+        }
+
+        if (Input.GetButtonDown("Cancel")) {
+            NewTurn();
+        }
     }
 
     void InputCheck() {
@@ -69,18 +74,22 @@ public class CombatInput : MonoBehaviour {
         if (_blocked == false) {
             if (Input.GetButtonDown("Up")) {
                 _actualCombo[_cont] = 1;
+                _firstCommand = true;
                 ComboCheck();
             }
             if (Input.GetButtonDown("Down")) {
                 _actualCombo[_cont] = 2;
+                _firstCommand = true;
                 ComboCheck();
             }
             if (Input.GetButtonDown("Left")) {
                 _actualCombo[_cont] = 3;
+                _firstCommand = true;
                 ComboCheck();
             }
             if (Input.GetButtonDown("Right")) {
                 _actualCombo[_cont] = 4;
+                _firstCommand = true;
                 ComboCheck();
             }
         } else {
@@ -131,7 +140,7 @@ public class CombatInput : MonoBehaviour {
                     _cont++;
                 } else { Missed(); }
                 break;
-            case InputCombo.RUN:
+            case InputCombo.SPECIAL:
                 if (_actualCombo[_cont] == _specialCombo[_cont]) {
                     ArrowColorHeld();
                     _cont++;
@@ -142,8 +151,8 @@ public class CombatInput : MonoBehaviour {
 
     void Missed() {
         _cont = 0;
-        Debug.Log("missed!");
         ArrowColorMissed();
+        _firstCommand = false;
         _UiAnimator.SetBool("Attack", false);
         _UiAnimator.SetBool("Defense", false);
         _UiAnimator.SetBool("Special", false);
@@ -155,12 +164,29 @@ public class CombatInput : MonoBehaviour {
     }
 
     void Timer() {
-        _timer += Time.deltaTime;
+        if (_time > 0) {
+            _time -= Time.deltaTime;
+        } else { Missed(); }
+        _timerBarFill.fillAmount = ((_time * 100) / _limitTime)*0.01f;
     }
 
-    void EndTurn() {
-        _endTurn = true;
+    void NewTurn() {
+        _blocked = false;
+        _time = _limitTime;
+        _firstCommand = false;
+        _UiAnimator.SetBool("EndTurn", false);
+        _timerBarFill.fillAmount = ((_time * 100) / _limitTime) * 0.01f;
+        for (int i = 0; i < 10; i++) {
+            _attackArrows[i].sprite = _arrowCommon;
+            _specialArrows[i].sprite = _arrowCommon;
+            _defenseArrows[i].sprite = _arrowCommon;
+        }
     }
+
+    //void EndTurn() {
+    //    _endTurn = true;
+    //    _time = _limitTime;
+    //}
 
     void Send() {
         ArrowSent();
@@ -168,7 +194,8 @@ public class CombatInput : MonoBehaviour {
         _UiAnimator.SetBool("Defense", false);
         _UiAnimator.SetBool("Special", false);
         _UiAnimator.SetBool("EndTurn", true);
-        Debug.Log("send!");
+        _firstCommand = false;
+        _blocked = false;
     }
 
     void ArrowColorHeld() {

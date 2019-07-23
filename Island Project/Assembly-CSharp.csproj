@@ -66,6 +66,7 @@
     <Compile Include="Assets\Imported Assets\DigitalGlitch.cs" />
     <Compile Include="Assets\Imported Assets\DigitalGlitchEditor.cs" />
     <Compile Include="Assets\Imported Assets\GlitchCamera.cs" />
+    <Compile Include="Assets\Scenes\MovementTest.cs" />
     <Compile Include="Assets\Scripts\CombatInput.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\Dialog.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\DialogManager.cs" />
@@ -83,29 +84,29 @@
     <Compile Include="Assets\Scripts\PlayerMov.cs" />
     <None Include="Assets\Imported Assets\DigitalGlitch.shader" />
     <None Include="Assets\Imported Assets\AnalogGlitch.shader" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
