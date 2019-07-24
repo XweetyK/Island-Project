@@ -13,6 +13,8 @@ public class PlayerMov : MonoBehaviour {
 
     [SerializeField] float _movSpeed;
     [SerializeField] float _rotSpeed;
+
+    [SerializeField] int _layerMask;
     Vector3 MovementDirection;
     Rigidbody _rb;
     float _angle;
@@ -29,8 +31,9 @@ public class PlayerMov : MonoBehaviour {
 	bool _counting = false;
 
 	Animator _animator;
+    RaycastHit hit;
 
-	void Start () {
+    void Start () {
 		_isWalking = _isRunning = _isCrouch = _isSit = false;
 		_animator = GetComponent<Animator> ();
 		_water = GetComponent<ParticleSystem> ();
@@ -65,17 +68,13 @@ public class PlayerMov : MonoBehaviour {
 
 	void KeyInput(){
 
-		if (Input.GetButton ("Space")) {
+		if (Input.GetButton ("Shift")) {
 			_isRunning = true;
 		} else {
 			_isRunning = false;
 		}
-		if (Input.GetButton ("Shift")) {
-			_isCrouch = true;
-		} else {
-			_isCrouch = false;
-		}
-		if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
+
+        if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
 			_isWalking = true;
 			if (_isSit) {
 				_isSit = false;
@@ -84,13 +83,29 @@ public class PlayerMov : MonoBehaviour {
 		} else {
 			_isWalking = false;
 		}
-		if (Input.GetButtonDown ("One")) {
+
+        if (Input.GetButtonDown ("One")) {
 			_isSit = true;
 			_counting = true;
 		}
-	}
 
-	void UpdateAnimator(){
+        if (Input.GetButtonDown("Submit")) {
+            if (Physics.Raycast(transform.position+ new Vector3(0.0f,2.0f,0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
+                hit.collider.gameObject.GetComponent<DialogTrigger>().Trigger();
+            }
+        }
+		//if (Input.GetButton ("Shift")) {
+		//	_isCrouch = true;
+		//} else {
+		//	_isCrouch = false;
+		//}
+
+	}
+    void OnDrawGizmos() {
+        Gizmos.DrawRay(transform.position + new Vector3(0.0f, 2.0f, 0.0f), transform.forward * 3.0f);
+    }
+
+    void UpdateAnimator(){
 		_animator.SetBool ("Walking", _isWalking);
 		_animator.SetBool ("Running", _isRunning);
 		_animator.SetBool ("Crouch", _isCrouch);
