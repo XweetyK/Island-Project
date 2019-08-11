@@ -41,6 +41,7 @@ public class CombatInput : MonoBehaviour {
         _opacityBack = _opacityHeld = Color.white;
         _opacityBack.a = _arrowOpacity;
         _time = _limitTime;
+        _endTurn = false;
         if (_level < 10) {
             for (int i = _level; i < 10; i++) {
                 _attackArrows[i].gameObject.SetActive(false);
@@ -60,10 +61,6 @@ public class CombatInput : MonoBehaviour {
         InputCheck();
         if (_firstCommand) {
             Timer();
-        }
-
-        if (Input.GetButtonDown("Cancel")) {
-            NewTurn();
         }
     }
 
@@ -157,6 +154,7 @@ public class CombatInput : MonoBehaviour {
         _UiAnimator.SetBool("Defense", false);
         _UiAnimator.SetBool("Special", false);
         _UiAnimator.SetBool("EndTurn", true);
+        _endTurn = true;
         for (int i = 0; i < 10; i++) {
             _actualCombo[i] = 0;
         }
@@ -170,8 +168,9 @@ public class CombatInput : MonoBehaviour {
         _timerBarFill.fillAmount = ((_time * 100) / _limitTime)*0.01f;
     }
 
-    void NewTurn() {
+    public void NewTurn() {
         _blocked = false;
+        _endTurn = false;
         _time = _limitTime;
         _firstCommand = false;
         _UiAnimator.SetBool("EndTurn", false);
@@ -189,13 +188,14 @@ public class CombatInput : MonoBehaviour {
     //}
 
     void Send() {
-        ArrowSent();
+        ArrowColorSent();
         _UiAnimator.SetBool("Attack", false);
         _UiAnimator.SetBool("Defense", false);
         _UiAnimator.SetBool("Special", false);
         _UiAnimator.SetBool("EndTurn", true);
         _firstCommand = false;
         _blocked = false;
+        _endTurn = true;
     }
 
     void ArrowColorHeld() {
@@ -230,7 +230,7 @@ public class CombatInput : MonoBehaviour {
                 break;
         }
     }
-    void ArrowSent() {
+    void ArrowColorSent() {
         switch (_iCombo) {
             case InputCombo.ATTACK:
                 for (int i = 0; i < _cont; i++) {
@@ -248,5 +248,9 @@ public class CombatInput : MonoBehaviour {
                 }
                 break;
         }
+    }
+
+    public bool EndTurn {
+        get { return _endTurn; }
     }
 }
