@@ -182,11 +182,6 @@ public class CombatInput : MonoBehaviour {
         }
     }
 
-    //void EndTurn() {
-    //    _endTurn = true;
-    //    _time = _limitTime;
-    //}
-
     void Send() {
         ArrowColorSent();
         _UiAnimator.SetBool("Attack", false);
