@@ -79,7 +79,7 @@ MonoBehaviour:
   _splash: {fileID: 2125336532}
   _movSpeed: 5
   _rotSpeed: 250
-  _layerMask: 9
+  _interactLayer: Interactable
 --- !u!54 &2074018066690284674
 Rigidbody:
   m_ObjectHideFlags: 0

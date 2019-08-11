@@ -14,7 +14,8 @@ public class PlayerMov : MonoBehaviour {
     [SerializeField] float _movSpeed;
     [SerializeField] float _rotSpeed;
 
-    [SerializeField] int _layerMask;
+    [SerializeField] string _interactLayer = "Interactable";
+    [SerializeField] GameObject _InteractPrompt;
     Vector3 MovementDirection;
     Rigidbody _rb;
     float _angle;
@@ -30,7 +31,9 @@ public class PlayerMov : MonoBehaviour {
 	float _timer = 0;
 	bool _counting = false;
 
-	Animator _animator;
+    int _layerMask;
+
+    Animator _animator;
     RaycastHit hit;
 
     void Start () {
@@ -39,6 +42,7 @@ public class PlayerMov : MonoBehaviour {
 		_water = GetComponent<ParticleSystem> ();
         _rb = gameObject.GetComponent<Rigidbody>();
         _isJesus = false;
+        _layerMask = LayerMask.GetMask(_interactLayer);
 	}
 
 	void Update () {
@@ -89,10 +93,15 @@ public class PlayerMov : MonoBehaviour {
 			_counting = true;
 		}
 
-        if (Input.GetButtonDown("Submit")) {
-            if (Physics.Raycast(transform.position+ new Vector3(0.0f,2.0f,0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
+        if (Physics.Raycast(transform.position+ new Vector3(0.0f,2.0f,0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
+            if (Input.GetButtonDown("Submit")){
                 hit.collider.gameObject.GetComponent<DialogTrigger>().Trigger();
             }
+            FindObjectOfType<DialogManager>().PromptActive(true);
+
+        }
+        else{
+            FindObjectOfType<DialogManager>().PromptActive(false);
         }
 		//if (Input.GetButton ("Shift")) {
 		//	_isCrouch = true;

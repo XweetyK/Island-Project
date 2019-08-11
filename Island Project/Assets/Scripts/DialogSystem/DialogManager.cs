@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour {
 	[SerializeField] private Text _dialogTxt;
     [SerializeField] private Image _faceBox;
     [SerializeField] private FacesReferences _facesRef;
+    [SerializeField] private GameObject interactPromptBox;
 
 	private Animator _anim;
 	private Queue <string> _chats;
@@ -27,6 +28,7 @@ public class DialogManager : MonoBehaviour {
 	public void StartDialog(Dialog dial){
         if (!_init) {
             _init = true;
+            PromptActive(false);
             _anim.SetBool("openBox", true);
             _names.Clear();
             _chats.Clear();
@@ -54,5 +56,14 @@ public class DialogManager : MonoBehaviour {
 	void EndDialog(){
         _init = false;
 		_anim.SetBool ("openBox", false);
+        PromptActive(false);
 	}
+
+    public void PromptActive(bool active){
+        if (active == true && _init == true)
+            return;
+        if (interactPromptBox){
+            interactPromptBox.SetActive(active);
+        }
+    }
 }
