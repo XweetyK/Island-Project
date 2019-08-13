@@ -63,6 +63,8 @@ public class PlayerMov : MonoBehaviour {
 		if (_counting==false || _isSit==true) {
             MovementDirection = (Input.GetAxis("Horizontal") * _cameraSystem.right + Input.GetAxis("Vertical") * _cameraSystem.forward) * _currentSpeed;
             _rb.velocity = new Vector3(MovementDirection.x, _rb.velocity.y, MovementDirection.z);
+            _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, _currentSpeed);
+            Debug.Log(_rb.velocity);
 
             if (_rb.velocity != Vector3.zero) {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(_rb.velocity.x, 0, _rb.velocity.z)), Time.deltaTime * _rotSpeed);
