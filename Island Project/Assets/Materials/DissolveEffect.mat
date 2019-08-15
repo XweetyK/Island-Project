@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DissolveEffect
-  m_Shader: {fileID: 4800000, guid: f5ab4b5a358a44e418b9c9b1ceade1f9, type: 3}
+  m_Shader: {fileID: 4800000, guid: ab10324923ea3a048b567c4145a2a138, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,13 +39,23 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_446AD814_Texture:
+        m_Texture: {fileID: 2800000, guid: c9b476cb75dc7be48a0d65bdb5161c42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_4F0108B9: -1.07
+    - Vector1_64F7B16E: 3
+    - Vector1_9EDD63A7: 50
     - Vector1_A2AE84B9: -1
+    - Vector1_A68B99B: -0.25
+    - Vector1_A7AFFDC5: 0.05
     - Vector1_CF94732F: 30
+    - Vector1_FBC6CEF: 0.05
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -65,7 +75,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_6EEC1908: {r: 0.9645325, g: 1, b: 0, a: 1}
     - Color_A801BC8D: {r: 18.379171, g: 0, b: 0, a: 0}
+    - Color_DCFF8592: {r: 2436.8022, g: 0, b: 0, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
