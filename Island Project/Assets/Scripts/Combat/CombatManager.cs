@@ -16,14 +16,10 @@ public class CombatManager : MonoBehaviour {
     private void Update() {
         switch (_turn) {
             case Turn.ENEMY:
-                if (_enemy.Act()) { _turn = Turn.PLAYER; }
+                if (_enemy.Act()) { _turn = Turn.PLAYER; _player.NewTurn(); }
                 break;
             case Turn.PLAYER:
-                Debug.Log("player turn");
-                PlayerTurn();
-                Debug.Log(_player.EndTurn);
                 if (_player.EndTurn) {
-                    _endTurn = true;
                     _turn = Turn.ENEMY;
                 }
                 break;
@@ -32,9 +28,4 @@ public class CombatManager : MonoBehaviour {
         }
     }
 
-    void PlayerTurn() {
-        if (_endTurn==true) {
-            _player.NewTurn();
-        }
-    }
 }

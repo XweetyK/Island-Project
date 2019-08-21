@@ -19,12 +19,15 @@ public class CommonOrderEnemy : Enemy
     public override bool Act() {
         int _rand= Random.Range(0, 100);
         if (_rand<60) {
+            Debug.Log("enemy attacks!");
             Attack();
         }
         if (_rand >= 60 && _rand <= 80) {
+            Debug.Log("enemy's special!");
             Special();
         }
         if (_rand > 80) {
+            Debug.Log("enemy blocked!");
             Defense();
         }
         return true;
@@ -57,6 +60,7 @@ public class CommonOrderEnemy : Enemy
         Invoke("Attack", _animTime);
     }
     private void Defense() {
+        _anim.SetTrigger("_block");
         _protect = true; 
     }
 
@@ -66,7 +70,7 @@ public class CommonOrderEnemy : Enemy
 
     public override void GetDamage(int damage) {
         if (_protect) {
-            _anim.SetTrigger("_blocked");
+            _anim.SetTrigger("_block");
             _protect = false;
             return;
         } else {
