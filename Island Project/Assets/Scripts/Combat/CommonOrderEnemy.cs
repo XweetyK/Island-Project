@@ -16,56 +16,48 @@ public class CommonOrderEnemy : Enemy
         }
     }
 
-    public override bool Act() {
+    public override int Act() {
         int _rand= Random.Range(0, 100);
         if (_rand<60) {
             Debug.Log("enemy attacks!");
-            Attack();
+            return Attack();
         }
         if (_rand >= 60 && _rand <= 80) {
             Debug.Log("enemy's special!");
-            Special();
+            return Special();
         }
         if (_rand > 80) {
             Debug.Log("enemy blocked!");
-            Defense();
+            return Defense();
         }
-        return true;
+        return -1;
     }
 
-    private void Attack() {
-        if (_attacked) {
-            int rand = Random.Range(0, 100);
-            if (rand > _missChance) {
-                _character.GetDamage(_attack * 2 - _character.Defense);
-            } else { Miss(); }
-            _attacked = false;
-            return;
-        }
+    private int Attack() {
         _anim.SetTrigger("_attack1");
-        _attacked = true;
-        Invoke("Attack", _animTime);
+        int rand = Random.Range(0, 100);
+        if (rand > _missChance) {
+            int _a = _attack * 2;
+            return _a;
+        } else {  return Miss(); }
     }
-    private void Special() {
-        if (_attacked) {
-            int rand = Random.Range(0, 100);
-            if (rand > _missChance) {
-                _character.GetDamage(_attack * 5 - _character.Defense * 2 );
-            } else { Miss(); }
-            _attacked = false;
-            return;
-        }
+    private int Special() {
         _anim.SetTrigger("_attack2");
-        _attacked = true;
-        Invoke("Attack", _animTime);
+        int rand = Random.Range(0, 100);
+        if (rand > _missChance) {
+            int _a = _attack * 5;
+            return _a;
+        } else { return Miss(); }
     }
-    private void Defense() {
+    private int Defense() {
         _anim.SetTrigger("_block");
         _protect = true; 
+        return 4943;
     }
 
-    private void Miss() {
+    private int Miss() {
         Debug.Log("missed!");
+        return 0;
     }
 
     public override void GetDamage(int damage) {

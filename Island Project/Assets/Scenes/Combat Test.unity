@@ -4717,11 +4717,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d13867bd41a4146aca4255c865cc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 50
+  _maxLife: 50
   _defense: 2
   _level: 5
   _growth: 2
   _missChance: 2
+  _health: 100
 --- !u!1 &1954825592
 GameObject:
   m_ObjectHideFlags: 0

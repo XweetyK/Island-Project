@@ -16,6 +16,6 @@ public abstract class Enemy : MonoBehaviour{
     protected bool _protect;
     protected bool _dead;
 
-    public abstract bool Act();
+    public abstract int Act();
     public abstract void GetDamage(int damage);
 }

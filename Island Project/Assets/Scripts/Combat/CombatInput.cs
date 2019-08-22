@@ -178,6 +178,75 @@ public class CombatInput : MonoBehaviour {
         _state = State.ENDTURN;
     }
 
+    public bool EndTurn {
+        get {
+            if (_state == State.ENDTURN) {
+                return true;
+            } else { return false; }
+        }
+    }
+
+    //Visual UI-------------------------------
+    void UpdateArrows() {   
+        switch (_state) {
+            case State.STARTTURN:
+                _UiAnimator.SetBool("EndTurn", false);
+                _UiAnimator.SetBool("Attack", false);
+                _UiAnimator.SetBool("Defense", false);
+                _UiAnimator.SetBool("Special", false);
+                for (int i = 0; i < 10; i++) {
+                    _attackArrows[i].sprite = _arrowCommon;
+                    _specialArrows[i].sprite = _arrowCommon;
+                    _defenseArrows[i].sprite = _arrowCommon;
+                }
+                break;
+            case State.COMBO:
+                switch (_iCombo) {
+                    case InputCombo.NONE:
+                        _UiAnimator.SetBool("Attack", false);
+                        _UiAnimator.SetBool("Defense", false);
+                        _UiAnimator.SetBool("Special", false);
+                        break;
+                    case InputCombo.ATTACK:
+                        _UiAnimator.SetBool("Attack", true);
+                        break;
+                    case InputCombo.SPECIAL:
+                        _UiAnimator.SetBool("Special", true);
+                        break;
+                    case InputCombo.DEFENSE:
+                        _UiAnimator.SetBool("Defense", true);
+                        break;
+                }
+                ArrowColorHeld();
+                break;
+
+            case State.SENT:
+                _UiAnimator.SetBool("Attack", false);
+                _UiAnimator.SetBool("Defense", false);
+                _UiAnimator.SetBool("Special", false);
+                _UiAnimator.SetBool("EndTurn", true);
+                ArrowColorSent();
+                break;
+
+            case State.MISSED:
+                _UiAnimator.SetBool("Attack", false);
+                _UiAnimator.SetBool("Defense", false);
+                _UiAnimator.SetBool("Special", false);
+                _UiAnimator.SetBool("EndTurn", true);
+                ArrowColorMissed();
+                break;
+
+            case State.ENDTURN:
+                ArrowColorEnd();
+                break;
+
+            default:
+                break;
+        }
+
+        _timerBarFill.fillAmount = ((_time * 100) / _limitTime) * 0.01f;
+    }
+
     void ArrowColorHeld() {
         switch (_iCombo) {
             case InputCombo.ATTACK:
@@ -246,74 +315,6 @@ public class CombatInput : MonoBehaviour {
                     _defenseArrows[i].color = _opacityBack;
                 }
                 break;
-        }
-    }
-
-    void UpdateArrows() {
-        switch (_state) {
-            case State.STARTTURN:
-                _UiAnimator.SetBool("EndTurn", false);
-                _UiAnimator.SetBool("Attack", false);
-                _UiAnimator.SetBool("Defense", false);
-                _UiAnimator.SetBool("Special", false);
-                for (int i = 0; i < 10; i++) {
-                    _attackArrows[i].sprite = _arrowCommon;
-                    _specialArrows[i].sprite = _arrowCommon;
-                    _defenseArrows[i].sprite = _arrowCommon;
-                }
-                break;
-            case State.COMBO:
-                switch (_iCombo) {
-                    case InputCombo.NONE:
-                        _UiAnimator.SetBool("Attack", false);
-                        _UiAnimator.SetBool("Defense", false);
-                        _UiAnimator.SetBool("Special", false);
-                        break;
-                    case InputCombo.ATTACK:
-                        _UiAnimator.SetBool("Attack", true);
-                        break;
-                    case InputCombo.SPECIAL:
-                        _UiAnimator.SetBool("Special", true);
-                        break;
-                    case InputCombo.DEFENSE:
-                        _UiAnimator.SetBool("Defense", true);
-                        break;
-                }
-                ArrowColorHeld();
-                break;
-
-            case State.SENT:
-                _UiAnimator.SetBool("Attack", false);
-                _UiAnimator.SetBool("Defense", false);
-                _UiAnimator.SetBool("Special", false);
-                _UiAnimator.SetBool("EndTurn", true);
-                ArrowColorSent();
-                break;
-
-            case State.MISSED:
-                _UiAnimator.SetBool("Attack", false);
-                _UiAnimator.SetBool("Defense", false);
-                _UiAnimator.SetBool("Special", false);
-                _UiAnimator.SetBool("EndTurn", true);
-                ArrowColorMissed();
-                break;
-
-            case State.ENDTURN:
-                ArrowColorEnd();
-                break;
-
-            default:
-                break;
-        }
-
-        _timerBarFill.fillAmount = ((_time * 100) / _limitTime) * 0.01f;
-    }
-
-    public bool EndTurn {
-        get {
-            if (_state == State.ENDTURN) {
-                return true;
-            } else { return false; }
         }
     }
 }
