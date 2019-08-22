@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 5b3adce2b9c7e924980e4a3bcae8ebb9
+guid: e92ea35360768384caf3c29ea072cf21
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LoadingBar_0
-    21300002: LoadingBar_1
-    21300004: LoadingBar_2
+    21300000: LifeBar_0
+    21300002: LifeBar_1
+    21300004: LifeBar_2
+    21300006: LifeBar_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -109,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoadingBar_0
+      name: LifeBar_0
       rect:
         serializedVersion: 2
         x: 0
         y: 132
-        width: 1880
+        width: 1050
         height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -123,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3a2c578938f1c948a48d0c6f2474641
+      spriteID: 47656ecf8df9c0642b9fefe19ea9f2e6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoadingBar_1
+      name: LifeBar_1
       rect:
         serializedVersion: 2
-        x: 70
-        y: 84
-        width: 1741
+        x: 48
+        y: 77
+        width: 563
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,18 +144,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91b137f03aca8f04798482762c8ce4af
+      spriteID: 5f1ece810884d7c47a2a13b739fc1cf7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoadingBar_2
+      name: LifeBar_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 15
-        width: 1741
+        x: 48
+        y: 8
+        width: 563
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f7da0c0a5eb164d876db9b801cc731
+      spriteID: a7d689535de97594ab04c671ea237d16
       vertices: []
       indices: 
       edges: []
@@ -171,7 +172,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1303a6ba5b535a8469fd37bfb33adc00
+    spriteID: 9cd3c370c4d30244781af68eb78f1a23
     vertices: []
     indices: 
     edges: []

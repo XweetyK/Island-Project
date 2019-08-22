@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 5b3adce2b9c7e924980e4a3bcae8ebb9
+guid: 8d4c151c1b2d58f42810272b72ab0f12
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: LoadingBar_0
-    21300002: LoadingBar_1
-    21300004: LoadingBar_2
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -43,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -107,71 +104,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: LoadingBar_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 132
-        width: 1880
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3a2c578938f1c948a48d0c6f2474641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LoadingBar_1
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 84
-        width: 1741
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91b137f03aca8f04798482762c8ce4af
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LoadingBar_2
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 15
-        width: 1741
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67f7da0c0a5eb164d876db9b801cc731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1303a6ba5b535a8469fd37bfb33adc00
+    spriteID: 
     vertices: []
     indices: 
     edges: []

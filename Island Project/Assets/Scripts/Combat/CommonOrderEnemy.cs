@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CommonOrderEnemy : Enemy
 {
+    private int _maxLife;
     bool _attacked;
     private void Start() {
         _character = FindObjectOfType<CharacterStats>();
         _protect = _dead = false;
+        _maxLife = _life;
     }
     private void Update() {
         if (_life<=0) {
@@ -70,5 +72,10 @@ public class CommonOrderEnemy : Enemy
             _life -= damage;
         }
     }
-
+    public override int Health() {
+        return _life;
+    }
+    public override int MaxLife() {
+        return _maxLife;
+    }
 }

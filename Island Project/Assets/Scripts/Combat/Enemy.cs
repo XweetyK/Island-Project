@@ -18,4 +18,6 @@ public abstract class Enemy : MonoBehaviour{
 
     public abstract int Act();
     public abstract void GetDamage(int damage);
+    public abstract int Health();
+    public abstract int MaxLife();
 }

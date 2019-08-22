@@ -1,10 +1,14 @@
 fileFormatVersion: 2
-guid: 5b3adce2b9c7e924980e4a3bcae8ebb9
+guid: 0c96274e34df5ab489b6455ce0d92146
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LoadingBar_0
-    21300002: LoadingBar_1
-    21300004: LoadingBar_2
+    21300000: New Piskel_0
+    21300002: New Piskel_1
+    21300004: New Piskel_2
+    21300006: Icons_0
+    21300008: Icons_1
+    21300010: Icons_2
+    21300012: Icons_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -109,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoadingBar_0
+      name: Icons_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 132
-        width: 1880
-        height: 63
+        x: 20
+        y: 148
+        width: 88
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,19 +127,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3a2c578938f1c948a48d0c6f2474641
+      spriteID: 6c946be0f78a62947bef6cc5964a2992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoadingBar_1
+      name: Icons_1
       rect:
         serializedVersion: 2
-        x: 70
-        y: 84
-        width: 1741
-        height: 31
+        x: 140
+        y: 148
+        width: 88
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,19 +147,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91b137f03aca8f04798482762c8ce4af
+      spriteID: b56d94f5d84b9a24495659156b9e89c5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoadingBar_2
+      name: Icons_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 15
-        width: 1741
-        height: 31
+        x: 20
+        y: 28
+        width: 88
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +167,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f7da0c0a5eb164d876db9b801cc731
+      spriteID: 4c0e541e38f295149b7fe176e4d1980f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 28
+        width: 104
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c30bb0d03059845a0d1676e219089d
       vertices: []
       indices: 
       edges: []
@@ -171,7 +195,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1303a6ba5b535a8469fd37bfb33adc00
+    spriteID: e4518c580e2d82b47b7ac7c01da1bd33
     vertices: []
     indices: 
     edges: []

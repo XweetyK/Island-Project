@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour {
     [SerializeField] CombatInput _player;
+    [SerializeField] Image _playerHealth;
+    [SerializeField] Image _enemyHealth;
+    [SerializeField] Text _lifePercent;
     CharacterStats _playerStats;
     private Enemy _enemy;
     enum Turn{ENEMY, PLAYER};
@@ -36,6 +40,7 @@ public class CombatManager : MonoBehaviour {
                 }
                 break;
         }
+        UiUpdate();
     }
 
     private int Combat(int damage, int defense) {
@@ -49,4 +54,9 @@ public class CombatManager : MonoBehaviour {
         }
     }
 
+    private void UiUpdate() {
+        _playerHealth.fillAmount=((_playerStats.Health * 100) / _playerStats.Life) * 0.01f;
+        _enemyHealth.fillAmount=((_enemy.Health() * 100) / _enemy.MaxLife()) * 0.01f;
+        _lifePercent.text = _playerStats.Health.ToString();
+    }
 }
