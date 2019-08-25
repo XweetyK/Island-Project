@@ -19,26 +19,24 @@ public class CombatManager : MonoBehaviour {
         _playerStats = FindObjectOfType<CharacterStats>();
     }
 
-    private void Update() {
-        switch (_turn) {
+    private void switchTurns(){
+        switch (_turn)
+        {
             case Turn.ENEMY:
-                //if (_enemy.Act()) { _turn = Turn.PLAYER; _player.NewTurn(); }
-
-                int _dmg = Combat(_enemy.Act(), _playerStats.Defense);
-                Debug.LogWarning("Damage Done: "+_dmg);
-                if (_dmg > 0) {
-                    Debug.LogWarning("attacking! combat manager");
-                    _playerStats.GetDamage(_dmg);
-                }
-                _turn = Turn.PLAYER;
-                _player.NewTurn();
+                StartCoroutine("EnemyTurn", 2.0f);
                 break;
-
-            case Turn.PLAYER:
-                if (_player.EndTurn) {
-                    _turn = Turn.ENEMY;
-                }
-                break;
+        }
+    }
+    private void Update()
+    {
+        
+        if(_turn == Turn.PLAYER)
+        {
+            if (_player.EndTurn)
+            {
+                _turn = Turn.ENEMY;
+                StartCoroutine("PlayerTurn", 2.0f);
+            }
         }
         UiUpdate();
     }
@@ -58,5 +56,28 @@ public class CombatManager : MonoBehaviour {
         _playerHealth.fillAmount=((_playerStats.Health * 100) / _playerStats.Life) * 0.01f;
         _enemyHealth.fillAmount=((_enemy.Health() * 100) / _enemy.MaxLife()) * 0.01f;
         _lifePercent.text = _playerStats.Health.ToString();
+    }
+
+    IEnumerator EnemyTurn(float time){
+        //enemy actions
+        int _dmg = Combat(_enemy.Act(), _playerStats.Defense);
+        Debug.LogWarning("Damage Done: " + _dmg);
+        if (_dmg > 0)
+        {
+            Debug.LogWarning("attacking! combat manager");
+            _playerStats.GetDamage(_dmg);
+        }
+        yield return new WaitForSeconds(time);
+        //other turn
+        _turn = Turn.PLAYER;
+        _player.NewTurn();
+        yield return null;
+    }
+
+    IEnumerator PlayerTurn(float time){
+        yield return new WaitForSeconds(time);
+        //other turn
+        switchTurns();
+        yield return null;
     }
 }
