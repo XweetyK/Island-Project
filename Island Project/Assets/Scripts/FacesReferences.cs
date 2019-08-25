@@ -5,18 +5,18 @@ using UnityEngine;
 public enum Characters { HERO, CRIS, ORDER };
 public class FacesReferences : MonoBehaviour {
     [SerializeField] private Sprite[] _crisFaces;
-    //[SerializeField] private Sprite[] _heroFaces;
-    //[SerializeField] private Sprite[] _orderFaces;
+    [SerializeField] private Sprite[] _heroFaces;
+    [SerializeField] private Sprite[] _orderFaces;
 
     public Sprite GetFace(Characters chara, int faceIndex) {
         switch (chara) {
-            //case Characters.HERO:
-            //    if (faceIndex > _heroFaces.Length) {
-            //        return _heroFaces[faceIndex];
-            //    } else {
-            //        Debug.Log("index out of array range");
-            //        return null;
-            //    }
+            case Characters.HERO:
+                if (faceIndex > _heroFaces.Length) {
+                    return _heroFaces[faceIndex];
+                } else {
+                    Debug.Log("index out of array range");
+                    return null;
+                }
             case Characters.CRIS:
                 if (faceIndex < _crisFaces.Length) {
                     return _crisFaces[faceIndex];
@@ -24,13 +24,13 @@ public class FacesReferences : MonoBehaviour {
                     Debug.Log("index out of array range");
                     return null;
                 }
-            //case Characters.ORDER:
-            //    if (faceIndex > _orderFaces.Length) {
-            //        return _orderFaces[faceIndex];
-            //    } else {
-            //        Debug.Log("index out of array range");
-            //        return null;
-            //    }
+            case Characters.ORDER:
+                if (faceIndex > _orderFaces.Length) {
+                    return _orderFaces[faceIndex];
+                } else {
+                    Debug.Log("index out of array range");
+                    return null;
+                }
         }
         return null;
     }
