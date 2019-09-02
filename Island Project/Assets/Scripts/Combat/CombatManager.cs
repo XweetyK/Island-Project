@@ -20,8 +20,7 @@ public class CombatManager : MonoBehaviour {
     }
 
     private void switchTurns(){
-        switch (_turn)
-        {
+        switch (_turn){
             case Turn.ENEMY:
                 StartCoroutine("EnemyTurn", 2.0f);
                 break;
