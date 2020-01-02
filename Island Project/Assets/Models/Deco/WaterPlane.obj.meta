@@ -1,47 +1,8 @@
 fileFormatVersion: 2
-guid: 32bafe1745353454286e877e30c0fe82
+guid: b7cf368a72e9cba4e9b77b4c9f8b6822
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: CofreCaja
-  - first:
-      1: 100002
-    second: CofreTapa
-  - first:
-      1: 100004
-    second: //RootNode
-  - first:
-      4: 400000
-    second: CofreCaja
-  - first:
-      4: 400002
-    second: CofreTapa
-  - first:
-      4: 400004
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: Cofre2
-  - first:
-      23: 2300000
-    second: CofreCaja
-  - first:
-      23: 2300002
-    second: CofreTapa
-  - first:
-      33: 3300000
-    second: CofreCaja
-  - first:
-      33: 3300002
-    second: CofreTapa
-  - first:
-      43: 4300000
-    second: CofreCaja
-  - first:
-      43: 4300002
-    second: CofreTapa
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -70,7 +31,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
