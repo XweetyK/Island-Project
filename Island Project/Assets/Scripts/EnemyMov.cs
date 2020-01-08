@@ -9,7 +9,7 @@ public class EnemyMov : MonoBehaviour {
     [SerializeField] float _runningSpeed;
     private Animator _anim;
     private GameObject _playerPos;
-    private enum State { PATROL, ALERT, DETECTED, CONNECTED };
+    private enum State { PATROL, ALERT, DETECTED, DISTRACTED };
     private State _state;
     private NavMeshAgent _nma;
     private float _origSpeed;
@@ -21,15 +21,16 @@ public class EnemyMov : MonoBehaviour {
     private Vector3 _orderHead;
     public float _angle;
     public float _distance;
+    bool _groovin = false;
 
     private int _randAnim;
-    float _timerAnim=0;
+    float _timerAnim = 0;
     private int _randAlert;
     float _timerAlert = 0;
 
     private int _randDet;
     float _timerDet = 0;
-
+    bool _isStop = false;
 
     void Start() {
         _playerPos = GameObject.FindGameObjectWithTag("Player");
@@ -41,7 +42,7 @@ public class EnemyMov : MonoBehaviour {
 
     void Update() {
         TestAngle();
-        Detector();
+        PlayerDetector();
         Animations();
     }
 
@@ -54,10 +55,10 @@ public class EnemyMov : MonoBehaviour {
         _distance = Vector3.Distance(_playerPos.transform.position, gameObject.transform.position);
     }
 
-    private void Detector() {
+    private void PlayerDetector() {
         if (_angle < 45.0f) {
             //Area de vision------------------------------------
-            if (_distance < _maxDistance) {
+            if (_distance < _maxDistance && !_groovin) {
                 _state = State.DETECTED;
                 _seen = true;
             } else if (_seen) {
@@ -65,6 +66,7 @@ public class EnemyMov : MonoBehaviour {
             } else { _state = State.PATROL; }
         }
     }
+
     private void Animations() {
         switch (_state) {
             case State.PATROL:
@@ -79,36 +81,62 @@ public class EnemyMov : MonoBehaviour {
                 Debug.Log("detected");
                 DetectedBehavior();
                 break;
-            case State.CONNECTED:
+            case State.DISTRACTED:
                 break;
         }
         if (_nma.velocity == Vector3.zero) {
             _anim.SetBool("_walking", false);
+            _anim.SetBool("_running", false);
+
         } else {
-            _anim.SetBool("_walking", true);
+            switch (_state) {
+                case State.DETECTED:
+                    _anim.SetBool("_walking", false);
+                    _anim.SetBool("_running", true);
+                    break;
+                default:
+                    _anim.SetBool("_walking", true);
+                    _anim.SetBool("_running", false);
+                    break;
+            }
         }
     }
     private void PatrolBehavior() {
         _timerAnim += Time.deltaTime;
-
-        if (_timerAnim > 5) {
-            _timerAnim = 0;
-            _randAnim = Random.Range(1, 100);
+        if (_groovin) {
+            if (_timerAnim > 15) {
+                _timerAnim = 0;
+                _randAnim = Random.Range(1, 100);
+                Debug.Log(_randAnim);
+                _groovin = false;
+            }
+        } else {
+            if (_timerAnim > 5) {
+                _timerAnim = 0;
+                _randAnim = Random.Range(1, 100);
+                Debug.Log(_randAnim);
+                _groovin = false;
+            }
         }
 
-        if (_randAnim > 30 && _randAnim < 45) {
+        if (_randAnim >= 30 && _randAnim < 60) {
             _randAnim = -1;
             _nma.isStopped = true;
             _anim.SetTrigger("_looking");
-        } else if (_randAnim > 0 && _randAnim <= 30) {
+        } else if (_randAnim > 0 && _randAnim < 30) {
             _randAnim = -1;
             _nma.isStopped = true;
-        } else if (_randAnim>=45){
+        } else if (_randAnim >= 60 && _randAnim < 90) {
             _randAnim = -1;
             _anim.SetBool("_walking", true);
             _nma.isStopped = false;
 
             _nma.SetDestination(RandomWalk(gameObject.transform.position));
+        } else if (_randAnim >= 90) {
+            _groovin = true;
+            _randAnim = -1;
+            _nma.isStopped = true;
+            _anim.SetTrigger("_dance");
         }
     }
     private void AlertBehavior() {
@@ -135,17 +163,20 @@ public class EnemyMov : MonoBehaviour {
     private void DetectedBehavior() {
         _timerAlert = 0;
         _timerDet += Time.deltaTime;
-        _nma.isStopped = false;
         _nma.speed = _runningSpeed;
         _nma.SetDestination(_playerPos.transform.position);
+        if (!_isStop) {
+            _nma.isStopped = false;
+        }
 
         if (_timerDet > 10) {
-            _nma.speed = Mathf.Lerp(_runningSpeed, _runningSpeed+3, Time.deltaTime);
-        }
-        if (Vector3.Distance(gameObject.transform.position, _playerPos.transform.position) < 4) {
-            _anim.SetTrigger("_attack2");
+            _nma.speed = Mathf.Lerp(_runningSpeed, _runningSpeed + 5, Time.deltaTime);
         }
         _lastSeen = _playerPos.transform.position;
+    }
+
+    private void DistractedBehavior() {
+
     }
 
     private Vector3 RandomWalk(Vector3 areaPos) {

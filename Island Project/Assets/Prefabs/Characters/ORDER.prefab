@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 9223150397836548762}
   m_Layer: 0
   m_Name: ORDER
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -644,9 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxDistance: 20
   _head: {fileID: 2932110895792578845}
-  _runningSpeed: 5.5
-  _targetDist: {x: 0, y: 0, z: 0}
-  _orderHead: {x: 0, y: 0, z: 0}
+  _runningSpeed: 7
   _angle: 0
   _distance: 0
 --- !u!195 &9223150397836548762
