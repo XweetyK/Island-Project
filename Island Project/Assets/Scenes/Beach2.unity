@@ -7834,7 +7834,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _playerStats
       value: 
-      objectReference: {fileID: 1028075785}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b22aade569ca1a4899496d6e0d84454, type: 3}
 --- !u!4 &917499655 stripped
@@ -8730,31 +8730,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 839819788}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1028075784 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4541495691887270778, guid: bb8c6855d03a111489a20541a1985538,
-    type: 3}
-  m_PrefabInstance: {fileID: 1620633300}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1028075785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028075784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d13867bd41a4146aca4255c865cc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxLife: 100
-  _attack: 0
-  _defense: 2
-  _level: 5
-  _growth: 2
-  _missChance: 2
-  _health: 100
 --- !u!1001 &1030634954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14228,6 +14203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759937112}
   - component: {fileID: 1759937111}
+  - component: {fileID: 1759937113}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -14268,6 +14244,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1759937113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759937110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49444451876ffee48ba2b35b005a62d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1764310813
 PrefabInstance:
   m_ObjectHideFlags: 0
