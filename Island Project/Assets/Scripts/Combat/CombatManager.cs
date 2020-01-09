@@ -8,7 +8,7 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] Image _playerHealth;
     [SerializeField] Image _enemyHealth;
     [SerializeField] Text _lifePercent;
-    CharacterStats _playerStats;
+    [SerializeField] CharacterStats _playerStats;
     private Enemy _enemy;
     enum Turn{ENEMY, PLAYER};
     Turn _turn;
@@ -16,7 +16,6 @@ public class CombatManager : MonoBehaviour {
     private void Start() {
         _turn = Turn.PLAYER;
         _enemy = FindObjectOfType<Enemy>();
-        _playerStats = FindObjectOfType<CharacterStats>();
     }
 
     private void switchTurns(){

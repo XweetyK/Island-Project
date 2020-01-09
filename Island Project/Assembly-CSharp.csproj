@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\DolphinSpawn.cs" />
     <Compile Include="Assets\Scripts\EnemyMov.cs" />
     <Compile Include="Assets\Scripts\FacesReferences.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlitchFace.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />
     <None Include="Assets\Imported Assets\DigitalGlitch.shader" />

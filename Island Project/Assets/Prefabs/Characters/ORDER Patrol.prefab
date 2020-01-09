@@ -557,8 +557,9 @@ GameObject:
   - component: {fileID: 754551842}
   - component: {fileID: 9004759980079848838}
   - component: {fileID: 9223150397836548762}
+  - component: {fileID: 3171824721536794836}
   m_Layer: 0
-  m_Name: ORDER
+  m_Name: ORDER Patrol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -669,6 +670,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &3171824721536794836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754551841}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &767445920
 GameObject:
   m_ObjectHideFlags: 0

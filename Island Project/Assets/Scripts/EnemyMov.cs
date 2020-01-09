@@ -32,6 +32,8 @@ public class EnemyMov : MonoBehaviour {
     float _timerDet = 0;
     bool _isStop = false;
 
+    BoxCollider _Collider;
+
     void Start() {
         _playerPos = GameObject.FindGameObjectWithTag("Player");
         _anim = gameObject.GetComponent<Animator>();
@@ -114,7 +116,6 @@ public class EnemyMov : MonoBehaviour {
             if (_timerAnim > 5) {
                 _timerAnim = 0;
                 _randAnim = Random.Range(1, 100);
-                Debug.Log(_randAnim);
                 _groovin = false;
             }
         }
@@ -186,5 +187,20 @@ public class EnemyMov : MonoBehaviour {
                Random.Range(areaPos.z - 30, areaPos.z + 30));
 
         return _dest;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        GameManager.Instance.ChangeGameMode(GameManager.GameMode.COMBAT);
+    }
+
+    public void IsFrozen(bool froze){
+        if (froze) {
+            _isStop = true;
+            _nma.isStopped = true;
+            _anim.enabled = false;
+        } else {
+            _nma.isStopped = false;
+            _anim.enabled = true;
+        }
     }
 }

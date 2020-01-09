@@ -8,6 +8,7 @@ TagManager:
   - Water
   - FaceRefs
   - Enemy
+  - Combat
   layers:
   - Default
   - TransparentFX
