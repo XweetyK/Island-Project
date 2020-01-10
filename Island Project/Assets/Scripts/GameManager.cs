@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     GameObject _player;
     GameObject[] _mapEnemies;
     [SerializeField] Animator _effectTransition;
+    [SerializeField] Animator _combatCanvasAnim;
 
     bool _readyCombat = false;
     bool _readyExplore = false;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour {
             }
             _player.GetComponent<PlayerMov>().enabled=false;
             Invoke("CameraTransitions", 1.38f);
+            Invoke("AnimateCanvas", 5.0f);
             _combatTerrain.SetActive(true);
             _readyExplore = false;
             _readyCombat = true;
@@ -89,5 +91,9 @@ public class GameManager : MonoBehaviour {
         _combatCanvas.SetActive(true);
         _combatCamera.SetActive(true);
         _effectTransition.SetTrigger("_loaded");
+    }
+
+    private void AnimateCanvas() {
+        _combatCanvasAnim.SetTrigger("_combatStart");
     }
 }

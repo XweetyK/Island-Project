@@ -10,7 +10,7 @@ public class DolphinMov : MonoBehaviour {
 	[SerializeField]float _magnitude;
 	[SerializeField]float _swimZoneMin;
 	[SerializeField]float _swimZoneMax;
-
+    public bool _static;
 	float _randZ;
 	float _randTimer;
 	float _timer;
@@ -18,7 +18,7 @@ public class DolphinMov : MonoBehaviour {
 
 	void Start () {
 		_timer = 0;
-		_randTimer = Random.Range (0.5f, 5.0f);
+		_randTimer = Random.Range (0.5f, 50.0f);
 		_moving = false;
 		Invoke ("StartMovement", _randTimer);
 	}
@@ -27,7 +27,10 @@ public class DolphinMov : MonoBehaviour {
 		if (_moving) {
 			_timer += Time.deltaTime;
 		}
-		transform.Translate (_swimVel * Time.deltaTime, 0, 0);
+        if (!_static) {
+            transform.Translate(_swimVel * Time.deltaTime, 0, 0);
+        } else { StartMovement(); }
+
 		transform.position = transform.position + (transform.up * Mathf.Sin (_timer * _freq) * _magnitude);
 		if (transform.position.x <= _maxDistance) {
 			_randZ = Random.Range (_swimZoneMin, _swimZoneMax);
