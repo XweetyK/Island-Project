@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     GameObject _player;
     GameObject[] _mapEnemies;
     [SerializeField] Animator _effectTransition;
+    [SerializeField] Animator _combatCanvasAnim;
 
     bool _readyCombat = false;
     bool _readyExplore = false;
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour {
             }
             _playerInput = false;
             Invoke("CameraTransitions", 1.38f);
+            Invoke("AnimateCanvas", 5.0f);
             _combatTerrain.SetActive(true);
             _readyExplore = false;
             _readyCombat = true;
@@ -98,5 +100,9 @@ public class GameManager : MonoBehaviour {
     public bool PlayerInput{
         get { return _playerInput; }
         set { _playerInput = value; }
+    }
+
+    private void AnimateCanvas() {
+        _combatCanvasAnim.SetTrigger("_combatStart");
     }
 }

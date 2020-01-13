@@ -67,7 +67,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5b3adce2b9c7e924980e4a3bcae8ebb9, type: 3}
+  m_Sprite: {fileID: 2234763867330250425, guid: 0612fb9d5c53c024a88ace4cbbf912b4,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1260,14 +1261,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9931951, g: 1, b: 0.20392156, a: 1}
+  m_Color: {r: 0.8207547, g: 0.48393556, b: 0.48393556, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 5b3adce2b9c7e924980e4a3bcae8ebb9, type: 3}
+  m_Sprite: {fileID: 2107487411251476716, guid: 0612fb9d5c53c024a88ace4cbbf912b4,
+    type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2224,6 +2226,7 @@ GameObject:
   - component: {fileID: 1890402593983880064}
   - component: {fileID: 1890402593983880071}
   - component: {fileID: 1890402593983880067}
+  - component: {fileID: 5818919707813058994}
   m_Layer: 5
   m_Name: CombatCanvas
   m_TagString: Untagged
@@ -2329,6 +2332,26 @@ MonoBehaviour:
   _playerHealth: {fileID: 1890402595014519803}
   _enemyHealth: {fileID: 1890402593589368237}
   _lifePercent: {fileID: 1890402594668171242}
+  _playerStats: {fileID: 0}
+--- !u!95 &5818919707813058994
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890402593983880070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6107139d98b0bcd4894a38e9345af3dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1890402594015091134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,14 +2560,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8018868, g: 0.6997597, b: 0.6997597, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300004, guid: 5b3adce2b9c7e924980e4a3bcae8ebb9, type: 3}
+  m_Sprite: {fileID: 7236474679571854499, guid: 0612fb9d5c53c024a88ace4cbbf912b4,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

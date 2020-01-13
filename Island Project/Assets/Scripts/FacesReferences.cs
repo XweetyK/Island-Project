@@ -11,7 +11,7 @@ public class FacesReferences : MonoBehaviour {
     public Sprite GetFace(Characters chara, int faceIndex) {
         switch (chara) {
             case Characters.HERO:
-                if (faceIndex > _heroFaces.Length) {
+                if (faceIndex < _heroFaces.Length) {
                     return _heroFaces[faceIndex];
                 } else {
                     Debug.Log("index out of array range");
@@ -25,7 +25,7 @@ public class FacesReferences : MonoBehaviour {
                     return null;
                 }
             case Characters.ORDER:
-                if (faceIndex > _orderFaces.Length) {
+                if (faceIndex < _orderFaces.Length) {
                     return _orderFaces[faceIndex];
                 } else {
                     Debug.Log("index out of array range");
