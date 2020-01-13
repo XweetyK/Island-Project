@@ -13,4 +13,7 @@ public class Dialogue {
 [System.Serializable]
 public class Dialog {
     public Dialogue[] conversations;
+    [Header("Post Dialogue Chat Events")]
+    public DialogTrigger[] deactivateChat;
+    public DialogTrigger[] activateChat;
 }

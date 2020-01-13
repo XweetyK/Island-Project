@@ -94,11 +94,17 @@ public class PlayerMov : MonoBehaviour {
 		}
 
         if (Physics.Raycast(transform.position+ new Vector3(0.0f,2.0f,0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
-            if (Input.GetButtonDown("Submit")){
-                hit.collider.gameObject.GetComponent<DialogTrigger>().Trigger();
+            foreach (var item in hit.collider.gameObject.GetComponents<DialogTrigger>()) {
+                if (item.enabled) {
+                    Debug.Log("dialog enabled");
+                    if (Input.GetButtonDown("Submit")) {
+                        item.Trigger();
+                    }
+                    FindObjectOfType<DialogManager>().PromptActive(true);
+                } else {
+                    Debug.Log("dialog disabled");
+                }
             }
-            FindObjectOfType<DialogManager>().PromptActive(true);
-
         }
         else{
             FindObjectOfType<DialogManager>().PromptActive(false);

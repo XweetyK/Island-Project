@@ -5,19 +5,24 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour {
 
-	[SerializeField] private Text _nameTxt;
-	[SerializeField] private Text _dialogTxt;
+    [SerializeField] private Text _nameTxt;
+    [SerializeField] private Text _dialogTxt;
     [SerializeField] private Image _faceBox;
     [SerializeField] private FacesReferences _facesRef;
     [SerializeField] private GameObject interactPromptBox;
 
-	private Animator _anim;
-	private Queue <string> _chats;
-	private Queue <string> _names;
-	private Queue <Sprite> _faces;
+    private Animator _anim;
+    private Queue<string> _chats;
+    private Queue<string> _names;
+    private Queue<Sprite> _faces;
+    private DialogTrigger[] _activate;
+	private DialogTrigger[] _deactivate;
     bool _init = false;
 
-	void Awake(){
+    public static DialogManager Instance { get; private set; }
+    void Awake() {
+        if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
+
 		_anim = gameObject.GetComponent<Animator>();
 	}
 	void Start(){
@@ -38,6 +43,12 @@ public class DialogManager : MonoBehaviour {
                 _chats.Enqueue(dial.conversations[i]._chat);
                 _faces.Enqueue(_facesRef.GetFace(dial.conversations[i]._character, dial.conversations[i]._face));
             }
+            if (dial.activateChat.Length>0) {
+                _activate = dial.activateChat;
+            }
+            if (dial.deactivateChat.Length>0) {
+                _deactivate = dial.deactivateChat;
+            }
         }
         DisplayNext ();
 	}
@@ -57,7 +68,23 @@ public class DialogManager : MonoBehaviour {
         _init = false;
 		_anim.SetBool ("openBox", false);
         PromptActive(false);
+        Invoke("PostDialogEvents", 0.2f);
 	}
+
+    void PostDialogEvents() {
+        if (_activate != null) {
+            foreach (DialogTrigger log in _activate) {
+                log.enabled = true;
+            }
+        }
+        if (_deactivate != null) {
+            foreach (DialogTrigger log in _deactivate) {
+                log.enabled = false;
+            }
+        }
+        _activate = null;
+        _deactivate = null;
+    }
 
     public void PromptActive(bool active){
         if (active == true && _init == true)

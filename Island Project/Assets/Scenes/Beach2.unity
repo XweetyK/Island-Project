@@ -390,6 +390,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1363538721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &37764957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4313297071423905905, guid: 2f89d8677d3e3314fbef9df4eae97098,
+    type: 3}
+  m_PrefabInstance: {fileID: 655536354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &37764958 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+    type: 3}
+  m_PrefabInstance: {fileID: 655536354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &37764959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37764957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialog:
+    conversations:
+    - _name: Hero
+      _character: 0
+      _face: 0
+      _chat: The Coco nut nut is a giant nut
+    - _name: Hero
+      _character: 0
+      _face: 0
+      _chat: if you eat too much you'll get veeery fat
+    deactivateChat: []
+    activateChat: []
 --- !u!4 &39188221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9126325569117564780, guid: 758b4b3d296df754e8b300d75953a1bd,
@@ -997,6 +1033,112 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f89d8677d3e3314fbef9df4eae97098, type: 3}
+--- !u!1 &119987820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 119987821}
+  - component: {fileID: 119987824}
+  - component: {fileID: 119987823}
+  - component: {fileID: 119987822}
+  - component: {fileID: 119987825}
+  m_Layer: 9
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &119987821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119987820}
+  m_LocalRotation: {x: -0.0000000037252899, y: -0.000000029802319, z: 0.10201898,
+    w: 0.99478245}
+  m_LocalPosition: {x: -0.89, y: 3.55, z: -0}
+  m_LocalScale: {x: 5.2605, y: 9.761384, z: 5.2605}
+  m_Children: []
+  m_Father: {fileID: 1023590171}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.711}
+--- !u!114 &119987822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119987820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialog:
+    conversations:
+    - _name: Hero
+      _character: 0
+      _face: 0
+      _chat: Just Chillin Bro
+    - _name: Hero
+      _character: 0
+      _face: 8
+      _chat: Calm Vibes...
+    deactivateChat:
+    - {fileID: 119987822}
+    activateChat:
+    - {fileID: 119987825}
+--- !u!65 &119987823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119987820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.389149, y: 1, z: 0.9999999}
+  m_Center: {x: -0.19488098, y: 0.00380177, z: 0.000000009289096}
+--- !u!33 &119987824
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119987820}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &119987825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119987820}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialog:
+    conversations:
+    - _name: Hero
+      _character: 0
+      _face: 8
+      _chat: 'Hehe '
+    - _name: Hero
+      _character: 0
+      _face: 8
+      _chat: Chonky
+    deactivateChat: []
+    activateChat: []
 --- !u!1 &122336559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1563,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1011955802617082, guid: 73532e49fc58b9041b6b01a2f0087252, type: 3}
       propertyPath: m_Name
-      value: Dolphin
+      value: Chonky
       objectReference: {fileID: 0}
     - target: {fileID: 1011955802617082, guid: 73532e49fc58b9041b6b01a2f0087252, type: 3}
       propertyPath: m_Layer
@@ -1470,6 +1612,10 @@ PrefabInstance:
     - target: {fileID: 4314340562489888, guid: 73532e49fc58b9041b6b01a2f0087252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314340562489888, guid: 73532e49fc58b9041b6b01a2f0087252, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.81922
       objectReference: {fileID: 0}
     - target: {fileID: 114739035777258360, guid: 73532e49fc58b9041b6b01a2f0087252,
         type: 3}
@@ -7299,6 +7445,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f89d8677d3e3314fbef9df4eae97098, type: 3}
+--- !u!1001 &655536354
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1099315607}
+    m_Modifications:
+    - target: {fileID: 4313297071423905905, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_Name
+      value: Palm (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4313297071423905905, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 224.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 84.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 74.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.32446587
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.49689755
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15185547
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7904143
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -21.224
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 972972191176102498, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 37.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353003320584891368, guid: 2f89d8677d3e3314fbef9df4eae97098,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f89d8677d3e3314fbef9df4eae97098, type: 3}
 --- !u!1001 &707829663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10563,60 +10788,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1003814746}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1023590163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1011955802617082, guid: 73532e49fc58b9041b6b01a2f0087252,
+--- !u!4 &1023590171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4314340562489888, guid: 73532e49fc58b9041b6b01a2f0087252,
     type: 3}
   m_PrefabInstance: {fileID: 130862378}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1023590168
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023590163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 23.8, y: 7.93, z: 9}
-  m_Center: {x: 0.27608186, y: 1.22, z: 0.0000000064169607}
---- !u!114 &1023590169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023590163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialog:
-    conversations:
-    - _name: Hero
-      _character: 0
-      _face: 0
-      _chat: Just Chillin Bro
-    - _name: Hero
-      _character: 0
-      _face: 8
-      _chat: Calm Vibes...
---- !u!65 &1023590170
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023590163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.65, y: 3.432154, z: 4.5492063}
-  m_Center: {x: 0.27608186, y: 0.08101911, z: 0.0000000064169607}
 --- !u!1001 &1027664123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11771,6 +11948,7 @@ Transform:
   - {fileID: 2018278611}
   - {fileID: 645872567}
   - {fileID: 848842041}
+  - {fileID: 37764958}
   m_Father: {fileID: 1268488417}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

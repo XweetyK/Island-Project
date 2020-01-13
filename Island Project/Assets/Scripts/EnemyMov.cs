@@ -72,15 +72,12 @@ public class EnemyMov : MonoBehaviour {
     private void Animations() {
         switch (_state) {
             case State.PATROL:
-                Debug.Log("patrol");
                 PatrolBehavior();
                 break;
             case State.ALERT:
-                Debug.Log("alert");
                 AlertBehavior();
                 break;
             case State.DETECTED:
-                Debug.Log("detected");
                 DetectedBehavior();
                 break;
             case State.DISTRACTED:
@@ -109,7 +106,6 @@ public class EnemyMov : MonoBehaviour {
             if (_timerAnim > 15) {
                 _timerAnim = 0;
                 _randAnim = Random.Range(1, 100);
-                Debug.Log(_randAnim);
                 _groovin = false;
             }
         } else {
