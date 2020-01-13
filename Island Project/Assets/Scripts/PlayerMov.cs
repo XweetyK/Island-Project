@@ -32,6 +32,10 @@ public class PlayerMov : MonoBehaviour {
 
     int _layerMask;
 
+    //Movement Input
+    float _movX;
+    float _movY;
+
     Animator _animator;
     RaycastHit hit;
 
@@ -45,8 +49,8 @@ public class PlayerMov : MonoBehaviour {
 	}
 
 	void Update () {
-		KeyInput ();
-		Movement ();
+        KeyInput();
+        Movement();
 		UpdateAnimator ();
 		AnimTimer ();
 		WaterAnim ();
@@ -60,7 +64,7 @@ public class PlayerMov : MonoBehaviour {
     void Movement(){
         _currentSpeed = _isRunning ? _movSpeed * 2 : _movSpeed;
 		if (_counting==false || _isSit==true) {
-            MovementDirection = (Input.GetAxis("Horizontal") * _cameraSystem.right + Input.GetAxis("Vertical") * _cameraSystem.forward) * _currentSpeed;
+            MovementDirection = (_movX * _cameraSystem.right + _movY * _cameraSystem.forward) * _currentSpeed;
             _rb.velocity = new Vector3(MovementDirection.x, _rb.velocity.y, MovementDirection.z);
             _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, _currentSpeed);
 
@@ -71,14 +75,24 @@ public class PlayerMov : MonoBehaviour {
 	}
 
 	void KeyInput(){
+        //Mov
+        if (GameManager.Instance.PlayerInput)
+        {
+            _movX = Input.GetAxis("Horizontal");
+            _movY = Input.GetAxis("Vertical");
+        }
+        else
+        {
+            _movX = 0.0f;
+            _movY = 0.0f;
+        }
 
-		if (Input.GetButton ("Shift")) {
+        if (Input.GetButton ("Shift") && GameManager.Instance.PlayerInput) {
 			_isRunning = true;
 		} else {
 			_isRunning = false;
 		}
-
-        if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
+        if (_movX != 0 || _movY != 0) {
 			_isWalking = true;
 			if (_isSit) {
 				_isSit = false;
@@ -88,7 +102,7 @@ public class PlayerMov : MonoBehaviour {
 			_isWalking = false;
 		}
 
-        if (Input.GetButtonDown ("One")) {
+        if (Input.GetButtonDown ("One") && GameManager.Instance.PlayerInput) {
 			_isSit = true;
 			_counting = true;
 		}

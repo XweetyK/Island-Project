@@ -9,7 +9,7 @@ public class EnemyMov : MonoBehaviour {
     [SerializeField] float _runningSpeed;
     private Animator _anim;
     private GameObject _playerPos;
-    private enum State { PATROL, ALERT, DETECTED, DISTRACTED };
+    private enum State { PATROL, ALERT, DETECTED, DISTRACTED, COMBAT };
     private State _state;
     private NavMeshAgent _nma;
     private float _origSpeed;
@@ -82,6 +82,9 @@ public class EnemyMov : MonoBehaviour {
             case State.DETECTED:
                 Debug.Log("detected");
                 DetectedBehavior();
+                break;
+            case State.COMBAT:
+                Debug.Log("Combat");
                 break;
             case State.DISTRACTED:
                 break;
@@ -190,7 +193,11 @@ public class EnemyMov : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        GameManager.Instance.ChangeGameMode(GameManager.GameMode.COMBAT);
+        if (other.gameObject.tag == "Player")
+        {
+            GameManager.Instance.ChangeGameMode(GameManager.GameMode.COMBAT);
+            _state = State.COMBAT;
+        }
     }
 
     public void IsFrozen(bool froze){

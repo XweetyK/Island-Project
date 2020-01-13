@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
     bool _readyCombat = false;
     bool _readyExplore = false;
 
+    //Global inputs
+    bool _playerInput = true;
+
     public static GameManager Instance { get; private set; }
     void Awake() {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour {
             _combatCamera.SetActive(false);
             _exploreTerrain.SetActive(true);
             _player.SetActive(true);
+            _playerInput = true;
             _playerCamera.SetActive(true);
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.SetActive(true);
@@ -68,7 +72,7 @@ public class GameManager : MonoBehaviour {
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.GetComponent<EnemyMov>().IsFrozen(true);
             }
-            _player.GetComponent<PlayerMov>().enabled=false;
+            _playerInput = false;
             Invoke("CameraTransitions", 1.38f);
             _combatTerrain.SetActive(true);
             _readyExplore = false;
@@ -89,5 +93,10 @@ public class GameManager : MonoBehaviour {
         _combatCanvas.SetActive(true);
         _combatCamera.SetActive(true);
         _effectTransition.SetTrigger("_loaded");
+    }
+
+    public bool PlayerInput{
+        get { return _playerInput; }
+        set { _playerInput = value; }
     }
 }
