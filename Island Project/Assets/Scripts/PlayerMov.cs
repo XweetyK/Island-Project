@@ -107,7 +107,7 @@ public class PlayerMov : MonoBehaviour {
 			_counting = true;
 		}
 
-        if (Physics.Raycast(transform.position+ new Vector3(0.0f,2.0f,0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
+        if (Physics.Raycast(transform.position+ new Vector3(0.0f,3.0f,0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
             foreach (var item in hit.collider.gameObject.GetComponents<DialogTrigger>()) {
                 if (item.enabled) {
                     Debug.Log("dialog enabled");
