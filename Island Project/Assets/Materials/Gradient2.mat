@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5102688731180194979
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gradient
+  m_Name: Gradient2
   m_Shader: {fileID: -6465566751694194690, guid: 5f4cd327b7d3be042a9d970236d191df,
     type: 3}
   m_ShaderKeywords: 
@@ -49,8 +62,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_31C774F4: 0.5
-    - Vector1_C42E8A8E: -1.03
+    - Vector1_31C774F4: -0.35
+    - Vector1_B9D402E6: 0.5
+    - Vector1_C42E8A8E: 1.57
+    - Vector1_E213A493: 0.95
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -73,22 +88,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_A3801CE5: {r: 1, g: 0.7122642, b: 0.9062683, a: 0}
-    - Color_E0F22028: {r: 0.68235296, g: 0.9414407, b: 1, a: 0}
+    - Color_A3801CE5: {r: 0.7786341, g: 1, b: 0.7688679, a: 0}
+    - Color_E0F22028: {r: 0.5801887, g: 0.96465373, b: 1, a: 0}
+    - Vector2_9ED57AFE: {r: 6, g: 6, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
---- !u!114 &3864953121904269851
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1

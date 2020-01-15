@@ -88,8 +88,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_A3801CE5: {r: 0.9056604, g: 0.34603062, b: 0.74681365, a: 0}
-    - Color_E0F22028: {r: 1, g: 0.84366614, b: 0.504717, a: 0}
+    - Color_A3801CE5: {r: 1, g: 0.7216981, b: 0.93322194, a: 0}
+    - Color_E0F22028: {r: 0.4198113, g: 1, b: 0.9631626, a: 0}
     - Vector2_9ED57AFE: {r: 6, g: 6, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
