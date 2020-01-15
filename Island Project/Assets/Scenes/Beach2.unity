@@ -6416,7 +6416,7 @@ PrefabInstance:
     - target: {fileID: 8173435373473658931, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8173435373473658927, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
         type: 3}
@@ -9453,7 +9453,7 @@ PrefabInstance:
     - target: {fileID: 1890402593983880070, guid: 7b22aade569ca1a4899496d6e0d84454,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1890402593983880066, guid: 7b22aade569ca1a4899496d6e0d84454,
         type: 3}
@@ -19227,7 +19227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1759937112}
   - component: {fileID: 1759937111}
-  - component: {fileID: 1759937113}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
