@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 13c261fc983ef4d4db4980d851e4f622,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -18262,11 +18262,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1912767632063665208, guid: bb8c6855d03a111489a20541a1985538,
-        type: 3}
-      propertyPath: _scale
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb8c6855d03a111489a20541a1985538, type: 3}
