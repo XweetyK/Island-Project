@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pond
+  m_Name: CanvasPortal
   m_Shader: {fileID: -6465566751694194690, guid: 35dd2e076d702964ebd56aa4a2d23ad4,
     type: 3}
   m_ShaderKeywords: 
@@ -62,8 +62,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Boolean_2F2B2DE1: 1
-    - Vector1_B2431DDB: 0.5
+    - Boolean_2F2B2DE1: 0
+    - Vector1_B2431DDB: 0
     - Vector1_B9D402E6: -0.02
     - Vector1_E213A493: 0.95
     - _AlphaClip: 0

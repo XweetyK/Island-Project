@@ -92,6 +92,8 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlitchFace.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
     <None Include="Assets\Imported Assets\DigitalGlitch.shader" />
     <None Include="Assets\Imported Assets\AnalogGlitch.shader" />
     <Reference Include="Unity.Timeline.Editor">

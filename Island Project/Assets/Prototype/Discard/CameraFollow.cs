@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour {
     void CamMouseLook() {
         _limitAngle += Input.mouseScrollDelta.y * 3.3f;
         _limitAngle = Mathf.Clamp(_limitAngle, 5.0f, 25.0f);
-        Debug.Log(_limitAngle);
+        
         if (Input.GetButton("Fire2")) {
             _rotX += _speedX * Input.GetAxis("Mouse Y") * Time.deltaTime;
             _rotY = _speedY * Input.GetAxis("Mouse X") * Time.deltaTime;
