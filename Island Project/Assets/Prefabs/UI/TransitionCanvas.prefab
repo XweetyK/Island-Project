@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B E A C H
+  m_Text: Loading Map...
 --- !u!1 &6623361858039741051
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 6623361858840681140}
   _bar: {fileID: 6623361858039741049}
-  _portal: {fileID: 6623361857869356869}
+  _portal: {fileID: 6623361859092803254}
 --- !u!95 &6623361858840681140
 Animator:
   serializedVersion: 3

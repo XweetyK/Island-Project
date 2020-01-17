@@ -104,6 +104,11 @@ PrefabInstance:
       propertyPath: _cameraSystem
       value: 
       objectReference: {fileID: 1912767632063665209}
+    - target: {fileID: 152924214961096423, guid: fb436660ca5738a4799af445f19ea731,
+        type: 3}
+      propertyPath: _rotSpeed
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb436660ca5738a4799af445f19ea731, type: 3}
 --- !u!4 &6160043196313337031 stripped
@@ -189,6 +194,16 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 6160043196313337031}
+    - target: {fileID: 5762173894380917231, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: _speedY
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894380917231, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: _speedX
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2261e1f7568221c4daf9f51b4150423c, type: 3}
 --- !u!4 &1912767632063665209 stripped

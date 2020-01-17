@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] GameObject _combatTerrain;
     [SerializeField] GameObject _playerCamera;
     [SerializeField] GameObject _combatCamera;
+    [SerializeField] GameObject _interaction;
     GameObject _player;
     GameObject[] _mapEnemies;
     [SerializeField] Animator _effectTransition;
@@ -27,10 +28,8 @@ public class GameManager : MonoBehaviour {
         if (Instance == null) {
             Instance = this;
         } else {
-            Destroy(Instance);
-            Instance = this;
+            Destroy(this.gameObject);
         }
-
         _combatCanvas.SetActive(false);
     }
 
@@ -64,6 +63,7 @@ public class GameManager : MonoBehaviour {
             _player.SetActive(true);
             _playerInput = true;
             _playerCamera.SetActive(true);
+            _interaction.SetActive(true);
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.SetActive(true);
             }
@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour {
     private void CameraTransitions() {
         _exploreTerrain.SetActive(false);
         _player.SetActive(false);
+        _interaction.SetActive(false);
         foreach (GameObject enemy in _mapEnemies) {
             enemy.SetActive(false);
         }
