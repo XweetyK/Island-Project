@@ -1440,7 +1440,7 @@ MonoBehaviour:
   _name: Order
   _life: 30
   _attack: 5
-  _defense: 2
+  _defense: 3
   _missChance: 10
   _animTime: 2
   _anim: {fileID: 7328561090412588511}

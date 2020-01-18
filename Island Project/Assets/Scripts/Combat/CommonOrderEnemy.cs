@@ -21,10 +21,12 @@ public class CommonOrderEnemy : Enemy
     public override int Act() {
         int _rand= Random.Range(0, 100);
         if (_rand<60) {
+            Invoke("CamShake", 1.1f);
             Debug.Log("enemy attacks!");
             return Attack();
         }
         if (_rand >= 60 && _rand <= 80) {
+            Invoke("CamShake", 1.2f);
             Debug.Log("enemy's special!");
             return Special();
         }
@@ -69,7 +71,7 @@ public class CommonOrderEnemy : Enemy
             return;
         } else {
             _anim.SetTrigger("_hit");
-            _life -= damage;
+            _life -= damage - _defense*2;
         }
     }
     public override int Health() {
@@ -77,5 +79,9 @@ public class CommonOrderEnemy : Enemy
     }
     public override int MaxLife() {
         return _maxLife;
+    }
+
+    void CamShake() {
+        CombatManager.Instance.CombatCamera.StartShake();
     }
 }

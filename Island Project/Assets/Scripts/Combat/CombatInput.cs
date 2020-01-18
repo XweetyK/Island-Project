@@ -7,7 +7,6 @@ public class CombatInput : MonoBehaviour {
 
     enum InputCombo { NONE, ATTACK, SPECIAL, DEFENSE, RUN, ITEM };
     enum State { STARTTURN, COMBO, SENT, MISSED, ENDTURN};
-    [SerializeField] int _level;
     [SerializeField] private float _limitTime;
     [SerializeField] private Sprite _arrowFilled;
     [SerializeField] private Sprite _arrowCommon;
@@ -25,15 +24,18 @@ public class CombatInput : MonoBehaviour {
 
     InputCombo _iCombo = InputCombo.NONE;
     State _state = State.STARTTURN;
+    private int _level;
     private int _cont = 0;
     private bool _blocked = false;
-    private int _levelLimit;
     private float _time;
+
+    private int _damageDone = 0;
 
     private Color _opacityBack;
     private Color _opacityHeld;
 
     private void Start() {
+        _level = CharacterStats.Instance.Level;
         _time = _limitTime;
         _opacityBack = _opacityHeld = Color.white;
         _opacityBack.a = _arrowOpacity;
@@ -156,6 +158,8 @@ public class CombatInput : MonoBehaviour {
         for (int i = 0; i < 10; i++) {
             _actualCombo[i] = 0;
         }
+        _damageDone = 0;
+        CombatManager.Instance.SendPlayerAttack(_damageDone);
         _state = State.ENDTURN;
     }
 
@@ -168,13 +172,16 @@ public class CombatInput : MonoBehaviour {
 
     public void NewTurn() {
         _blocked = false;
+        _damageDone = 0;
         _state = State.STARTTURN;
         _time = _limitTime;
     }
 
     void Send() {
+        _damageDone = _cont * CharacterStats.Instance.Attack;
         _blocked = false;
         _cont = 0;
+        CombatManager.Instance.SendPlayerAttack(_damageDone);
         _state = State.ENDTURN;
     }
 

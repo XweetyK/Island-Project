@@ -76,6 +76,7 @@
     <Compile Include="Assets\Prototype\Discard\CharaMov2d.cs" />
     <Compile Include="Assets\Prototype\Discard\Clock.cs" />
     <Compile Include="Assets\Prototype\Discard\Orbit.cs" />
+    <Compile Include="Assets\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Combat\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatInput.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatManager.cs" />
