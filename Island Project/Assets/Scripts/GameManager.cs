@@ -74,11 +74,11 @@ public class GameManager : MonoBehaviour {
 
     private void CombatMode() {
         if (!_readyCombat) {
+            _playerInput = false;
             _effectTransition.SetTrigger("_contact");
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.GetComponent<EnemyMov>().IsFrozen(true);
             }
-            _playerInput = false;
             Invoke("CameraTransitions", 1.38f);
             Invoke("AnimateCanvas", 5.0f);
             _combatTerrain.SetActive(true);

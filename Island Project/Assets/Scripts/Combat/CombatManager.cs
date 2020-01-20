@@ -9,6 +9,8 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] Image _enemyHealth;
     [SerializeField] Text _lifePercent;
     [SerializeField] CameraShake _combatCam;
+    [SerializeField] Image _playerFace;
+    [SerializeField] Animator _playerAnim;
 
     private Enemy _enemy;
     enum Turn { ENEMY, PLAYER };
@@ -38,7 +40,7 @@ public class CombatManager : MonoBehaviour {
     private void Update() {
 
         if (_turn == Turn.PLAYER) {
-            if (_endTurn) {
+            if (_endTurn && _enemy.Health() > 0) {
                 _turn = Turn.ENEMY;
                 StartCoroutine("PlayerTurn", 2.0f);
             }
@@ -47,7 +49,6 @@ public class CombatManager : MonoBehaviour {
     }
 
     private int Combat(int damage, int defense) {
-        Debug.LogWarning("Initial Damage: " + damage);
         if (damage == 4943) {
             //The enemy is defending--------------
             return -1;
@@ -60,15 +61,24 @@ public class CombatManager : MonoBehaviour {
     private void UiUpdate() {
         _playerHealth.fillAmount = ((CharacterStats.Instance.Health * 100) / CharacterStats.Instance.Life) * 0.01f;
         _enemyHealth.fillAmount = ((_enemy.Health() * 100) / _enemy.MaxLife()) * 0.01f;
-        _lifePercent.text = CharacterStats.Instance.Health.ToString();
+        if (CharacterStats.Instance.Health > 0) {
+            _lifePercent.text = CharacterStats.Instance.Health.ToString();
+        } else {
+            _lifePercent.text = "0";
+        }
+        if (CharacterStats.Instance.Health < CharacterStats.Instance.Life/3) {
+            _playerAnim.SetBool("_lowHealth", true);
+        }
+        if (CharacterStats.Instance.Health <= 0) {
+            _playerAnim.SetBool("_isDead", true);
+        }
     }
 
     IEnumerator EnemyTurn(float time) {
         //enemy actions
         int _dmg = Combat(_enemy.Act(), CharacterStats.Instance.Defense);
-        Debug.LogWarning("Damage Done: " + _dmg);
         if (_dmg > 0) {
-            Debug.LogWarning("attacking! combat manager");
+            Invoke("FaceChange", 1.1f);
             CharacterStats.Instance.GetDamage(_dmg);
         }
         yield return new WaitForSeconds(time);
@@ -92,7 +102,13 @@ public class CombatManager : MonoBehaviour {
 
     public void SendPlayerAttack(int damage) {
         _enemy.GetDamage(damage);
-        _combatCam.StartShake();
+        if (damage > 0) {
+            _combatCam.StartShake();
+        }
         _endTurn = true;
+    }
+
+    private void FaceChange(){
+        _playerAnim.SetTrigger("_damaged");
     }
 }

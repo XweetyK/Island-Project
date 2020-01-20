@@ -10,10 +10,13 @@ public class CombatInput : MonoBehaviour {
     [SerializeField] private float _limitTime;
     [SerializeField] private Sprite _arrowFilled;
     [SerializeField] private Sprite _arrowCommon;
+    [SerializeField] private Sprite _blueBox;
     [SerializeField] private Image[] _attackArrows;
     [SerializeField] private Image[] _defenseArrows;
     [SerializeField] private Image[] _specialArrows;
     [SerializeField] private Image _timerBarFill;
+    [SerializeField] private Image _missedBox;
+    [SerializeField] private Animator _missedAnim;
     [SerializeField] [Range(0.0f, 1.0f)] private float _arrowOpacity;
     [SerializeField] Animator _UiAnimator;
 
@@ -159,6 +162,10 @@ public class CombatInput : MonoBehaviour {
             _actualCombo[i] = 0;
         }
         _damageDone = 0;
+        if (_missedBox.sprite != _blueBox) {
+            _missedBox.sprite = _blueBox;
+        }
+        _missedAnim.SetTrigger("_missed");
         CombatManager.Instance.SendPlayerAttack(_damageDone);
         _state = State.ENDTURN;
     }

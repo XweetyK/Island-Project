@@ -8,7 +8,16 @@ public class FacesReferences : MonoBehaviour {
     [SerializeField] private Sprite[] _heroFaces;
     [SerializeField] private Sprite[] _orderFaces;
 
-    public Sprite GetFace(Characters chara, int faceIndex) {
+    public static FacesReferences Instance { get; private set; }
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
+
+        public Sprite GetFace(Characters chara, int faceIndex) {
         switch (chara) {
             case Characters.HERO:
                 if (faceIndex < _heroFaces.Length) {

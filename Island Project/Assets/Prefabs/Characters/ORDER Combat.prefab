@@ -1443,7 +1443,12 @@ MonoBehaviour:
   _defense: 3
   _missChance: 10
   _animTime: 2
+  _redBox: {fileID: 21300000, guid: d2dc8b4e4f0571a428fc49719f768369, type: 3}
   _anim: {fileID: 7328561090412588511}
+  _messageAnim: {fileID: 0}
+  _missedAnim: {fileID: 0}
+  _missedBox: {fileID: 0}
+  _messageText: {fileID: 0}
 --- !u!1 &7558812870247425786
 GameObject:
   m_ObjectHideFlags: 0

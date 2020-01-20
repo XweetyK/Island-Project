@@ -21,12 +21,10 @@ public class CommonOrderEnemy : Enemy
     public override int Act() {
         int _rand= Random.Range(0, 100);
         if (_rand<60) {
-            Invoke("CamShake", 1.1f);
             Debug.Log("enemy attacks!");
             return Attack();
         }
         if (_rand >= 60 && _rand <= 80) {
-            Invoke("CamShake", 1.2f);
             Debug.Log("enemy's special!");
             return Special();
         }
@@ -39,39 +37,55 @@ public class CommonOrderEnemy : Enemy
 
     private int Attack() {
         _anim.SetTrigger("_attack1");
+        _messageText.text = "Enemy ORDER Attacks!";
+        _messageAnim.SetTrigger("_enemyTurn");
         int rand = Random.Range(0, 100);
         if (rand > _missChance) {
             int _a = _attack * 2;
+            Invoke("CamShake", 1.1f);
             return _a;
         } else {  return Miss(); }
     }
     private int Special() {
         _anim.SetTrigger("_attack2");
+        _messageText.text = "Enemy ORDER [CENSORES] you!";
+        _messageAnim.SetTrigger("_enemyTurn");
         int rand = Random.Range(0, 100);
         if (rand > _missChance) {
             int _a = _attack * 5;
+            Invoke("CamShake", 1.2f);
             return _a;
         } else { return Miss(); }
     }
     private int Defense() {
         _anim.SetTrigger("_block");
+        _messageText.text = "Enemy ORDER is ready!";
+        _messageAnim.SetTrigger("_enemyTurn");
         _protect = true; 
         return 4943;
     }
 
     private int Miss() {
         Debug.Log("missed!");
+        if (_missedBox.sprite != _redBox) {
+            _missedBox.sprite = _redBox;
+        }
+        _missedAnim.SetTrigger("_missed");
         return 0;
     }
 
     public override void GetDamage(int damage) {
         if (_protect) {
             _anim.SetTrigger("_block");
+            _messageText.text = "Enemy ORDER blocked your attack!";
+            _messageAnim.SetTrigger("_enemyTurn");
             _protect = false;
             return;
         } else {
-            _anim.SetTrigger("_hit");
-            _life -= damage - _defense*2;
+            if (damage > 0) {
+                _anim.SetTrigger("_hit");
+                _life -= damage - _defense * 2;
+            }
         }
     }
     public override int Health() {
