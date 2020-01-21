@@ -14,8 +14,8 @@ public class CommonOrderEnemy : Enemy
     private void Update() {
         if (_life<=0) {
             _dead = true;
-            _anim.SetBool("_dead",true);
         }
+        _anim.SetBool("_dead",_dead);
     }
 
     public override int Act() {
@@ -24,11 +24,11 @@ public class CommonOrderEnemy : Enemy
             Debug.Log("enemy attacks!");
             return Attack();
         }
-        if (_rand >= 60 && _rand <= 80) {
+        if (_rand >= 60 && _rand <= 90) {
             Debug.Log("enemy's special!");
             return Special();
         }
-        if (_rand > 80) {
+        if (_rand > 90) {
             Debug.Log("enemy blocked!");
             return Defense();
         }
@@ -93,6 +93,10 @@ public class CommonOrderEnemy : Enemy
     }
     public override int MaxLife() {
         return _maxLife;
+    }
+    public override void Revive() {
+        _dead = false;
+        _life = _maxLife;
     }
 
     void CamShake() {

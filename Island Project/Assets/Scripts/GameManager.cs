@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour {
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.SetActive(true);
             }
+            _effectTransition.SetBool("_win", false);
             _readyCombat = false;
             _readyExplore = true;
         }
@@ -90,6 +91,16 @@ public class GameManager : MonoBehaviour {
     public void ChangeGameMode (GameMode mode){
         _gameMode = mode;
     }
+    public void ChangeGameMode (int mode){
+        switch (mode) {
+            case 1:
+                _gameMode = GameMode.COMBAT;
+                break;
+            case 2:
+                _gameMode = GameMode.EXPLORE;
+                break;
+        }
+    }
 
     private void CameraTransitions() {
         _exploreTerrain.SetActive(false);
@@ -110,5 +121,15 @@ public class GameManager : MonoBehaviour {
 
     private void AnimateCanvas() {
         _combatCanvasAnim.SetTrigger("_combatStart");
+    }
+
+    public void EndCombat(bool won) {
+        switch (won) {
+            case true:
+                _effectTransition.SetBool("_win", true);
+                break;
+            case false:
+                break;
+        }
     }
 }

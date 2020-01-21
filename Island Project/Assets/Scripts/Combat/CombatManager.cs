@@ -16,6 +16,7 @@ public class CombatManager : MonoBehaviour {
     enum Turn { ENEMY, PLAYER };
     Turn _turn;
     bool _endTurn = false;
+    bool _endGame = false;
 
     public static CombatManager Instance { get; private set; }
     void Awake() {
@@ -43,7 +44,12 @@ public class CombatManager : MonoBehaviour {
             if (_endTurn && _enemy.Health() > 0) {
                 _turn = Turn.ENEMY;
                 StartCoroutine("PlayerTurn", 2.0f);
+            } else if (_enemy.Health() < 0) {
+                StartCoroutine(EndCombat());
             }
+        }
+        if (CharacterStats.Instance.Health <= 0) {
+            GameOver();
         }
         UiUpdate();
     }
@@ -78,8 +84,7 @@ public class CombatManager : MonoBehaviour {
         //enemy actions
         int _dmg = Combat(_enemy.Act(), CharacterStats.Instance.Defense);
         if (_dmg > 0) {
-            Invoke("FaceChange", 1.1f);
-            CharacterStats.Instance.GetDamage(_dmg);
+            StartCoroutine(TakeDamage(_dmg, 1.1f));
         }
         yield return new WaitForSeconds(time);
         //other turn
@@ -108,7 +113,29 @@ public class CombatManager : MonoBehaviour {
         _endTurn = true;
     }
 
-    private void FaceChange(){
+    IEnumerator TakeDamage(int damage, float delay) {
+        yield return new WaitForSeconds(delay);
         _playerAnim.SetTrigger("_damaged");
+        CharacterStats.Instance.GetDamage(damage);
+    }
+
+    private void GameOver() {
+        if (!_endGame) {
+            _endGame = true;
+        }
+    }
+    IEnumerator EndCombat() {
+        yield return new WaitForSeconds(2.0f);
+        if (!_endGame) {
+            _endGame = true;
+            GameManager.Instance.EndCombat(true);
+        }
+    }
+    private void OnDisable() {
+        _endGame = false;
+        _endTurn = false;
+        if (_enemy != null) {
+            _enemy.Revive();
+        }
     }
 }

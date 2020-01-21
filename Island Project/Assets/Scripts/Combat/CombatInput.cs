@@ -31,6 +31,7 @@ public class CombatInput : MonoBehaviour {
     private int _cont = 0;
     private bool _blocked = false;
     private float _time;
+    private int _multiplyFactor=0;
 
     private int _damageDone = 0;
 
@@ -141,17 +142,20 @@ public class CombatInput : MonoBehaviour {
             case InputCombo.ATTACK:
                 if (_actualCombo[_cont] == _attackCombo[_cont]) {
                     _cont++;
-                } else { _state = State.MISSED; }
+                    _multiplyFactor = 1;
+                } else { _state = State.MISSED; _multiplyFactor = 0; }
                 break;
             case InputCombo.DEFENSE:
                 if (_actualCombo[_cont] == _defenseCombo[_cont]) {
                     _cont++;
-                } else { _state = State.MISSED; }
+                    _multiplyFactor = 1;
+                } else { _state = State.MISSED; _multiplyFactor = 0; }
                 break;
             case InputCombo.SPECIAL:
                 if (_actualCombo[_cont] == _specialCombo[_cont]) {
                     _cont++;
-                } else { _state = State.MISSED; }
+                    _multiplyFactor = 2;
+                } else { _state = State.MISSED; _multiplyFactor = 0; }
                 break;
         }
     }
@@ -185,7 +189,7 @@ public class CombatInput : MonoBehaviour {
     }
 
     void Send() {
-        _damageDone = _cont * CharacterStats.Instance.Attack;
+        _damageDone = _cont * CharacterStats.Instance.Attack*_multiplyFactor;
         _blocked = false;
         _cont = 0;
         CombatManager.Instance.SendPlayerAttack(_damageDone);

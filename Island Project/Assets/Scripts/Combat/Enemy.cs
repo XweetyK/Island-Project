@@ -26,4 +26,5 @@ public abstract class Enemy : MonoBehaviour{
     public abstract void GetDamage(int damage);
     public abstract int Health();
     public abstract int MaxLife();
+    public abstract void Revive();
 }
