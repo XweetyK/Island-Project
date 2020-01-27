@@ -32,6 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4751445104405011280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6160043196614779484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d13867bd41a4146aca4255c865cc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 40
+  _attack: 5
+  _defense: 2
+  _level: 3
+  _growth: 2
+  _missChance: 3
+  _health: 40
 --- !u!1001 &6160043195023903390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,10 +61,6 @@ PrefabInstance:
     - target: {fileID: 1866426562, guid: fb436660ca5738a4799af445f19ea731, type: 3}
       propertyPath: m_Name
       value: HERO
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866426562, guid: fb436660ca5738a4799af445f19ea731, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1562850905, guid: fb436660ca5738a4799af445f19ea731, type: 3}
       propertyPath: m_LocalPosition.x
@@ -104,8 +119,19 @@ PrefabInstance:
       propertyPath: _cameraSystem
       value: 
       objectReference: {fileID: 1912767632063665209}
+    - target: {fileID: 152924214961096423, guid: fb436660ca5738a4799af445f19ea731,
+        type: 3}
+      propertyPath: _rotSpeed
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb436660ca5738a4799af445f19ea731, type: 3}
+--- !u!1 &6160043196614779484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1866426562, guid: fb436660ca5738a4799af445f19ea731,
+    type: 3}
+  m_PrefabInstance: {fileID: 6160043195023903390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6160043196313337031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1562850905, guid: fb436660ca5738a4799af445f19ea731,
@@ -123,11 +149,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CameraSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 5762173894380917226, guid: 2261e1f7568221c4daf9f51b4150423c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5762173894380917230, guid: 2261e1f7568221c4daf9f51b4150423c,
         type: 3}
@@ -189,6 +210,41 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 6160043196313337031}
+    - target: {fileID: 5762173894380917231, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: _speedX
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894380917231, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: _speedY
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894694639118, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.12134309
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894694639118, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000017081355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894694639118, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000044317087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894694639118, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99261063
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762173894694639118, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 13.939001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2261e1f7568221c4daf9f51b4150423c, type: 3}
 --- !u!4 &1912767632063665209 stripped

@@ -13,6 +13,14 @@ public class CharacterStats : MonoBehaviour {
     private int _xp;
     private int _xpLimit;
 
+    public static CharacterStats Instance { get; private set; }
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
 
     public int Health{
         get { return _health; }
@@ -20,6 +28,9 @@ public class CharacterStats : MonoBehaviour {
     }
     public int Life {
         get { return _maxLife; }
+    }
+    public int Attack {
+        get { return _attack; }
     }
     public int Defense {
         get { return _defense; }

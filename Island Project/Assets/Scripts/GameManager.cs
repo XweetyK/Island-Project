@@ -11,27 +11,33 @@ public class GameManager : MonoBehaviour {
     [SerializeField] GameObject _combatTerrain;
     [SerializeField] GameObject _playerCamera;
     [SerializeField] GameObject _combatCamera;
+    [SerializeField] GameObject _interaction;
     GameObject _player;
-    GameObject[] _mapEnemies;
+    List<GameObject> _mapEnemies;
     [SerializeField] Animator _effectTransition;
     [SerializeField] Animator _combatCanvasAnim;
 
     bool _readyCombat = false;
     bool _readyExplore = false;
 
+    EnemyMov _contactEnemy;
+
     //Global inputs
     bool _playerInput = true;
 
     public static GameManager Instance { get; private set; }
     void Awake() {
-        if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
-
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
         _combatCanvas.SetActive(false);
+        _mapEnemies = new List<GameObject>();
     }
 
     void Start() {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _mapEnemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -59,9 +65,11 @@ public class GameManager : MonoBehaviour {
             _player.SetActive(true);
             _playerInput = true;
             _playerCamera.SetActive(true);
+            _interaction.SetActive(true);
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.SetActive(true);
             }
+            _effectTransition.SetBool("_win", false);
             _readyCombat = false;
             _readyExplore = true;
         }
@@ -69,11 +77,11 @@ public class GameManager : MonoBehaviour {
 
     private void CombatMode() {
         if (!_readyCombat) {
+            _playerInput = false;
             _effectTransition.SetTrigger("_contact");
             foreach (GameObject enemy in _mapEnemies) {
                 enemy.GetComponent<EnemyMov>().IsFrozen(true);
             }
-            _playerInput = false;
             Invoke("CameraTransitions", 1.38f);
             Invoke("AnimateCanvas", 5.0f);
             _combatTerrain.SetActive(true);
@@ -82,13 +90,10 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void ChangeGameMode (GameMode mode){
-        _gameMode = mode;
-    }
-
     private void CameraTransitions() {
         _exploreTerrain.SetActive(false);
         _player.SetActive(false);
+        _interaction.SetActive(false);
         foreach (GameObject enemy in _mapEnemies) {
             enemy.SetActive(false);
         }
@@ -97,12 +102,51 @@ public class GameManager : MonoBehaviour {
         _effectTransition.SetTrigger("_loaded");
     }
 
+    private void AnimateCanvas() {
+        _combatCanvasAnim.SetTrigger("_combatStart");
+    }
+
     public bool PlayerInput{
         get { return _playerInput; }
         set { _playerInput = value; }
     }
 
-    private void AnimateCanvas() {
-        _combatCanvasAnim.SetTrigger("_combatStart");
+    public void SetActualEnemy(EnemyMov enemy) {
+        _contactEnemy = enemy;
+    }
+
+    public void ChangeGameMode (GameMode mode){
+        _gameMode = mode;
+    }
+
+    public void ChangeGameMode (int mode){
+        switch (mode) {
+            case 1:
+                _gameMode = GameMode.COMBAT;
+                break;
+            case 2:
+                _gameMode = GameMode.EXPLORE;
+                _contactEnemy.Dead();
+                //_mapEnemies.Remove(_contactEnemy.gameObject);
+                _contactEnemy = null;
+                break;
+        }
+    }
+
+    public void EndCombat(bool won) {
+        switch (won) {
+            case true:
+                _effectTransition.SetBool("_win", true);
+                break;
+            case false:
+                break;
+        }
+    }
+
+    public void AddEnemy(GameObject enemy) {
+        _mapEnemies.Add(enemy);
+    }
+    public void RemoveEnemy(GameObject enemy) {
+        _mapEnemies.Remove(enemy);
     }
 }

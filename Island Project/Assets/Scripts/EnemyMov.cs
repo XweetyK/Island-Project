@@ -9,13 +9,14 @@ public class EnemyMov : MonoBehaviour {
     [SerializeField] float _runningSpeed;
     private Animator _anim;
     private GameObject _playerPos;
-    private enum State { PATROL, ALERT, DETECTED, DISTRACTED, COMBAT };
+    private enum State { PATROL, ALERT, DETECTED, DEAD, COMBAT };
     private State _state;
     private NavMeshAgent _nma;
     private float _origSpeed;
     private Vector3 _lastSeen;
 
     private bool _seen = false;
+    private bool _alreadyDead = false;
 
     private Vector3 _targetDist;
     private Vector3 _orderHead;
@@ -32,6 +33,8 @@ public class EnemyMov : MonoBehaviour {
     float _timerDet = 0;
     bool _isStop = false;
 
+    bool _init = false;
+
     BoxCollider _Collider;
 
     void Start() {
@@ -40,6 +43,8 @@ public class EnemyMov : MonoBehaviour {
         _nma = gameObject.GetComponent<NavMeshAgent>();
         _state = State.PATROL;
         _origSpeed = _nma.speed;
+        _init = true;
+        GameManager.Instance.AddEnemy(this.gameObject);
     }
 
     void Update() {
@@ -58,7 +63,7 @@ public class EnemyMov : MonoBehaviour {
     }
 
     private void PlayerDetector() {
-        if (_angle < 45.0f) {
+        if (_angle < 45.0f && _state != State.DEAD) {
             //Area de vision------------------------------------
             if (_distance < _maxDistance && !_groovin) {
                 _state = State.DETECTED;
@@ -83,7 +88,13 @@ public class EnemyMov : MonoBehaviour {
             case State.COMBAT:
                 Debug.Log("Combat");
                 break;
-            case State.DISTRACTED:
+            case State.DEAD:
+                GameManager.Instance.RemoveEnemy(this.gameObject);
+                _anim.SetBool("_walking", false);
+                _anim.SetBool("_running", false);
+                _anim.SetBool("_dead", true);
+                _anim.SetBool("_dissolve", true);
+                _nma.isStopped = true;
                 break;
         }
         if (_nma.velocity == Vector3.zero) {
@@ -175,8 +186,17 @@ public class EnemyMov : MonoBehaviour {
         _lastSeen = _playerPos.transform.position;
     }
 
-    private void DistractedBehavior() {
-
+    public void Dead() {
+        if (!_alreadyDead) {
+            transform.LookAt(_playerPos.transform);
+        }
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        _state = State.DEAD;
+        Invoke("Dead", 3.5f);
+        if (_alreadyDead) {
+            Destroy(this.gameObject);
+        }
+        _alreadyDead = true;
     }
 
     private Vector3 RandomWalk(Vector3 areaPos) {
@@ -189,21 +209,27 @@ public class EnemyMov : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Player")
-        {
+        if (other.gameObject.tag == "Player") {
             GameManager.Instance.ChangeGameMode(GameManager.GameMode.COMBAT);
+            GameManager.Instance.SetActualEnemy(this);
             _state = State.COMBAT;
         }
     }
 
-    public void IsFrozen(bool froze){
+    public void IsFrozen(bool froze) {
         if (froze) {
             _isStop = true;
             _nma.isStopped = true;
             _anim.enabled = false;
         } else {
+            _isStop = false;
             _nma.isStopped = false;
             _anim.enabled = true;
+        }
+    }
+    private void OnEnable() {
+        if (_init) {
+            IsFrozen(false);
         }
     }
 }
