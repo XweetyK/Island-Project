@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CombatInput : MonoBehaviour {
 
     enum InputCombo { NONE, ATTACK, SPECIAL, DEFENSE, RUN, ITEM };
-    enum State { STARTTURN, COMBO, SENT, MISSED, ENDTURN};
+    enum State { STARTTURN, COMBO, SENT, MISSED, ENDTURN };
     [SerializeField] private float _limitTime;
     [SerializeField] private Sprite _arrowFilled;
     [SerializeField] private Sprite _arrowCommon;
@@ -31,13 +31,21 @@ public class CombatInput : MonoBehaviour {
     private int _cont = 0;
     private bool _blocked = false;
     private float _time;
-    private int _multiplyFactor=0;
+    private int _multiplyFactor = 0;
 
     private int _damageDone = 0;
 
     private Color _opacityBack;
     private Color _opacityHeld;
 
+    public static CombatInput Instance { get; private set; }
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
     private void Start() {
         _level = CharacterStats.Instance.Level;
         _time = _limitTime;
@@ -60,7 +68,7 @@ public class CombatInput : MonoBehaviour {
     }
 
     void Update() {
-        if (_state==State.STARTTURN || _state==State.COMBO) {
+        if (_state == State.STARTTURN || _state == State.COMBO) {
             InputCheck();
         }
 
@@ -135,7 +143,7 @@ public class CombatInput : MonoBehaviour {
                 break;
             case 4:
                 _iCombo = InputCombo.DEFENSE;
-                
+
                 break;
         }
         switch (_iCombo) {
@@ -178,7 +186,7 @@ public class CombatInput : MonoBehaviour {
         if (_time > 0) {
             _time -= Time.deltaTime;
         } else { Missed(); }
-        
+
     }
 
     public void NewTurn() {
@@ -189,7 +197,7 @@ public class CombatInput : MonoBehaviour {
     }
 
     void Send() {
-        _damageDone = _cont * CharacterStats.Instance.Attack*_multiplyFactor;
+        _damageDone = _cont * CharacterStats.Instance.Attack * _multiplyFactor;
         _blocked = false;
         _cont = 0;
         CombatManager.Instance.SendPlayerAttack(_damageDone);
@@ -205,7 +213,7 @@ public class CombatInput : MonoBehaviour {
     }
 
     //Visual UI-------------------------------
-    void UpdateArrows() {   
+    void UpdateArrows() {
         switch (_state) {
             case State.STARTTURN:
                 _UiAnimator.SetBool("EndTurn", false);
@@ -334,5 +342,9 @@ public class CombatInput : MonoBehaviour {
                 }
                 break;
         }
+    }
+
+    public void Restart() {
+        _state = State.STARTTURN;
     }
 }

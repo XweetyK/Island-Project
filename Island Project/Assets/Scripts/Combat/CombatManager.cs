@@ -134,6 +134,8 @@ public class CombatManager : MonoBehaviour {
     private void OnDisable() {
         _endGame = false;
         _endTurn = false;
+        _turn = Turn.PLAYER;
+        CombatInput.Instance.Restart();
         if (_enemy != null) {
             _enemy.Revive();
         }

@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour {
     [SerializeField] GameObject _combatCamera;
     [SerializeField] GameObject _interaction;
     GameObject _player;
-    GameObject[] _mapEnemies;
+    List<GameObject> _mapEnemies;
     [SerializeField] Animator _effectTransition;
     [SerializeField] Animator _combatCanvasAnim;
 
     bool _readyCombat = false;
     bool _readyExplore = false;
+
+    EnemyMov _contactEnemy;
 
     //Global inputs
     bool _playerInput = true;
@@ -31,11 +33,11 @@ public class GameManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
         _combatCanvas.SetActive(false);
+        _mapEnemies = new List<GameObject>();
     }
 
     void Start() {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _mapEnemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -88,20 +90,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void ChangeGameMode (GameMode mode){
-        _gameMode = mode;
-    }
-    public void ChangeGameMode (int mode){
-        switch (mode) {
-            case 1:
-                _gameMode = GameMode.COMBAT;
-                break;
-            case 2:
-                _gameMode = GameMode.EXPLORE;
-                break;
-        }
-    }
-
     private void CameraTransitions() {
         _exploreTerrain.SetActive(false);
         _player.SetActive(false);
@@ -114,13 +102,35 @@ public class GameManager : MonoBehaviour {
         _effectTransition.SetTrigger("_loaded");
     }
 
+    private void AnimateCanvas() {
+        _combatCanvasAnim.SetTrigger("_combatStart");
+    }
+
     public bool PlayerInput{
         get { return _playerInput; }
         set { _playerInput = value; }
     }
 
-    private void AnimateCanvas() {
-        _combatCanvasAnim.SetTrigger("_combatStart");
+    public void SetActualEnemy(EnemyMov enemy) {
+        _contactEnemy = enemy;
+    }
+
+    public void ChangeGameMode (GameMode mode){
+        _gameMode = mode;
+    }
+
+    public void ChangeGameMode (int mode){
+        switch (mode) {
+            case 1:
+                _gameMode = GameMode.COMBAT;
+                break;
+            case 2:
+                _gameMode = GameMode.EXPLORE;
+                _contactEnemy.Dead();
+                //_mapEnemies.Remove(_contactEnemy.gameObject);
+                _contactEnemy = null;
+                break;
+        }
     }
 
     public void EndCombat(bool won) {
@@ -131,5 +141,12 @@ public class GameManager : MonoBehaviour {
             case false:
                 break;
         }
+    }
+
+    public void AddEnemy(GameObject enemy) {
+        _mapEnemies.Add(enemy);
+    }
+    public void RemoveEnemy(GameObject enemy) {
+        _mapEnemies.Remove(enemy);
     }
 }
