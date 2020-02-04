@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class DialogManager : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class DialogManager : MonoBehaviour {
     private DialogTrigger[] _activate;
 	private DialogTrigger[] _deactivate;
     bool _init = false;
+    NavMeshAgent _nma = null;
 
     public static DialogManager Instance { get; private set; }
     void Awake() {
@@ -30,8 +32,13 @@ public class DialogManager : MonoBehaviour {
 		_names = new Queue<string> ();
 		_faces = new Queue<Sprite> ();
 	}
-	public void StartDialog(Dialog dial){
+	public void StartDialog(Dialog dial, NavMeshAgent nma){
         if (!_init) {
+            GameManager.Instance.PlayerInput = false;
+            if (nma != null) {
+                _nma = nma;
+                _nma.isStopped = true;
+            }
             _init = true;
             PromptActive(false);
             _anim.SetBool("openBox", true);
@@ -68,6 +75,10 @@ public class DialogManager : MonoBehaviour {
         _init = false;
 		_anim.SetBool ("openBox", false);
         PromptActive(false);
+        if (_nma != null) {
+            _nma.isStopped = false;
+        }
+        GameManager.Instance.PlayerInput = true;
         Invoke("PostDialogEvents", 0.2f);
 	}
 

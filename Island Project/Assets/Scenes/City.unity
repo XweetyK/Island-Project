@@ -67,7 +67,7 @@ LightmapSettings:
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
-    m_TextureCompression: 1
+    m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
@@ -232,6 +232,7 @@ Transform:
   m_Children:
   - {fileID: 169209955}
   - {fileID: 515920369}
+  - {fileID: 586489645}
   - {fileID: 1059102786}
   - {fileID: 1730546998}
   - {fileID: 1565282913}
@@ -1236,7 +1237,7 @@ Transform:
   - {fileID: 1374704282}
   - {fileID: 1101290935}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -17.098001, z: 0}
 --- !u!1001 &331181739
 PrefabInstance:
@@ -2836,7 +2837,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 45.648003, y: -40.406002, z: -17.613}
 --- !u!1001 &421959784
 PrefabInstance:
@@ -2845,31 +2846,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _talking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: PurpleBudgie
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: I wonder what is inside this building...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -2913,7 +2889,7 @@ PrefabInstance:
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -2939,6 +2915,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _talking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: PurpleBudgie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: I wonder what is inside this building...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -3287,7 +3288,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &515920369 stripped
 Transform:
@@ -3471,6 +3472,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5005031342348351982, guid: eb247a80bcd195649811c73161930081,
     type: 3}
   m_PrefabInstance: {fileID: 442104771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &586489645 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130089601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &586489647 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6336749098660102983, guid: 520031d842b42dc41843e22c5e271e0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130089601}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &591864921 stripped
 Transform:
@@ -3725,7 +3738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661330752
 PrefabInstance:
@@ -3904,7 +3917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 21.854, y: -13.931001, z: 0}
 --- !u!1001 &693090211
 PrefabInstance:
@@ -4346,7 +4359,7 @@ Transform:
   - {fileID: 7274947955224805180}
   - {fileID: 29339200}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &797029765
 PrefabInstance:
@@ -4514,21 +4527,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: PurpleBudgie
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: I wonder what is inside this building...
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -4572,7 +4570,7 @@ PrefabInstance:
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -4598,6 +4596,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.300001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: PurpleBudgie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: I wonder what is inside this building...
       objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -4876,21 +4889,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _talking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -4934,7 +4932,7 @@ PrefabInstance:
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -4951,16 +4949,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _talking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6f7cbc4b325108140ae2cabf286f95ec, type: 2}
-    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3075577118136646976, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Text
@@ -4976,6 +4984,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 52
       objectReference: {fileID: 0}
+    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
 --- !u!1001 &924429016
@@ -4985,26 +4998,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1059102786}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: El Marto
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: Esto con los milicos no pasaba
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -5075,6 +5068,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.3000009
       objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: El Marto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Esto con los milicos no pasaba
+      objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5089,6 +5097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: -DarkerDark-
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -5601,7 +5614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 754551845, guid: ae228e8e7e2fcba4f973371224e1ba08, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 754551845, guid: ae228e8e7e2fcba4f973371224e1ba08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5718,7 +5731,7 @@ Transform:
   - {fileID: 1702637328}
   - {fileID: 5006512735240120870}
   m_Father: {fileID: 29339200}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 30.698002, z: 0}
 --- !u!1001 &1073959187
 PrefabInstance:
@@ -5727,46 +5740,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: User62134896
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._name
-      value: User62134896
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._character
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._face
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._chat
-      value: But I always end up wanting to go to the toilet
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: These waterfalls are so beautiful to watch...
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -5827,10 +5800,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
+      propertyPath: _state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: User62134896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._name
+      value: User62134896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._character
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._face
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._chat
+      value: But I always end up wanting to go to the toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: These waterfalls are so beautiful to watch...
       objectReference: {fileID: 0}
     - target: {fileID: 3075577118136646976, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -5847,6 +5855,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 52
       objectReference: {fileID: 0}
+    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
 --- !u!4 &1078800099 stripped
@@ -5862,31 +5875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _talking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: PurpleBudgie
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: I wonder what is inside this building...
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -5930,7 +5918,7 @@ PrefabInstance:
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -5961,6 +5949,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.82764
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _talking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: PurpleBudgie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: I wonder what is inside this building...
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -6826,26 +6839,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1059102786}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: El Marto
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: Esto con los milicos no pasaba
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -6921,6 +6914,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0831335
       objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: El Marto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Esto con los milicos no pasaba
+      objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6935,6 +6943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: '*+VivElle+*'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -7375,6 +7388,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eeafccb329a09843ac131b5aa467907, type: 3}
+--- !u!1 &1347906119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130089601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1347906122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130089601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347906119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1347906123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347906119}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nma: {fileID: 586489647}
+  _dialog:
+    conversations:
+    - _name: MightyDude
+      _character: 2
+      _face: 2
+      _chat: I'm Serious, leave me alone
+    deactivateChat: []
+    activateChat: []
 --- !u!1001 &1362454794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9473,51 +9525,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: El Marto
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: Isn't your ass wet?
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._character
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._name
-      value: El Marto
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._face
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._chat
-      value: Hahaha... maybe? :)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[1]._character
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._face
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -9588,6 +9595,51 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.3000009
       objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: El Marto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Isn't your ass wet?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._name
+      value: El Marto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._face
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._chat
+      value: Hahaha... maybe? :)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._character
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._face
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9596,12 +9648,12 @@ PrefabInstance:
     - target: {fileID: 3075577118136646976, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Text
-      value: El Marto
+      value: El_Marto
       objectReference: {fileID: 0}
     - target: {fileID: 8754273017811496079, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Text
-      value: El Marto
+      value: El_Marto
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -11950,26 +12002,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1059102786}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._name
-      value: El Marto
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._chat
-      value: Esto con los milicos no pasaba
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -12045,6 +12077,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2349997
       objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: El Marto
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Esto con los milicos no pasaba
+      objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -12059,6 +12106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: '###LABYRINTH'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -12075,21 +12127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29339200}
     m_Modifications:
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _state
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: _talking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Name
@@ -12133,7 +12170,7 @@ PrefabInstance:
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -12165,16 +12202,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1240189
       objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _talking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aeb8811a41689c745a8c3f64b6a4a92b, type: 2}
-    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3075577118136646976, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_Text
@@ -12189,6 +12236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -12226,7 +12278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2056936406 stripped
 Transform:
@@ -12553,6 +12605,150 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1870074597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2130089601
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 29339200}
+    m_Modifications:
+    - target: {fileID: 6756258661278953952, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Name
+      value: NPC (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2996521
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.19176805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -47.697845
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3372346
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9414207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 8.719001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2349995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2349995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666533209473581652, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _state
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.activateChat.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.deactivateChat.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: MightyDude
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Excuse me, I am on something very very important right now
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.activateChat.Array.data[0]
+      value: 
+      objectReference: {fileID: 1347906123}
+    - target: {fileID: 7968765780430137984, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: _dialog.deactivateChat.Array.data[0]
+      value: 
+      objectReference: {fileID: 1347906122}
+    - target: {fileID: 4038356791233704543, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f7cbc4b325108140ae2cabf286f95ec, type: 2}
+    - target: {fileID: 3075577118136646976, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Text
+      value: MightyDude
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754273017811496079, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_Text
+      value: MightyDude
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483437764102370025, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
 --- !u!1001 &2133312663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13906,7 +14102,7 @@ PrefabInstance:
     - target: {fileID: 8952148899848533665, guid: bb8c6855d03a111489a20541a1985538,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8952148899848533665, guid: bb8c6855d03a111489a20541a1985538,
         type: 3}
@@ -14344,6 +14540,75 @@ Transform:
   m_Father: {fileID: 7274947955224805180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8896450512078068959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5989211111528360334, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_Name
+      value: BoomBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 279.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 307.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5085586
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8610275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -61.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88ae6cc22119ea54983c6968fc5d5cd2, type: 3}
 --- !u!1001 &9169971172491969673
 PrefabInstance:
   m_ObjectHideFlags: 0

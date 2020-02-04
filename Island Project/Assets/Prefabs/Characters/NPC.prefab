@@ -2164,6 +2164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nma: {fileID: 6336749098660102983}
   _dialog:
     conversations:
     - _name: xXx_PussyDestoyer69_xXx

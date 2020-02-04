@@ -98,7 +98,7 @@ public class PlayerMov : MonoBehaviour {
             _isWalking = false;
         }
 
-        if (Physics.Raycast(transform.position + new Vector3(0.0f, 3.0f, 0.0f), transform.TransformDirection(Vector3.forward), out hit, 3.0f, _layerMask)) {
+        if (Physics.Raycast(transform.position + new Vector3(0.0f, 2.0f, 0.0f), transform.TransformDirection(Vector3.forward), out hit, 5.0f, _layerMask)) {
             foreach (var item in hit.collider.gameObject.GetComponents<DialogTrigger>()) {
                 if (item.enabled) {
                     Debug.Log("dialog enabled");
@@ -115,7 +115,7 @@ public class PlayerMov : MonoBehaviour {
         }
     }
     void OnDrawGizmos() {
-        Gizmos.DrawRay(transform.position + new Vector3(0.0f, 2.0f, 0.0f), transform.forward * 3.0f);
+        Gizmos.DrawRay(transform.position + new Vector3(0.0f, 2.0f, 0.0f), transform.forward * 5.0f);
     }
 
     void UpdateAnimator() {

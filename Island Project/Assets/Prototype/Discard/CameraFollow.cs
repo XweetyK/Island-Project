@@ -35,7 +35,6 @@ public class CameraFollow : MonoBehaviour {
         _rotX = Mathf.Clamp(_rotX, -30.0f, _limitAngle);
         _childX.transform.localRotation = Quaternion.Euler(-_rotX, 0, 0);
         float _dist = Vector3.Distance(this.transform.position, _camera.transform.position);
-        Debug.Log(_dist);
         if ((_dist<25.0f && Input.mouseScrollDelta.y<0)||(_dist>7.0f && Input.mouseScrollDelta.y>0)) {
             _camera.transform.position += Input.mouseScrollDelta.y * _camera.forward;
         }
