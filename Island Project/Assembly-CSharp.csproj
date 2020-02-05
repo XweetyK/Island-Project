@@ -81,7 +81,7 @@
     <Compile Include="Assets\Scripts\Combat\CombatManager.cs" />
     <Compile Include="Assets\Scripts\Combat\CommonOrderEnemy.cs" />
     <Compile Include="Assets\Scripts\Combat\DDR Special\DDRKey.cs" />
-    <Compile Include="Assets\Scripts\Combat\DDR Special\Key Spawner.cs" />
+    <Compile Include="Assets\Scripts\Combat\DDR Special\KeySpawner.cs" />
     <Compile Include="Assets\Scripts\Combat\Enemy.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\Dialog.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\DialogManager.cs" />
