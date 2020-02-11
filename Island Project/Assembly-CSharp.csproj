@@ -62,11 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Imported Assets\AnalogGlitch.cs" />
-    <Compile Include="Assets\Imported Assets\AnalogGlitchEditor.cs" />
-    <Compile Include="Assets\Imported Assets\DigitalGlitch.cs" />
-    <Compile Include="Assets\Imported Assets\DigitalGlitchEditor.cs" />
-    <Compile Include="Assets\Imported Assets\GlitchCamera.cs" />
     <Compile Include="Assets\Prototype\Discard\AngleDetector.cs" />
     <Compile Include="Assets\Prototype\Discard\Arrow.cs" />
     <Compile Include="Assets\Prototype\Discard\CameraFollow.cs" />
@@ -134,8 +129,6 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
-    <None Include="Assets\Imported Assets\DigitalGlitch.shader" />
-    <None Include="Assets\Imported Assets\AnalogGlitch.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Diana/Desktop/Unity/Island-Project/Island Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

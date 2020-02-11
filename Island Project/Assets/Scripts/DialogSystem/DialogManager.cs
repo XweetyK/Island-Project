@@ -17,22 +17,29 @@ public class DialogManager : MonoBehaviour {
     private Queue<string> _names;
     private Queue<Sprite> _faces;
     private DialogTrigger[] _activate;
-	private DialogTrigger[] _deactivate;
-    bool _init = false;
+    private DialogTrigger[] _deactivate;
+    public bool _init = false;
     NavMeshAgent _nma = null;
 
     public static DialogManager Instance { get; private set; }
     void Awake() {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
 
-		_anim = gameObject.GetComponent<Animator>();
-	}
-	void Start(){
-		_chats = new Queue<string> ();
-		_names = new Queue<string> ();
-		_faces = new Queue<Sprite> ();
-	}
-	public void StartDialog(Dialog dial, NavMeshAgent nma){
+        _anim = gameObject.GetComponent<Animator>();
+    }
+    void Start() {
+        _chats = new Queue<string>();
+        _names = new Queue<string>();
+        _faces = new Queue<Sprite>();
+    }
+    private void Update() {
+        if (_init) {
+            if (Input.GetKeyDown(KeyCode.E)) {
+                DisplayNext();
+            }
+        }
+    }
+    public void StartDialog(Dialog dial, NavMeshAgent nma, Transform camRefPoint) {
         if (!_init) {
             GameManager.Instance.PlayerInput = false;
             if (nma != null) {
@@ -50,37 +57,36 @@ public class DialogManager : MonoBehaviour {
                 _chats.Enqueue(dial.conversations[i]._chat);
                 _faces.Enqueue(_facesRef.GetFace(dial.conversations[i]._character, dial.conversations[i]._face));
             }
-            if (dial.activateChat.Length>0) {
+            if (dial.activateChat.Length > 0) {
                 _activate = dial.activateChat;
             }
-            if (dial.deactivateChat.Length>0) {
+            if (dial.deactivateChat.Length > 0) {
                 _deactivate = dial.deactivateChat;
             }
         }
-        DisplayNext ();
-	}
-	public void DisplayNext(){
-		if (_chats.Count == 0) {
-			EndDialog ();
-			return;
-		}
-		string chat = _chats.Dequeue ();
-		string name = _names.Dequeue ();
-		Sprite face = _faces.Dequeue ();
-		_dialogTxt.text = chat;
-		_nameTxt.text = name;
-		_faceBox.sprite = face;
-	}
-	void EndDialog(){
+    }
+    public void DisplayNext() {
+        if (_chats.Count == 0) {
+            EndDialog();
+            return;
+        }
+        string chat = _chats.Dequeue();
+        string name = _names.Dequeue();
+        Sprite face = _faces.Dequeue();
+        _dialogTxt.text = chat;
+        _nameTxt.text = name;
+        _faceBox.sprite = face;
+    }
+    void EndDialog() {
         _init = false;
-		_anim.SetBool ("openBox", false);
+        _anim.SetBool("openBox", false);
         PromptActive(false);
         if (_nma != null) {
             _nma.isStopped = false;
         }
         GameManager.Instance.PlayerInput = true;
         Invoke("PostDialogEvents", 0.2f);
-	}
+    }
 
     void PostDialogEvents() {
         if (_activate != null) {
@@ -97,10 +103,10 @@ public class DialogManager : MonoBehaviour {
         _deactivate = null;
     }
 
-    public void PromptActive(bool active){
+    public void PromptActive(bool active) {
         if (active == true && _init == true)
             return;
-        if (interactPromptBox){
+        if (interactPromptBox) {
             interactPromptBox.SetActive(active);
         }
     }

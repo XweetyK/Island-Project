@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 1877438358}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: 1.1900024, y: 5.3099976}
-  m_SizeDelta: {x: -16.75, y: -3.04}
+  m_AnchorMin: {x: 0.080000006, y: 0.06221915}
+  m_AnchorMax: {x: 0.92, y: 0.7911116}
+  m_AnchoredPosition: {x: 0.0012512207, y: 0}
+  m_SizeDelta: {x: 0.0025253, y: -0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &223688613
 CanvasRenderer:
@@ -381,10 +381,10 @@ RectTransform:
   m_Father: {fileID: 8173435372060615630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -224.25, y: 68.5}
-  m_SizeDelta: {x: 291.5, y: 20}
+  m_AnchorMin: {x: 0.027730966, y: 0.8222223}
+  m_AnchorMax: {x: 0.4036954, y: 0.9444445}
+  m_AnchoredPosition: {x: -0.25, y: -0.5}
+  m_SizeDelta: {x: -4.5, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8173435372117798411
 CanvasRenderer:
@@ -460,10 +460,10 @@ RectTransform:
   m_Father: {fileID: 8173435372060615630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67, y: 1}
-  m_SizeDelta: {x: 626, y: 65}
+  m_AnchorMin: {x: 0.185, y: 0.31666663}
+  m_AnchorMax: {x: 0.981731, y: 0.6888889}
+  m_AnchoredPosition: {x: 1, y: 0.5}
+  m_SizeDelta: {x: -2, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8173435372237465147
 CanvasRenderer:
@@ -724,10 +724,10 @@ RectTransform:
   m_Father: {fileID: 8173435372060615630}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 305, y: -62}
-  m_SizeDelta: {x: 150, y: 35}
+  m_AnchorMin: {x: 0.78746194, y: 0.05}
+  m_AnchorMax: {x: 0.981731, y: 0.25555557}
+  m_AnchoredPosition: {x: 2, y: 0.5}
+  m_SizeDelta: {x: -2, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8173435373797310091
 CanvasRenderer:

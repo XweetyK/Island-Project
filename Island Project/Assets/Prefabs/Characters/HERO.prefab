@@ -77,7 +77,7 @@ MonoBehaviour:
   _waterRateMin: 5
   _waterRateMax: 10
   _splash: {fileID: 2125336532}
-  _movSpeed: 5
+  _movSpeed: 5.5
   _rotSpeed: 250
   _interactLayer: Interactable
 --- !u!54 &2074018066690284674

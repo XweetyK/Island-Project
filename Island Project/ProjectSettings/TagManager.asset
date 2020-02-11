@@ -9,6 +9,7 @@ TagManager:
   - FaceRefs
   - Enemy
   - Combat
+  - CamRefPoint
   layers:
   - Default
   - TransparentFX

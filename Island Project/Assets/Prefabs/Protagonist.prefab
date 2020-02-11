@@ -218,16 +218,6 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 6160043196313337031}
-    - target: {fileID: 5762173894380917231, guid: 2261e1f7568221c4daf9f51b4150423c,
-        type: 3}
-      propertyPath: _speedX
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5762173894380917231, guid: 2261e1f7568221c4daf9f51b4150423c,
-        type: 3}
-      propertyPath: _speedY
-      value: 85
-      objectReference: {fileID: 0}
     - target: {fileID: 5762173894694639118, guid: 2261e1f7568221c4daf9f51b4150423c,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -252,6 +242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 13.939001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247488294825756633, guid: 2261e1f7568221c4daf9f51b4150423c,
+        type: 3}
+      propertyPath: m_TagString
+      value: CamRefPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2261e1f7568221c4daf9f51b4150423c, type: 3}
