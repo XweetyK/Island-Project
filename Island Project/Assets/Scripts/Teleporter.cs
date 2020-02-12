@@ -16,4 +16,10 @@ public class Teleporter : MonoBehaviour {
             SceneLoader.Instance.LoadScene(_sceneName);
         }
     }
+    public void Teleport() {
+        if (!_init) {
+            _init = true;
+            SceneLoader.Instance.LoadScene(_sceneName);
+        }
+    }
 }
