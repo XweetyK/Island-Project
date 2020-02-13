@@ -32,13 +32,13 @@ public class DialogManager : MonoBehaviour {
         _names = new Queue<string>();
         _faces = new Queue<Sprite>();
     }
-    private void Update() {
-        if (_init) {
-            if (Input.GetKeyDown(KeyCode.E)) {
-                DisplayNext();
-            }
-        }
-    }
+    //private void Update() {
+    //    if (_init) {
+    //        if (Input.GetKeyDown(KeyCode.E)) {
+    //            DisplayNext();
+    //        }
+    //    }
+    //}
     public void StartDialog(Dialog dial, NavMeshAgent nma, Transform camRefPoint) {
         if (!_init) {
             GameManager.Instance.PlayerInput = false;
@@ -64,6 +64,7 @@ public class DialogManager : MonoBehaviour {
                 _deactivate = dial.deactivateChat;
             }
         }
+        DisplayNext();
     }
     public void DisplayNext() {
         if (_chats.Count == 0) {

@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _speedX: 100
+  _speedX: 150
   _speedY: 85
   _scale: 0.5
 --- !u!1 &5762173894694639115

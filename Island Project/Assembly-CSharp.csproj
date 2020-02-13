@@ -85,9 +85,11 @@
     <Compile Include="Assets\Scripts\DolphinMov.cs" />
     <Compile Include="Assets\Scripts\DolphinSpawn.cs" />
     <Compile Include="Assets\Scripts\EnemyMov.cs" />
+    <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\FacesReferences.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlitchFace.cs" />
+    <Compile Include="Assets\Scripts\IntroManager.cs" />
     <Compile Include="Assets\Scripts\NPC\FollowUsername.cs" />
     <Compile Include="Assets\Scripts\NPC\NpcBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />

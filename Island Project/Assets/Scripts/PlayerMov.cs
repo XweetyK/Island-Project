@@ -23,12 +23,7 @@ public class PlayerMov : MonoBehaviour {
 
     bool _isRunning;
     bool _isWalking;
-    bool _isSit;
-    bool _isCrouch;
     bool _isJesus;
-
-    float _timer = 0;
-    bool _counting = false;
 
     int _layerMask;
 
@@ -40,7 +35,7 @@ public class PlayerMov : MonoBehaviour {
     RaycastHit hit;
 
     void Start() {
-        _isWalking = _isRunning = _isCrouch = _isSit = false;
+        _isWalking = _isRunning = false;
         _animator = GetComponent<Animator>();
         _water = GetComponent<ParticleSystem>();
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -52,7 +47,6 @@ public class PlayerMov : MonoBehaviour {
         KeyInput();
         Movement();
         UpdateAnimator();
-        AnimTimer();
         WaterAnim();
     }
 
@@ -63,14 +57,12 @@ public class PlayerMov : MonoBehaviour {
 
     void Movement() {
         _currentSpeed = _isRunning ? _movSpeed * 2 : _movSpeed;
-        if (_counting == false || _isSit == true) {
-            MovementDirection = (_movX * _cameraSystem.right + _movY * _cameraSystem.forward) * _currentSpeed;
-            _rb.velocity = new Vector3(MovementDirection.x, _rb.velocity.y, MovementDirection.z);
-            _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, _currentSpeed);
+        MovementDirection = (_movX * _cameraSystem.right + _movY * _cameraSystem.forward) * _currentSpeed;
+        _rb.velocity = new Vector3(MovementDirection.x, _rb.velocity.y, MovementDirection.z);
+        _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, _currentSpeed);
 
-            if (_rb.velocity != Vector3.zero) {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(_rb.velocity.x, 0, _rb.velocity.z)), Time.deltaTime * _rotSpeed);
-            }
+        if (_rb.velocity.x != 0 && _rb.velocity.z != 0) {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(new Vector3(_rb.velocity.x, 0, _rb.velocity.z)), Time.deltaTime * _rotSpeed);
         }
     }
 
@@ -88,12 +80,8 @@ public class PlayerMov : MonoBehaviour {
         } else {
             _isRunning = false;
         }
-        if ((_movX != 0 || _movY != 0)&& GameManager.Instance.PlayerInput) {
+        if ((_movX != 0 || _movY != 0) && GameManager.Instance.PlayerInput) {
             _isWalking = true;
-            if (_isSit) {
-                _isSit = false;
-                _counting = true;
-            }
         } else {
             _isWalking = false;
         }
@@ -121,22 +109,6 @@ public class PlayerMov : MonoBehaviour {
     void UpdateAnimator() {
         _animator.SetBool("Walking", _isWalking);
         _animator.SetBool("Running", _isRunning);
-        _animator.SetBool("Crouch", _isCrouch);
-        _animator.SetBool("Sitting", _isSit);
-    }
-
-    void AnimTimer() {
-        switch (_counting) {
-            case true:
-                _timer += 1 * Time.deltaTime;
-                if (_timer >= _animationWaitTime) {
-                    _counting = false;
-                }
-                break;
-            case false:
-                _timer = 0;
-                break;
-        }
     }
 
     void WaterAnim() {

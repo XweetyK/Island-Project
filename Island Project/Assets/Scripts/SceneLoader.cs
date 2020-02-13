@@ -26,15 +26,20 @@ public class SceneLoader : MonoBehaviour {
         switch (sceneName) {
             case "City":
                 _portal.text = "Now entering [C I T Y]";
+                _sceneName = sceneName;
                 break;
             case "Beach2":
                 _portal.text = "Now entering [B E A C H]";
+                _sceneName = sceneName;
+                break;
+            case "StartGame":
+                _portal.text = "Now entering [P A R A D I S E]";
+                _sceneName = "Beach2";
                 break;
             default:
                 _portal.text = "Now entering [? ? ?]";
                 break;
         }
-        _sceneName = sceneName;
         Invoke("InitAnimation", 1.0f);
         _anim.SetBool("Loading", true);
 
