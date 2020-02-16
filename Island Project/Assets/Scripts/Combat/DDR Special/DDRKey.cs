@@ -33,6 +33,10 @@ public class DDRKey : MonoBehaviour
         get { return _speed; }
         set { _speed = value; }
     }
+    public KeyTypes KeyType
+    {
+        get { return _type; }
+    }
 
 
     void detonate(){

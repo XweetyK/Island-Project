@@ -11,6 +11,15 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] CameraShake _combatCam;
     [SerializeField] Image _playerFace;
     [SerializeField] Animator _playerAnim;
+    [SerializeField] KeySpawner _kSpawner;
+
+    //DDR game
+    [Header("DDR Config")]
+    [SerializeField] float _keySpeed = 1.0f;
+    [SerializeField] float _keyDelay = 2.0f;
+    [SerializeField] float _initDelay = 1.0f;
+    [SerializeField] int _keyCant = 10;
+    private float score = 0;
 
     private Enemy _enemy;
     enum Turn { ENEMY, PLAYER };
@@ -113,6 +122,34 @@ public class CombatManager : MonoBehaviour {
         _endTurn = true;
     }
 
+    //DDR
+    public void startDDR(){
+        if (_kSpawner){
+            _kSpawner.startGame(_initDelay,_keyDelay,_keySpeed);
+        }
+    }
+
+    public void stopDDR(){
+        if (_kSpawner)
+        {
+            _kSpawner.stopGame();
+        }
+    }
+
+    public void loseKey(GameObject go){
+        _kSpawner.removeKey(go);
+        score -= 10;
+    }
+
+    public void killKey(GameObject go){
+        _kSpawner.removeKey(go);
+        score += 5;
+    }
+
+    public void missKey(){
+        score -= 5;
+    }
+
     IEnumerator TakeDamage(int damage, float delay) {
         yield return new WaitForSeconds(delay);
         _playerAnim.SetTrigger("_damaged");
@@ -131,6 +168,7 @@ public class CombatManager : MonoBehaviour {
             GameManager.Instance.EndCombat(true);
         }
     }
+
     private void OnDisable() {
         _endGame = false;
         _endTurn = false;
@@ -139,5 +177,10 @@ public class CombatManager : MonoBehaviour {
         if (_enemy != null) {
             _enemy.Revive();
         }
+    }
+
+    public float keyCant
+    {
+        get { return _keyCant; }
     }
 }
