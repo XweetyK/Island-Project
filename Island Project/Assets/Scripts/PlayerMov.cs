@@ -75,7 +75,7 @@ public class PlayerMov : MonoBehaviour {
             _movX = 0.0f;
             _movY = 0.0f;
         }
-        if (Input.GetButton("Shift") && GameManager.Instance.PlayerInput) {
+        if ((Input.GetButton("Shift")|| Input.GetAxis("Shift")!=0) && GameManager.Instance.PlayerInput) {
             _isRunning = true;
         } else {
             _isRunning = false;

@@ -31,6 +31,10 @@ public class CameraFollow : MonoBehaviour {
                 _rotX += _speedX * Input.GetAxis("Mouse Y") * Time.deltaTime;
                 _rotY = _speedY * Input.GetAxis("Mouse X") * Time.deltaTime;
                 gameObject.transform.Rotate(0.0f, _rotY, 0.0f);
+            } else { 
+                _rotX += _speedX * Input.GetAxis("JoystickY") * Time.deltaTime;
+                _rotY = _speedY * Input.GetAxis("JoystickX") * Time.deltaTime;
+                gameObject.transform.Rotate(0.0f, _rotY, 0.0f);
             }
 
             _rotX = Mathf.Clamp(_rotX, -30.0f, _limitAngle);
@@ -38,6 +42,8 @@ public class CameraFollow : MonoBehaviour {
             float _dist = Vector3.Distance(this.transform.position, _camera.transform.position);
             if ((_dist < 25.0f && Input.mouseScrollDelta.y < 0) || (_dist > 7.0f && Input.mouseScrollDelta.y > 0)) {
                 _camera.transform.position += Input.mouseScrollDelta.y * _camera.forward;
+            }else if ((_dist < 25.0f && Input.GetAxis("JoystickY") < 0) || (_dist > 7.0f && Input.GetAxis("JoystickY") > 0)) {
+                _camera.transform.position += Input.GetAxis("JoystickY") * _camera.forward*0.5f;
             }
         }
     }
