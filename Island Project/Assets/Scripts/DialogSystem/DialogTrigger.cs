@@ -9,9 +9,20 @@ public class DialogTrigger : MonoBehaviour {
 	public Dialog _dialog;
     DialogManager _manager;
 
-    public void Start()
-    {
+    public void Start() {
         _manager = FindObjectOfType<DialogManager>();
+        _dialog.Trigger = this;
+    }
+
+    private void Update() {
+        if (_dialog.deactivateByEvent != null) {
+            foreach (string key in _dialog.deactivateByEvent) {
+                if (EventManager.Instance.GetEvent(key)) {
+                    this.enabled = false;
+                    break;
+                }
+            }
+        } 
     }
     public void Trigger(){
         _manager.StartDialog(_dialog, _nma == null ? null : _nma, _camRefPoint);

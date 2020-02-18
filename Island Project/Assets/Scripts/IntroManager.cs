@@ -25,7 +25,7 @@ public class IntroManager : MonoBehaviour
 
     private void Start()
     {
-        if (!EventManager.Instance._initIntro) {
+        if (!EventManager.Instance.GetEvent("initIntro")) {
             StartCoroutine(Writting());
             _hero.transform.position = _initialTarget.position;
             _hero.transform.rotation = _initialTarget.rotation;
@@ -50,7 +50,7 @@ public class IntroManager : MonoBehaviour
         }
     }
     IEnumerator Writting() {
-        if (!EventManager.Instance._initIntro) {
+        if (!EventManager.Instance.GetEvent("initIntro")) {
             for (int i = 0; i < _introduction.Length; i++) {
                 for (int j = 0; j < _introduction[i].Length; j++) {
                     _currentText = _introduction[i].Substring(0, j);
@@ -64,7 +64,7 @@ public class IntroManager : MonoBehaviour
     }
 
     void StartGame() {
-        if (!EventManager.Instance._initIntro) {
+        if (!EventManager.Instance.GetEvent("initIntro")) {
             _director.Stop();
             Destroy(_director.gameObject);
             foreach (GameObject dlt in _delete) {
@@ -75,7 +75,7 @@ public class IntroManager : MonoBehaviour
             _hero.SetActive(true);
             _cris.SetActive(true);
             GameManager.Instance.PlayerInput = false;
-            EventManager.Instance._initIntro = true;
+            EventManager.Instance.UpdateEvent("initIntro", true);
         }
     }
 }

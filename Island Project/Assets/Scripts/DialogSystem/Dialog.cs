@@ -9,6 +9,7 @@ public class Dialogue {
     public int _face;
     [TextArea(3, 10)]
     public string _chat;
+
 }
 [System.Serializable]
 public class Dialog {
@@ -16,4 +17,12 @@ public class Dialog {
     [Header("Post Dialogue Chat Events")]
     public DialogTrigger[] deactivateChat;
     public DialogTrigger[] activateChat;
+    public string[] activateEvents;
+    public string[] deactivateByEvent;
+
+    private DialogTrigger _trigger;
+    public DialogTrigger Trigger {
+        get { return (_trigger); }
+        set { _trigger = value; }
+    }
 }

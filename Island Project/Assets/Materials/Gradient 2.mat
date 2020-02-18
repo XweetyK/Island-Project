@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gradient
+  m_Name: Gradient 2
   m_Shader: {fileID: -6465566751694194690, guid: 5f4cd327b7d3be042a9d970236d191df,
     type: 3}
   m_ShaderKeywords: 
@@ -50,10 +50,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1F086897: 0.2
-    - Vector1_31C774F4: 0.45
-    - Vector1_B5491B15: 0.4
-    - Vector1_C42E8A8E: -1.18
-    - Vector1_D1C3FC44: 0.47
+    - Vector1_31C774F4: 0.1
+    - Vector1_B5491B15: 0.3
+    - Vector1_C42E8A8E: 0.42
+    - Vector1_D1C3FC44: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -76,8 +76,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_A3801CE5: {r: 1, g: 0.7122642, b: 0.9062683, a: 0}
-    - Color_E0F22028: {r: 0.2216981, g: 0.81515276, b: 1, a: 0}
+    - Color_A3801CE5: {r: 0, g: 0.55511737, b: 1, a: 0}
+    - Color_E0F22028: {r: 0.8613256, g: 0.3820755, b: 1, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
