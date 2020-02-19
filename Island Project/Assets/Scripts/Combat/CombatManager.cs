@@ -135,6 +135,22 @@ public class CombatManager : MonoBehaviour {
             _kSpawner.stopGame();
         }
     }
+    public void checkKey(int input){
+        switch (input){
+            case 1:
+                _kSpawner.inputAttack(DDRKey.KeyTypes.UP);
+                break;
+            case 2:
+                _kSpawner.inputAttack(DDRKey.KeyTypes.DOWN);
+                break;
+            case 3:
+                _kSpawner.inputAttack(DDRKey.KeyTypes.LEFT);
+                break;
+            case 4:
+                _kSpawner.inputAttack(DDRKey.KeyTypes.RIGHT);
+                break;
+        }
+    }
 
     public void loseKey(GameObject go){
         _kSpawner.removeKey(go);

@@ -57,7 +57,7 @@ public class KeySpawner : MonoBehaviour
     }
     public void inputAttack(DDRKey.KeyTypes type){
         DDRKey target = _keys[0].GetComponent<DDRKey>();
-        if (target.KeyType == type)
+        if (target != null && target.KeyType == type)
         {
             CombatManager.Instance.killKey(target.gameObject);
         }

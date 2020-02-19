@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DDRKey : MonoBehaviour
 {
-    public enum KeyTypes { DOWN = 0, UP, LEFT, RIGHT };
+    public enum KeyTypes { UP = 0, DOWN, LEFT, RIGHT };
 
     [SerializeField] KeyTypes _type;
     float _speed;

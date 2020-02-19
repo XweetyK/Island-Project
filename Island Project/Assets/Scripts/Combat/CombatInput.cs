@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CombatInput : MonoBehaviour {
 
     enum InputCombo { NONE, ATTACK, SPECIAL, DEFENSE, RUN, ITEM };
-    enum State { STARTTURN, COMBO, SENT, MISSED, ENDTURN };
+    enum State { STARTTURN, COMBO, SENT, MISSED, ENDTURN, DDR };
     [SerializeField] private float _limitTime;
     [SerializeField] private Sprite _arrowFilled;
     [SerializeField] private Sprite _arrowCommon;
@@ -32,6 +32,7 @@ public class CombatInput : MonoBehaviour {
     private bool _blocked = false;
     private float _time;
     private int _multiplyFactor = 0;
+    private bool _paused = false;
 
     private int _damageDone = 0;
 
@@ -90,6 +91,9 @@ public class CombatInput : MonoBehaviour {
                 break;
             case State.ENDTURN:
                 break;
+            case State.DDR:
+                break;
+
         }
     }
 
@@ -127,6 +131,21 @@ public class CombatInput : MonoBehaviour {
         }
     }
 
+    void DDRInput(){
+        if (Input.GetButtonDown("Up")){
+            CombatManager.Instance.checkKey(1);
+        }
+        if (Input.GetButtonDown("Down")){
+            CombatManager.Instance.checkKey(2);
+        }
+        if (Input.GetButtonDown("Left")){
+            CombatManager.Instance.checkKey(3);
+        }
+        if (Input.GetButtonDown("Right")){
+            CombatManager.Instance.checkKey(4);
+        }
+    }
+
     void ComboCheck() {
         switch (_actualCombo[0]) {
             case 0:
@@ -143,7 +162,6 @@ public class CombatInput : MonoBehaviour {
                 break;
             case 4:
                 _iCombo = InputCombo.DEFENSE;
-
                 break;
         }
         switch (_iCombo) {
