@@ -71,7 +71,6 @@
     <Compile Include="Assets\Prototype\Discard\Clock.cs" />
     <Compile Include="Assets\Prototype\Discard\Orbit.cs" />
     <Compile Include="Assets\Scripts\CameraShake.cs" />
-    <Compile Include="Assets\Scripts\CinematicController.cs" />
     <Compile Include="Assets\Scripts\Combat\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatInput.cs" />
     <Compile Include="Assets\Scripts\Combat\CombatManager.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="Assets\Scripts\Combat\DDR Special\DDRKey.cs" />
     <Compile Include="Assets\Scripts\Combat\DDR Special\Key Spawner.cs" />
     <Compile Include="Assets\Scripts\Combat\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Cris\Cris.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\Dialog.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\DialogManager.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\DialogTrigger.cs" />
@@ -86,11 +86,14 @@
     <Compile Include="Assets\Scripts\DolphinMov.cs" />
     <Compile Include="Assets\Scripts\DolphinSpawn.cs" />
     <Compile Include="Assets\Scripts\EnemyMov.cs" />
-    <Compile Include="Assets\Scripts\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Events\CinematicController.cs" />
+    <Compile Include="Assets\Scripts\Events\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Events\IntroManager.cs" />
+    <Compile Include="Assets\Scripts\Events\ZoneEventsController.cs" />
     <Compile Include="Assets\Scripts\FacesReferences.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlitchFace.cs" />
-    <Compile Include="Assets\Scripts\IntroManager.cs" />
+    <Compile Include="Assets\Scripts\InSceneTeleporter.cs" />
     <Compile Include="Assets\Scripts\NPC\FollowUsername.cs" />
     <Compile Include="Assets\Scripts\NPC\NpcBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />

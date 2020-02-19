@@ -1,32 +1,8 @@
 fileFormatVersion: 2
-guid: dd83ff7e70c8adb42a6d6d0e41188f01
+guid: 7d6499c3fa516554398aeaec19b474bf
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: cuadro1_cuadros
-  - first:
-      1: 100002
-    second: //RootNode
-  - first:
-      4: 400000
-    second: cuadro1_cuadros
-  - first:
-      4: 400002
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: cuadro1_cuadrosMat
-  - first:
-      23: 2300000
-    second: cuadro1_cuadros
-  - first:
-      33: 3300000
-    second: cuadro1_cuadros
-  - first:
-      43: 4300000
-    second: cuadro1_cuadros
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -55,10 +31,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,7 +81,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

@@ -5206,6 +5206,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8173435373473658926, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8173435372058662233, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -5245,11 +5250,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.17222223
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173435373473658926, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178717b3cec425c4d9d22efe1bd5e2e8, type: 3}
@@ -8196,7 +8196,7 @@ PrefabInstance:
     - target: {fileID: 1890402593065221735, guid: 7b22aade569ca1a4899496d6e0d84454,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6.6000366
+      value: 6.600067
       objectReference: {fileID: 0}
     - target: {fileID: 1890402593983880067, guid: 7b22aade569ca1a4899496d6e0d84454,
         type: 3}
@@ -19211,6 +19211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862383414}
   - component: {fileID: 1862383415}
+  - component: {fileID: 1862383416}
   m_Layer: 0
   m_Name: IntroScene
   m_TagString: Untagged
@@ -19259,6 +19260,22 @@ MonoBehaviour:
   _typewritter: {fileID: 528494011}
   _charTime: 0.08
   _director: {fileID: 1564056639}
+--- !u!114 &1862383416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862383413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00749d71aab7ae449348e72da57c54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoneEvents:
+  - eventObject: {fileID: 556994573}
+    eventTrigger: cityIntro
+    shouldActivate: 0
 --- !u!1001 &1867453077
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -1318,7 +1318,7 @@ Transform:
   - {fileID: 1374704282}
   - {fileID: 1101290935}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -17.098001, z: 0}
 --- !u!1 &325130470
 GameObject:
@@ -4708,7 +4708,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 62.015003, y: -206.849, z: -160.906}
 --- !u!114 &413225264
 MonoBehaviour:
@@ -8075,7 +8075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &515920369 stripped
 Transform:
@@ -8525,7 +8525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661330752
 PrefabInstance:
@@ -8704,7 +8704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 21.854, y: -13.931001, z: 0}
 --- !u!1 &689881448
 GameObject:
@@ -9155,6 +9155,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1692255074}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &757090891 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8952148899848533665, guid: bb8c6855d03a111489a20541a1985538,
+    type: 3}
+  m_PrefabInstance: {fileID: 6160043195011128137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &763387727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9346,7 +9352,7 @@ Transform:
   - {fileID: 7274947955224805180}
   - {fileID: 29339200}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &797029765
 PrefabInstance:
@@ -11341,11 +11347,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9c0417cd136ef1d43bafb7c0ae47969c, type: 2}
-    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6402336318304317533, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -12690,6 +12691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.000000095926026
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -14711,7 +14717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 754551845, guid: ae228e8e7e2fcba4f973371224e1ba08, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 754551845, guid: ae228e8e7e2fcba4f973371224e1ba08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14956,11 +14962,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WarningMessage
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6402336318304317533, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
@@ -16307,6 +16308,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.000000095926026
       objectReference: {fileID: 0}
+    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
 --- !u!4 &1078800099 stripped
@@ -16333,7 +16339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1082195717
 Transform:
   m_ObjectHideFlags: 0
@@ -16348,7 +16354,7 @@ Transform:
   - {fileID: 689881449}
   - {fileID: 325860577}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1082195718
 Animator:
@@ -18677,7 +18683,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d8fb0b5bc0ec954e9a515fcf53d78a9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d8fb0b5bc0ec954e9a515fcf53d78a9,
         type: 3}
@@ -22229,6 +22235,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f89d8677d3e3314fbef9df4eae97098, type: 3}
+--- !u!1 &1627166474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627166476}
+  - component: {fileID: 1627166475}
+  m_Layer: 0
+  m_Name: EVENTMANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1627166475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627166474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b4d1d07db2c5341a138d248bc8d2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1627166476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627166474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 237.61652, y: -9.905113, z: 323.17007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1638472631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6237041202375818173, guid: 520031d842b42dc41843e22c5e271e0f,
@@ -22263,7 +22312,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1648964661
 PrefabInstance:
@@ -22749,6 +22798,95 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4774b2e39e05e54a92aa9a3912d2c56, type: 3}
+--- !u!1001 &1699726112
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1904396758}
+    m_Modifications:
+    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.979
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67942506
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853725285046372332, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._name
+      value: PRIVATE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853725285046372332, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Authorized personnel only
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1155aa2687b1f4d43babbcef9f7aa90f, type: 3}
 --- !u!4 &1702637328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7753039856827548659, guid: 520031d842b42dc41843e22c5e271e0f,
@@ -25438,6 +25576,469 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eeafccb329a09843ac131b5aa467907, type: 3}
+--- !u!1001 &1893193836
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4730310976188809031, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_Name
+      value: CRIS
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 231.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 317.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8210295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5708859
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -110.37601
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.activateEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.deactivateByEvent.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._face
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: 'Hey!
+
+        There you are.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._chat
+      value: You're pretty fast.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._chat
+      value: Welcome to the [C I T Y]!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[3]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[3]._chat
+      value: I know, it's not as prett-
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._chat
+      value: "p\u0335\u0346\u0311\u0312\u0341\u0343\u0343\u0320\u035A\u0324\u031F\u0353\u0339\u034E\u0339\u032F\u0323\u0319\u0322\u0328\u033C\u035Cr\u0336\u0308\u0344\u030F\u0355\u0316\u0330e\u0335\u0314\u034C\u034B\u0320\u0359\u035C\u032E\u0349\u0354\u031C\u0330\u0354\u0339t\u0338\u030E\u033D\u0300\u031E\u0333\u0326t\u0337\u0314\u0304\u0310\u0350\u034D\u0348\u032By\u0334\u030B\u0354
+        \u0334\u033E\u0309\u0340\u0313\u0360\u033E\u0314\u0340\u0346\u0301\u032D\u031Cp\u0338\u0357\u0303\u0340\u030E\u0353\u0325\u0326\u0353\u0339r\u0338\u0310\u0352\u0341\u030F\u0315\u0304\u0310\u0357\u033E\u030D\u0301\u0306\u0358\u0304\u0346\u034E\u0339\u0317e\u0334\u035D\u0302\u0310\u0302\u0344\u034C\u033F\u0306\u031B\u0307\u0358\u031A\u030C\u035A\u0348\u0333\u035A\u0356\u033B\u0325\u0325\u0329\u0327\u032F\u0349\u0355t\u0334\u033F\u0306\u030D\u035D\u034B\u0340\u0309\u033E\u030E\u035B\u035B\u0308\u030D\u0344\u0343\u0320\u032D\u0354\u032F\u0318\u0323\u0356\u0322\u0354\u032B\u0320\u0332t\u0337\u034A\u0302\u034C\u030E\u0357\u035D\u030A\u030A\u0358\u0308\u0306\u030D\u0352\u0329\u0321\u031C\u0356\u0328\u0329\u031C\u0355\u0321\u0331\u031F\u032C\u035C\u033B\u0353y\u0335\u0340\u0307\u0307\u0343\u0314\u035D\u031A\u034A\u030E\u0329\u032E\u0333
+        \u0334\u0301\u0351\u0347\u033Cp\u0338\u030B\u0344\u030F\u033F\u0304\u034C\u031B\u0342\u033E\u0307\u0309\u0346\u0306\u0360\u0306\u031D\u0359\u032C\u0353\u034D\u0318\u0354\u0326r\u0338\u0303\u035D\u0341\u035D\u030E\u0301\u0350\u0325\u0347\u033C\u033B\u0347\u0318\u032D\u0319\u0333\u031Ee\u0338\u0304\u0314\u0351\u0351\u0308\u0351\u0350\u035D\u0328\u0322\u0320\u033C\u0328\u0325\u035C\u033A\u032E\u035C\u0353\u033A\u0319\u035Ct\u0337\u0309\u035D\u0315\u0342\u0351\u030D\u0309\u0346\u035D\u0310\u033D\u0350\u0314\u035D\u030D\u0317t\u0338\u0350\u030A\u033E\u034B\u030E\u0305\u0312\u034E\u0349\u0347\u033C\u0320\u034E\u0348\u0325\u032B\u0353\u0328\u031C\u0322y\u0338\u0360\u0315\u0302\u030B\u0313\u030D\u032F
+        \u0334\u030D\u0315\u0307\u0351\u0312\u0344\u0305\u034A\u030C\u0346\u0342\u030F\u035D\u0352\u030B\u032Bp\u0338\u030A\u034A\u034A\u031A\u035D\u0306\u0346\u030D\u0341\u0360\u0349\u0317\u0347\u033B\u0320\u0355r\u0336\u030E\u0350\u030D\u034A\u0310\u030A\u0310\u034C\u035Ce\u0338\u0302\u0312\u033F\u0300\u0314\u033F\u035D\u0310\u0300\u030D\u033C\u031Ft\u0337\u031A\u0351\u034B\u031B\u0351\u0315\u030B\u0357\u0344\u030F\u033D\u034B\u0302\u035D\u033D\u0339\u0353\u0331\u033Ct\u0335\u030A\u0343\u035B\u032C\u032D\u0316\u0345\u035A\u0353\u033C\u032A\u0339\u0355\u0326\u0318\u0355\u0332\u0320y\u0334\u030D\u0315\u031A\u0303\u0342\u032A\u032E\u032B\u032A
+        \u0334\u033D\u033E\u0305\u0341\u0340\u0344\u0350\u0341\u030F\u0316\u033A\u032A\u031F\u0322\u0332\u0317\u0321\u032A\u032B\u0320\u0353\u031E\u0328\u0349p\u0336\u0352\u034A\u0311\u030C\u030E\u0344\u030A\u032D\u0349\u0333\u0345\u035C\u0330\u035Cr\u0334\u035B\u0344\u0309\u0351\u0309\u031A\u031F\u0324\u0326\u035C\u0333\u0348\u031Ce\u0334\u0342\u0351\u0340\u0308\u0305\u0307\u0360\u0313\u030D\u030A\u0307\u030B\u0311\u030A\u0353\u0359\u032B\u0349\u0354\u0319\u0327\u0326\u0354\u032C\u0325\u0332\u0348\u0321t\u0338\u033E\u0305\u0343\u031A\u0304\u034E\u032E\u032F\u0332\u032B\u033A\u0330\u031E\u035A\u032F\u0356\u0333t\u0335\u0302\u035B\u0360\u0344\u035B\u031C\u031F\u0348\u0326\u033A\u0359\u0324\u0324y\u0335\u033F\u0346\u0358\u0312\u0358\u0330\u0348\u032D\u0323\u0330\u0345\u034D\u0332\u0318\u0324\u0317\u032D\u035C\u0322
+        \u0338\u035D\u0304\u0344\u030A\u0344\u0310\u033B\u0318\u0318\u032B\u0326\u032Fp\u0338\u0306\u031D\u032A\u0354\u034Dr\u0335\u0306\u033D\u033E\u0303\u034C\u033E\u034C\u0358\u0357\u0309\u0333\u0318\u035A\u0333\u0326\u0353\u0325\u0359\u0323\u0359\u0317\u0329\u0355\u0356\u032Be\u0334\u0344\u0346\u034C\u030F\u034B\u033F\u034C\u0315\u030A\u0304\u0350\u035D\u0305\u0319\u032D\u0319\u035A\u0347\u0328\u0347\u0354\u0319\u0339\u0356t\u0334\u0307\u030E\u0352\u030D\u030D\u030C\u0357\u0340\u033D\u033D\u0344\u034E\u032A\u032D\u0319\u0327\u0326\u0319\u034Dt\u0335\u0312\u030F\u0350\u0300\u0360\u0347y\u0336\u0351\u030D\u030C\u030E\u0340\u0302\u0308\u0313\u0318\u0325\u0329\u034D\u035A\u0354\u0329\u0356
+        \u0335\u0315\u0350\u0301\u030C\u030A\u0306\u0308\u0357\u030F\u033D\u035D\u0315\u0321\u032C\u0332p\u0337\u0309\u0352\u0305\u0302\u030E\u030B\u0357\u030B\u0320\u031F\u0348r\u0337\u030A\u0312\u030F\u0311\u0342\u0358\u034C\u0303\u032D\u0349\u032A\u0323\u0321\u0354\u0327\u0329e\u0335\u031B\u0300\u031F\u0325\u0325t\u0336\u030B\u031C\u035A\u032C\u035C\u034D\u031F\u0320\u0326\u033A\u0353\u0328\u0349\u0348\u032F\u031Dt\u0336\u0303\u034C\u030D\u031A\u0312\u0300\u0339\u0319\u032B\u0319y\u0337\u030A\u033B\u031D\u0353\u0330\u031F\u0322\u0349\u035A\u033C\u0323\u0323\u031C\u034E\u034E\u0317
+        \u0334\u034C\u0305\u0351\u033E\u0307\u0300\u0322\u0328p\u0334\u034A\u0304\u0307\u0342\u031E\u0356\u0329\u0345\u0320\u0326\u0331r\u0334\u0303\u033D\u030E\u033F\u0313\u0312\u0302\u0357\u0319\u032C\u032B\u032C\u0325\u032C\u032B\u0321\u035A\u032E\u0327\u0316\u0328\u0327e\u0335\u0346\u0301\u0342\u0360\u0300\u033F\u0312\u0332\u0345\u034E\u0359\u0348\u035A\u031C\u031Et\u0336\u030E\u0352\u0340\u0332\u0323\u0333\u031D\u0329t\u0338\u034B\u032D\u0324\u032D\u0323\u0354\u032E\u0324\u0348\u0323\u0353\u0347\u0333y\u0335\u0302\u030C\u0358\u034C\u0303\u034A\u0305\u0303\u0311\u0350\u0351\u0315\u034E\u0320\u033A\u033C\u0339\u0345\u0317\u0356\u0345
+        \u0334\u0309\u0313\u0360\u035D\u033F\u0358\u0315\u0344\u0306\u0306\u0309\u034B\u035D\u0342\u035D\u0355\u0339\u034E\u0326\u034E\u031C\u0319\u033C\u0322p\u0334\u030C\u0312\u030A\u0302\u0342\u0310\u0310\u033E\u0311\u0311\u0329\u0349\u032Dr\u0336\u0346\u0358\u030D\u0350\u0310\u031A\u0327\u0345\u0322\u0326e\u0336\u0360\u0306\u0309\u031B\u0342\u0305\u0322\u0316\u0324\u0332\u031D\u032C\u0321t\u0335\u030E\u0307\u0357\u030B\u0356\u0356\u031Ct\u0337\u0301\u0303\u0307\u0306\u0342\u0302\u0320\u032B\u0317\u0353\u0320\u0331\u033B\u033B\u034E\u0353\u032E\u034D\u0354\u0326\u0333y\u0335\u0352\u0304\u0315\u0307\u033D\u030D\u0342\u035A\u0320
+        \u0337\u035D\u0346\u0348\u031E\u0354\u0332\u0324\u0354\u0353\u035C\u034Ep\u0335\u0301\u0313\u035D\u033D\u0309\u0315\u0343\u0322\u0353\u0339r\u0337\u0306\u034B\u031B\u034A\u0315\u0312\u0308\u0302\u0342\u0319\u0316\u0318\u032B\u0317\u0326\u035A\u0349\u032B\u031C\u0318\u035A\u0353\u0316e\u0337\u0304\u0305\u034C\u0305\u0319\u0348\u035C\u0349t\u0335\u030C\u031B\u0344\u0344\u035D\u0307\u034C\u032C\u031C\u0359\u0324\u032C\u0356t\u0337\u033F\u0301\u030D\u0352\u035A\u0345\u034D\u0348\u0318\u0331\u032D\u0329\u0356\u0324\u033By\u0335\u0346\u0310\u0307\u0306\u0350\u030E\u0340\u0307\u0351\u0344\u030C\u030C\u0313\u034B\u034C\u0331\u0316\u033B
+        \u0338\u031A\u0323\u0319\u0359\u0359\u0349\u032A\u031F\u035A\u0318\u031C\u0323\u032Ap\u0334\u033D\u0312\u035D\u0346\u035B\u0315\u032B\u033A\u0329\u033Ar\u0334\u030D\u030E\u0340\u0308\u0344\u033D\u0312\u0302\u0346\u030D\u033D\u0305\u0306\u034B\u032D\u032D\u0356\u0318\u0332\u0328\u031D\u0348\u035Ae\u0334\u0315\u0314\u030F\u0304\u035D\u0360\u0344\u0343\u0302\u0345\u0319\u0332\u0321\u031E\u0356\u0317\u0330\u0332\u0329\u0325\u035A\u032D\u0354\u0347t\u0334\u034A\u035A\u0328t\u0334\u031A\u0341\u0351\u0305\u0343\u030A\u030C\u0360\u035D\u0352\u0308\u0313\u032E\u0323\u032F\u0332\u031F\u032C\u0323\u0318\u0319\u0332\u033B\u0316y\u0334\u0360\u0351\u035D\u0300\u0311\u0307\u0302\u030F\u030A\u0308\u0350\u0350\u0311\u0305\u0305\u0339\u0321\u035C\u0327\u032E\u0324\u033C\u0326\u0349\u0319\u031F\u032E\u0326\u034D\u0318
+        \u0335\u0344\u0360\u030D\u033D\u0340\u0350\u0310\u033A\u0318\u0353\u0316\u032B\u0317\u034E\u0353\u0320\u0325\u0321\u031C\u035C\u0320p\u0336\u030F\u031B\u0352\u0315\u034A\u033E\u0300\u0303\u0303\u034B\u0348\u0349\u0333\u0318\u033A\u0316\u0319\u0319\u0354\u0339\u032F\u0331\u033B\u0347\u0347r\u0338\u0352\u031B\u0300\u033D\u035D\u030B\u030E\u030D\u0313\u0302\u0343\u034B\u0305\u031D\u0321\u032D\u031F\u0348\u035C\u0328\u0321\u0355\u0330\u0330\u033B\u0327\u0347e\u0337\u030A\u0351\u035B\u0301\u0340\u030B\u0311\u0343\u030B\u031A\u0301\u033F\u032B\u0319\u0317\u0317\u035A\u0349\u0322\u0333\u0319\u0333\u0354\u0319\u031D\u0332t\u0334\u0309\u033D\u031A\u031A\u0329\u0332\u032A\u032C\u031D\u0333\u035A\u0359t\u0337\u030C\u0352\u0310\u030C\u0303\u0315\u030B\u0358\u030F\u0344\u0344\u0317\u035A\u0356\u0328\u0326\u0322\u0322\u0322\u033B\u0349\u032C\u0326\u033A\u0354y\u0335\u030D\u0358\u0342\u0306\u030C\u0357\u0340\u031A\u0358\u0309\u0350\u0350\u031B\u0302\u0359\u0325\u0339\u0355\u032A\u032C\u0321\u033B\u034E\u035C\u032F\u0333
+        \u0337\u035B\u0344\u033C\u0359p\u0336\u0311\u031B\u0343\u035D\u0346\u034B\u031A\u0314\u0351\u0343\u0333\u0320\u032E\u031C\u0331\u032A\u0349\u031F\u0316\u032C\u0345\u0331\u033B\u034D\u033Br\u0338\u0307\u0351\u030C\u0350\u0343\u0354\u031D\u0332\u0331\u034E\u033Ae\u0338\u0343\u0301\u0303\u0360\u035D\u0314\u0357\u0313\u0359\u0318t\u0337\u030C\u0301\u0302\u033E\u0341\u034A\u0301\u034E\u034D\u0318\u032D\u0330\u0347\u031D\u0317\u031Ct\u0338\u0342\u0304\u030D\u0319\u0356\u0329\u0348\u0348\u0339\u0326\u031D\u0355\u031D\u0355\u0316\u0354\u0332\u0320y\u0335\u0305\u0310\u0306\u0360\u035D\u030A\u0323\u0339\u0328\u0353\u0323\u032E\u031D\u031C\u034D\u032C\u0322
+        \u0334\u034C\u0358\u033A\u0332\u032D\u0318\u0349\u0333\u0328\u032Ap\u0337\u0302\u0350\u0311\u030D\u0342\u0308\u0305\u0359\u0345\u0329\u033Ar\u0338\u030D\u0323\u0325e\u0337\u0313\u033E\u0358\u0306\u035D\u034C\u0311\u0354\u0339\u031D\u0324\u031E\u0324\u0318\u0354\u0319\u033A\u0325\u032E\u0318\u033At\u0335\u0310\u0313\u031A\u030F\u0343\u030B\u031A\u0344\u0357\u035B\u035B\u0344\u0320\u034E\u0330\u032A\u0323\u0355\u0353\u032A\u0318\u034Dt\u0336\u0360\u033F\u0302\u033E\u030B\u0304\u0351\u034C\u030A\u033F\u0351\u0308\u031A\u0313\u031B\u031C\u0333y\u0338\u035D\u0343\u0302\u030F\u0343\u0344\u0300\u0305\u0314\u0311\u0300\u033D\u0319\u0339\u031E
+        \u0338\u033F\u031B\u0350\u034A\u034A\u0312\u034B\u0360\u030E\u0313\u031B\u0309\u0342\u033D\u0315\u0332\u0348\u033A\u032Cp\u0338\u0300\u030D\u0352\u0315\u0355\u031C\u031F\u0319\u035C\u033A\u0321\u031C\u0327\u032F\u0318\u0324\u0349\u0323r\u0334\u0360\u0344\u0344\u0340\u035D\u0341\u0312\u0310\u0359\u0325\u0339\u0354\u035C\u031E\u0322e\u0334\u0344\u030D\u031B\u035D\u0302\u0314\u0306\u0300\u034B\u0306\u0302\u0310\u0302\u0341\u0301\u032A\u0353\u0348\u0330\u0345\u035A\u031E\u0324\u0316\u0354\u0323\u033Ct\u0334\u0342\u0315\u031B\u0360\u0342\u0305\u0358\u0360\u0307\u035D\u034B\u030F\u030E\u0315\u0326\u032D\u0356\u0316\u0317t\u0336\u035B\u0344\u0315\u030A\u031A\u030E\u0319\u032D\u034D\u031E\u031Fy\u0338\u0306\u035B\u031D\u031F
+        \u0334\u0301\u030F\u033E\u0360\u0352\u0360\u0344\u030E\u0351\u032F\u0319\u0328\u0319\u032D\u0329\u0354\u0318\u0324\u0332\u0353\u0328p\u0338\u035B\u0358\u035D\u0300\u035D\u033F\u030E\u0306\u0303\u0320\u032B\u0347\u0329\u0326\u0316\u035A\u0330\u0325\u0325\u0326\u0356\u0325\u0318\u0317r\u0334\u0300\u0350\u0341\u0301\u034A\u031A\u031C\u032A\u0348\u0349\u0354\u032A\u0316e\u0336\u0351\u0307\u035B\u0304\u034B\u0350\u0310\u0351\u031A\u034B\u0314\u0340\u0304\u035D\u035D\u0326\u033A\u0330\u0353\u033A\u0331\u0329\u032Et\u0337\u030E\u0309\u033D\u034C\u035D\u0304\u0357\u030B\u0308\u0343\u034A\u0311\u0302\u034C\u0322t\u0334\u031A\u0305\u0344\u0301\u031A\u034E\u0353\u0353y\u0338\u035D\u0358\u030D\u035D\u0317\u0333\u0359\u0322\u0356\u032C\u032B\u032B
+        \u0338\u034B\u034A\u0358\u0311\u0302\u0318\u0349\u0354\u0330p\u0337\u0303\u0311\u032Dr\u0337\u0360\u0303\u0305\u035D\u033F\u030B\u0314\u031D\u0324\u0329\u0320e\u0334\u0303\u0350\u0303\u0340\u0328\u0321\u035At\u0337\u030A\u034A\u0304\u034B\u034B\u035D\u0310\u0308\u0309\u031E\u033C\u0327\u031E\u0333\u0331\u0325\u0347\u032Bt\u0336\u033D\u030A\u0310\u035D\u030E\u0349\u0320\u0345\u034D\u0355\u0318\u0339\u033B\u0316\u034Ey\u0336\u0301\u0357\u0344\u0305\u030A\u0303\u0313\u035A\u0319\u032B\u031E\u0321\u0318\u0322\u0318\u0317
+        \u0336\u0302\u0310\u035D\u0344\u030D\u035D\u034C\u030F\u034A\u0310\u0307\u0342\u0345\u0329\u0318\u0349\u0318\u0322\u032C\u0323\u0349\u0329\u035C\u0318\u0345\u032Ap\u0338\u0305\u0315\u034B\u033D\u030D\u034A\u0320\u032B\u033A\u031E\u033B\u0339\u0333\u032D\u0320r\u0334\u0357\u0312\u0341\u0342\u0343\u030F\u035B\u0305\u031A\u0344\u0344\u030F\u0333\u0331\u033A\u0318\u0319\u0319\u0329\u0327\u0349\u033B\u0348e\u0338\u0304\u0360\u0309\u0350\u0314\u0302\u034B\u030A\u031A\u0303\u0331\u033A\u031F\u032A\u0355\u0318\u032E\u0330\u0333t\u0335\u0304\u0305\u033A\u0318\u0349\u034E\u0320\u033B\u0326\u032Bt\u0334\u033F\u0301\u0305\u030A\u0344\u030E\u030F\u030F\u0300\u0317\u034D\u0345\u032B\u0329\u0327y\u0335\u0351\u030B\u031B\u0308\u0305\u0315\u0342\u0346\u0315\u0344\u0313\u030F\u0342\u0318\u0325\u0318
+        \u0336\u0310\u0344\u0310\u031A\u035B\u031A\u0358\u0304\u0303\u033E\u0322\u034D\u0319\u0329p\u0335\u0306\u033D\u0343\u035B\u0351\u0344\u031Fr\u0337\u0303\u035D\u0344\u035B\u031D\u0329\u0356\u034E\u035C\u034D\u0326\u0317e\u0338\u0301\u0312\u0305\u030A\u0344\u030A\u030D\u033E\u0306\u0303\u033E\u030E\u0331\u032E\u032F\u0323\u031F\u035A\u033C\u033B\u035C\u0320\u0347\u0349\u033B\u0320t\u0337\u0357\u0308\u0358\u033E\u0304\u0324\u0348\u033A\u035Ct\u0338\u0344\u0308\u0323\u0356\u031C\u031D\u0329y\u0335\u031B\u0349\u032C\u031E\u031F\u0322\u0355\u0316\u0333\u0330\u031E\u0319\u0339\u0347
+        \u0335\u033E\u035D\u0306\u030D\u0312\u0357\u0315\u030C\u033E\u0310\u0325\u0348\u033B\u0348\u0332\u031C\u035A\u0324\u0349\u0333\u0330\u0321\u0319\u0347\u033Ap\u0334\u0309\u0309\u0302\u0360\u0360\u030A\u0357\u033E\u0300\u0346\u0358\u034B\u0309\u0358\u034B\u0322\u0332\u0322\u0330\u0330\u0330\u032A\u0319\u0329\u0319\u0345\u032A\u0322r\u0336\u0305\u0351\u0360\u0319\u0317\u0355\u0318\u032B\u0318e\u0335\u0303\u030D\u0323\u0323\u031C\u031E\u0325\u0347\u0326\u0320\u0330t\u0334\u0312\u034B\u035B\u0311\u035B\u030A\u030C\u032A\u034E\u0326\u0325\u0325\u031C\u0348\u0355\u0345t\u0338\u0309\u0309\u0311\u0311\u030B\u0341\u030A\u032C\u0325\u0318\u0319\u031D\u0321y\u0338\u034C\u0351\u0325\u034D\u0323\u0320\u0345\u032A\u032E\u031D\u0322\u034D\u032A\u0317
+        \u0338\u0301\u0306\u0352\u0343\u030E\u0304\u0352\u030A\u0348\u0354\u033Cp\u0335\u0310\u030C\u033E\u0303\u030D\u0326\u0324\u032E\u032F\u0328\u0359\u031D\u0333\u0330r\u0337\u0312\u0304\u0313\u0346\u034B\u0307\u0309\u0303\u0317\u0347\u0332\u0328e\u0334\u030F\u035B\u035B\u034B\u0312\u031A\u0344\u0322\u034Dt\u0336\u0358\u034C\u033F\u0341\u0319\u0326\u0316\u0322\u0325\u0326\u035C\u0339\u0356\u0333\u0356\u0319\u032C\u032Ft\u0338\u0303\u031B\u0346\u0302\u0307\u033E\u0346\u0343\u0327\u032F\u0345\u031Cy\u0337\u0313\u0343\u033F\u030D\u0352\u033F\u034C\u0357\u0351\u0350\u033E\u030C\u0309\u0340\u0331\u032B\u0316\u0347\u0332\u0322\u031E\u0339
+        \u0335\u0309\u033F\u0351\u0344\u030C\u0312\u031A\u0342\u0304\u0307\u0327\u033Ap\u0338\u0314\u0305\u0341\u0358\u0344\u030C\u0315\u0311\u035B\u034B\u0306\u0312\u0357\u031C\u035C\u033A\u034Er\u0335\u0304\u0314\u034B\u0306\u0327\u0328\u0322\u0345\u0325\u032D\u0347\u0323\u0324\u0328\u0322\u0320\u0348\u0322e\u0334\u035D\u030F\u0329\u034D\u032F\u0349\u0329\u0324\u035A\u0348\u0332\u032D\u032C\u033A\u0317\u033A\u0354t\u0337\u031A\u0346\u0344\u0357\u030B\u033D\u0305\u035D\u035D\u0327\u031E\u0325\u0324\u031F\u0327\u0330\u0353\u0353\u032B\u031Dt\u0337\u0305\u0304\u030D\u0306\u030D\u031A\u0358\u030B\u034C\u0340\u030B\u0347\u0316\u0325\u0329\u032D\u033A\u0318\u0326\u032C\u0318\u031C\u0330\u035C\u031Ey\u0338\u035D\u0300\u033D\u0301\u0314\u0306\u0360\u0344\u032A\u0322\u0359\u0326\u032E\u0323\u032B\u031C\u0326\u0321\u0355
+        \u0336\u030F\u0340\u0351\u0307\u034A\u0342\u034A\u0341\u030C\u0352\u031B\u033E\u0356\u0325\u034E\u0320\u0323\u0331\u0328p\u0335\u0342\u0300\u0360\u0352\u0360\u030C\u0307\u035C\u0349\u0326\u0339\u032E\u0325\u0332\u032Cr\u0337\u0351\u033F\u0358\u0327\u0349\u0319\u033B\u0316\u032De\u0336\u0310\u035D\u031B\u0344\u034A\u033D\u030F\u030C\u0350\u0340\u0309\u0344\u034B\u0333\u0321\u0355\u0348\u0316\u0326t\u0336\u034A\u0315\u030B\u0313\u033A\u032E\u032Bt\u0336\u0343\u0313\u0308\u0319\u0348\u0359\u032C\u0323y\u0337\u0360\u0315\u0311\u0360\u035D\u0342\u031C\u0331\u033B\u035C\u032E\u032E\u0321\u0329\u0339\u0331
+        \u0336\u0352\u0340\u0303\u030F\u033E\u031B\u0302\u030E\u031B\u0311\u0344\u0318\u0319\u0328\u0325p\u0336\u034A\u0310\u0358\u0300\u0305\u0342\u0358\u0300\u0317\u0359\u032B\u035Ar\u0338\u0304\u030C\u0345\u035C\u033A\u0345e\u0335\u030F\u0307\u0357\u0314\u0358\u0343\u033E\u0314\u0348\u0331\u0333\u0318\u033B\u0356\u032C\u0348\u032E\u0330\u0333t\u0334\u031B\u034A\u0308\u034A\u0316\u034D\u0348\u0316\u0317\u0323\u0325\u0325t\u0338\u0352\u032B\u031E\u0359\u0325\u033B\u033C\u0345y\u0334\u0306\u0351\u0306\u0300\u0308\u0346\u0303\u0313\u030F\u0341\u0302\u0312\u0346\u034A\u0360\u032E\u0322\u032C\u033C\u031D\u034E\u032B\u0345\u0349\u0327\u0332\u0322
+        \u0335\u0308\u031A\u0357\u031E\u0354\u032D\u0327\u0349\u0348\u035A\u0349p\u0336\u034B\u0310\u0344\u0313\u0314\u0300\u0308\u030E\u0301\u0307\u034B\u0330\u032C\u033B\u0325\u032A\u0347\u0330\u0339\u033C\u031C\u0326\u0316\u0318\u0354r\u0337\u0357\u0305\u030B\u030B\u035D\u0360\u0326\u0353\u033C\u0333\u0355\u034D\u031C\u0359\u032A\u032C\u0320e\u0338\u030F\u0358\u0328\u0348\u0330t\u0335\u030F\u0358\u035D\u035D\u035A\u0353\u0331t\u0337\u035B\u031B\u0305\u031B\u033E\u030D\u0302\u0308\u0304\u0342\u031A\u033E\u0304\u0311\u0355\u0317\u031D\u0316y\u0338\u0350\u0343\u0340\u0342\u030F\u0340\u0344\u0309\u0343\u0307\u0304\u034A\u0339\u0332\u0320\u0320\u032A\u035A\u0349\u0349\u033C
+        \u0334\u0342\u033D\u0313\u030F\u0308\u0342\u0360\u0344\u035D\u0358\u0304\u0358\u035D\u0358\u0356\u0347\u0325\u0326\u033Cp\u0334\u0310\u0350\u034B\u0307\u031A\u0357\u0341\u0350\u0303\u0342\u0351\u0310\u0309\u033E\u0302\u0349\u0328\u0323\u033C\u031F\u0325\u0353r\u0334\u030B\u031A\u030E\u0342\u033E\u0326\u0331\u0345\u032A\u0323\u0347\u0359\u032E\u034E\u0316\u0329\u0324\u033A\u034E\u0322e\u0338\u0351\u0302\u0300\u035B\u0307\u0346\u0308\u0310\u034A\u0344\u030C\u0357\u0344\u034E\u032F\u032F\u033C\u031E\u035C\u032A\u0353\u0348\u0339\u032At\u0334\u030F\u0305\u0305\u0360\u0346\u0313\u031B\u0314\u034B\u030D\u0305\u030D\u0324\u0356\u033C\u033A\u031Ft\u0334\u0315\u0352\u0308\u0304\u031B\u033B\u0356y\u0334\u0313\u0307\u0342\u031B\u0314\u032B\u0349\u0328\u0320\u0359\u0320\u0330\u0317\u0326\u0355\u0328\u032B\u0316\u031C
+        \u0338\u0308\u0327\u0345\u032D\u0331\u035C\u0326\u031D\u031D\u032Dp\u0334\u034C\u030F\u0352\u0342\u0312\u030C\u030B\u0315\u0314\u0303\u034C\u0315\u0311\u035D\u032Ar\u0338\u034A\u030D\u0346\u0340\u0350\u0351\u0346\u0355\u0324\u0347\u032A\u0318\u031E\u032E\u0359\u034Ee\u0335\u0309\u0358\u030C\u0313\u0342\u034A\u0300\u0344\u033D\u030A\u035D\u030C\u0341\u0314\u0327\u0316\u035A\u0332\u0348\u0317\u0329t\u0334\u0360\u0345\u0330\u0322\u0326\u0321\u0359\u031E\u0345\u031C\u0322\u032Et\u0334\u0343\u0305\u033E\u0308\u034A\u034A\u035D\u031A\u034A\u0352\u034C\u0305\u034C\u0304\u0357\u0320\u0353\u031E\u0329\u032A\u033A\u0356\u0347\u0347\u0355y\u0335\u030B\u0308\u0315\u030A\u0341\u0305\u0340\u0308\u0319\u0332\u0348\u035C\u031C\u0328\u0354\u0327\u0359\u0345\u0348\u035A
+        \u0335\u0358\u0304\u030A\u0342\u0325\u0355\u0349\u0330\u031E\u0318\u031E\u0320\u035C\u0359\u0354\u0323\u0332\u0322p\u0337\u0315\u0346\u0302\u0314\u033E\u0357\u0304\u031C\u0353\u0319\u0331r\u0335\u0350\u033D\u0351\u0300\u035B\u0346\u0307\u035D\u031A\u035D\u0314\u030B\u032C\u0326\u0353\u0349\u032D\u035C\u0345\u0326\u0345\u0355\u032C\u032D\u0316\u0339e\u0335\u0304\u034B\u035D\u0319\u0348\u0347\u0324\u0333\u0327\u031F\u032E\u0356\u0321\u0355\u0333\u0327\u0359t\u0335\u0304\u031B\u0314\u0305\u0343\u0344\u0301\u030A\u031B\u031B\u0331\u032D\u031F\u0322\u0332\u032E\u031F\u0359\u032A\u0317\u0345t\u0338\u0343\u0304\u030A\u030F\u0313\u031A\u0340\u0314\u0357\u030E\u030D\u0348\u0319\u031C\u035C\u033C\u031D\u0332\u032B\u0356\u031F\u032C\u0332y\u0337\u0306\u0342\u0344\u0305\u0308\u0344\u030B\u0305\u033D\u030F\u035D\u030A\u0313\u0352\u0316\u0332\u031D\u032F\u0326"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[5]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[5]._chat
+      value: THIS CITY IS QUITE PLEASING TO THE EYE. DON'T YOU THINK? :)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[6]._character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[6]._chat
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[7]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[7]._chat
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[8]._name
+      value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[8]._character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[8]._chat
+      value: Whatever you say, man.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[9]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[9]._chat
+      value: Excuse me for that.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._face
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[5]._face
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[8]._face
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[6]._name
+      value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[6]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[7]._face
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[10]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[10]._chat
+      value: Don't mind me, go ahead and enjoy the [C I T Y]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[11]._name
+      value: "c\u0334\u0344\u031A\u0312\u0304\u0352\u0307\u030D\u030D\u030F\u0301\u0328\u0328\u0359\u031F\u0353\u0322r\u0334\u0344\u0340\u030C\u035B\u030F\u0344\u033D\u035D\u0357\u0329\u0354\u0331\u034Ei\u0338\u0341\u033F\u0350\u033F\u0354\u0327\u0316\u0319\u032F\u0349s\u0335\u0305\u0333\u033A\u0356\u032B\u0325\u0323\u032A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[11]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[11]._chat
+      value: There's a lot of activities arround here you may enjoy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[12]._character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[12]._chat
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[13]._character
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[13]._chat
+      value: Are you the owner of this place or something?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[14]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[14]._chat
+      value: Me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[15]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[15]._chat
+      value: Haha, you make me laugh.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[16]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[16]._chat
+      value: I'm just a simple citizen, but you can consider me as your tour guide.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[17]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[17]._chat
+      value: So I'm here to help if you need me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[18]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[18]._chat
+      value: There you are
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[19]._name
+      value: "c\u0334\u0344\u031A\u0312\u0304\u0352\u0307\u030D\u030D\u030F\u0301\u0328\u0328\u0359\u031F\u0353\u0322r\u0334\u0344\u0340\u030C\u035B\u030F\u0344\u033D\u035D\u0357\u0329\u0354\u0331\u034Ei\u0338\u0341\u033F\u0350\u033F\u0354\u0327\u0316\u0319\u032F\u0349s\u0335\u0305\u0333\u033A\u0356\u032B\u0325\u0323\u032A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[19]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[19]._chat
+      value: There you are
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[10]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[11]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[12]._name
+      value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[12]._face
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[13]._face
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[14]._face
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[15]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[16]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[17]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.activateEvents.Array.data[0]
+      value: crisDialog2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297540283057946832, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.deactivateByEvent.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._chat
+      value: Do you like the [C I T Y]?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._character
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._face
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._chat
+      value: Let me know if you need anything.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444626157327296148, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._character
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2713d0309dd4e524e96d622e6d0a071b, type: 3}
 --- !u!1001 &1895052256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28288,11 +28889,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fda47e0ece7aa754089b7b3bc337f9b5, type: 2}
-    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6402336318304317533, guid: 520031d842b42dc41843e22c5e271e0f,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -29637,6 +30233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.000000095926026
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463340813239765392, guid: 520031d842b42dc41843e22c5e271e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520031d842b42dc41843e22c5e271e0f, type: 3}
@@ -33370,6 +33971,100 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab0a58af0a0bd8439b54066ad3c9e6f, type: 3}
+--- !u!1001 &2968014351278714386
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3326030179586443064, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: m_Name
+      value: MuseoInterior
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329709880350755, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415811587291822869, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: _isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415811587291822869, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: _destination
+      value: 
+      objectReference: {fileID: 6654192653292283196}
+    - target: {fileID: 680399659405632154, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085254956997373949, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427097254685858834, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304506808916369490, guid: ec0446cd54ed07f4b979d1db54035efe,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec0446cd54ed07f4b979d1db54035efe, type: 3}
+--- !u!4 &2968014351278714387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8939172859840891121, guid: ec0446cd54ed07f4b979d1db54035efe,
+    type: 3}
+  m_PrefabInstance: {fileID: 2968014351278714386}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3731042883451766370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33852,7 +34547,7 @@ PrefabInstance:
     - target: {fileID: 8952148899848533665, guid: bb8c6855d03a111489a20541a1985538,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8952148899848533665, guid: bb8c6855d03a111489a20541a1985538,
         type: 3}
@@ -34097,6 +34792,116 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 593a3a1b07477b04781a7bac76cbaaab, type: 3}
+--- !u!1001 &6654192653292283195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 597551073}
+    m_Modifications:
+    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9404666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0707903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.366955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70711
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70710367
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8318965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.64173514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6674459
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649591610201000757, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _destination
+      value: 
+      objectReference: {fileID: 2968014351278714387}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 757090891}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1155aa2687b1f4d43babbcef9f7aa90f, type: 3}
+--- !u!4 &6654192653292283196 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3315465672957559238, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6654192653292283195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6707121064078242212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34370,7 +35175,7 @@ PrefabInstance:
     - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7297707296269704093, guid: 88ae6cc22119ea54983c6968fc5d5cd2,
         type: 3}

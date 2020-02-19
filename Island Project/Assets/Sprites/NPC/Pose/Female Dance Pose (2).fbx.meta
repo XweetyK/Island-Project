@@ -1,32 +1,11 @@
 fileFormatVersion: 2
-guid: dd83ff7e70c8adb42a6d6d0e41188f01
+guid: b10057f66e861254ab4a3e213f41f573
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      1: 100000
-    second: cuadro1_cuadros
-  - first:
-      1: 100002
-    second: //RootNode
-  - first:
-      4: 400000
-    second: cuadro1_cuadros
-  - first:
-      4: 400002
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: cuadro1_cuadrosMat
-  - first:
-      23: 2300000
-    second: cuadro1_cuadros
-  - first:
-      33: 3300000
-    second: cuadro1_cuadros
-  - first:
-      43: 4300000
-    second: cuadro1_cuadros
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -55,10 +34,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 200
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,13 +84,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

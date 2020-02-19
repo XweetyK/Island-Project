@@ -6,11 +6,6 @@ public class EventManager : MonoBehaviour
 {
     private Dictionary<string, bool> events = new Dictionary<string, bool>();
 
-    private void Start() {
-        events.Add("initIntro", false);
-        events.Add("crisDialog1", false);
-        events.Add("cityIntro", false);
-    }
     public static EventManager Instance { get; private set; }
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
@@ -19,6 +14,13 @@ public class EventManager : MonoBehaviour
         } else {
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start() {
+        events.Add("initIntro", false);
+        events.Add("cityIntro", false);
+        events.Add("crisDialog1", false);
+        events.Add("crisDialog2", false);
     }
 
     public void UpdateEvent(string key, bool value) {
