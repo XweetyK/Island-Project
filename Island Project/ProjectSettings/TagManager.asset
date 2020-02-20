@@ -12,6 +12,7 @@ TagManager:
   - CamRefPoint
   - Protagonist
   - CameraSystem
+  - TransitionCanvas
   layers:
   - Default
   - TransparentFX

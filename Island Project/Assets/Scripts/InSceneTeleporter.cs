@@ -9,12 +9,15 @@ public class InSceneTeleporter : MonoBehaviour {
 
     [SerializeField] Transform _destination;
     [SerializeField] bool _isActive;
+    Animator _canvas;
     Transform _player;
     Transform _camSys;
     DialogTrigger _dt;
+    bool _init = false;
 
 
     private void Start() {
+        _canvas = GameObject.FindGameObjectWithTag("TransitionCanvas").GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _camSys = GameObject.FindGameObjectWithTag("CameraSystem").transform;
         _dt = GetComponent<DialogTrigger>();
@@ -30,11 +33,22 @@ public class InSceneTeleporter : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == GameObject.FindGameObjectWithTag("Player")) {
             if (_isActive) {
-                ///------------transition-----------------
-                _player.position = _destination.position;
-                _player.rotation = _destination.rotation;
-                _camSys.rotation = _destination.rotation;
+                _init = false;
+                _canvas.SetTrigger("Door");
+                GameManager.Instance.PlayerInput = false;
+                Invoke("Teleport", 0.5f);
             }
         }
-    }  
+    }
+
+    void Teleport() {
+        if (!_init) {
+            _player.position = _destination.position;
+            _player.rotation = _destination.rotation;
+            _camSys.rotation = _destination.rotation;
+            _init = true;
+            Invoke("Teleport",0.3f);
+        }
+        GameManager.Instance.PlayerInput = true;
+    }
 }

@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour {
                 _gameMode = GameMode.COMBAT;
                 break;
             case 2:
+                Debug.Log("button working");
                 _gameMode = GameMode.EXPLORE;
                 _contactEnemy.Dead();
                 //_mapEnemies.Remove(_contactEnemy.gameObject);
