@@ -11,6 +11,7 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] CameraShake _combatCam;
     [SerializeField] Image _playerFace;
     [SerializeField] Animator _playerAnim;
+    [SerializeField] KeySpawner _kSpawner;
 
     private Enemy _enemy;
     enum Turn { ENEMY, PLAYER };
@@ -131,6 +132,7 @@ public class CombatManager : MonoBehaviour {
             GameManager.Instance.EndCombat(true);
         }
     }
+
     private void OnDisable() {
         _endGame = false;
         _endTurn = false;
@@ -140,4 +142,6 @@ public class CombatManager : MonoBehaviour {
             _enemy.Revive();
         }
     }
+
+
 }
