@@ -10,25 +10,43 @@ public class KeySpawner : MonoBehaviour
     [SerializeField] GameObject _SpawnPoint;
     List<GameObject> _keys;
 
+    //DDR game
+    [Header("DDR Config")]
+    [SerializeField] float _keySpeed = 1.0f;
+    [SerializeField] float _keyDelay = 2.0f;
+    [SerializeField] float _initDelay = 1.0f;
+    [SerializeField] int _keyCant = 10;
+
     bool _active = false;
+
+    public static KeySpawner Instance { get; private set; }
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Start()
     {
+        _keys = new List<GameObject>();
         //startGame(1.0f,2.0f,1.0f);
     }
-    public void startGame(float initDelay ,float keyDelay, float keySpeed)
+    public void StartGame()
     {
-        stopGame();
+        Debug.Log("DDRSTART   " + gameObject.name);
+        StopGame();
         _active = true;
-        StartCoroutine(DDRUpdate(initDelay,keyDelay,keySpeed));
+        StartCoroutine(DDRUpdate());
     }
-    public void stopGame(){
+    public void StopGame(){
         _active = false;
         _keys.Clear();
     }
 
-    IEnumerator DDRUpdate(float initDelay = 1.0f, float keyDelay = 1.0f, float keySpeed = 1.0f){
-        yield return new WaitForSeconds(initDelay);
+    IEnumerator DDRUpdate(){
+        yield return new WaitForSeconds(_initDelay);
         int keycont = 0;
         int rand;
         while (_active)
@@ -38,17 +56,17 @@ public class KeySpawner : MonoBehaviour
             GameObject go = Instantiate(_keyPrefab[rand], transform);
             _keys.Add(go);
             DDRKey key = go.GetComponent<DDRKey>();
-            key.speed = keySpeed;
+            key.speed = _keySpeed;
             key.setTarget(_EndZone);
-            yield return new WaitForSeconds(keyDelay);
-            if(CombatManager.Instance.keyCant == keycont && _keys.Count == 0){
-                CombatManager.Instance.stopDDR();
+            yield return new WaitForSeconds(_keyDelay);
+            if(_keyCant == keycont && _keys.Count == 0){
+                StopGame();
             }
         }
         yield return null;
     }
 
-    public void removeKey(GameObject go){
+    public void RemoveKey(GameObject go){
         foreach (GameObject key in _keys){
             if(key == go){
                 _keys.Remove(key);
@@ -56,20 +74,20 @@ public class KeySpawner : MonoBehaviour
             }
         }
     }
-    public void inputAttack(DDRKey.KeyTypes type){
+    public void InputAttack(DDRKey.KeyTypes type){
         DDRKey target = _keys[0].GetComponent<DDRKey>();
         if (target != null && target.KeyType == type)
         {
-            CombatManager.Instance.killKey(target.gameObject);
-            removeKey(target.gameObject);
+            CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.KILL,target.gameObject);
+            RemoveKey(target.gameObject);
         }
         else
         {
-            CombatManager.Instance.missKey();
+            CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.MISS, null);
         }
     }
 
-    public bool active
+    public bool Active
     {
         get { return _active; }
         set { _active = value; }

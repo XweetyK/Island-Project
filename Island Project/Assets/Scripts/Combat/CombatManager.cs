@@ -13,14 +13,6 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] Animator _playerAnim;
     [SerializeField] KeySpawner _kSpawner;
 
-    //DDR game
-    [Header("DDR Config")]
-    [SerializeField] float _keySpeed = 1.0f;
-    [SerializeField] float _keyDelay = 2.0f;
-    [SerializeField] float _initDelay = 1.0f;
-    [SerializeField] int _keyCant = 10;
-    private float score = 0;
-
     private Enemy _enemy;
     enum Turn { ENEMY, PLAYER };
     Turn _turn;
@@ -122,49 +114,6 @@ public class CombatManager : MonoBehaviour {
         _endTurn = true;
     }
 
-    //DDR
-    public void startDDR(){
-        if (_kSpawner){
-            _kSpawner.startGame(_initDelay,_keyDelay,_keySpeed);
-        }
-    }
-
-    public void stopDDR(){
-        if (_kSpawner)
-        {
-            _kSpawner.stopGame();
-        }
-    }
-    public void checkKey(int input){
-        switch (input){
-            case 1:
-                _kSpawner.inputAttack(DDRKey.KeyTypes.UP);
-                break;
-            case 2:
-                _kSpawner.inputAttack(DDRKey.KeyTypes.DOWN);
-                break;
-            case 3:
-                _kSpawner.inputAttack(DDRKey.KeyTypes.LEFT);
-                break;
-            case 4:
-                _kSpawner.inputAttack(DDRKey.KeyTypes.RIGHT);
-                break;
-        }
-    }
-
-    public void loseKey(GameObject go){
-        _kSpawner.removeKey(go);
-        score -= 10;
-    }
-
-    public void killKey(GameObject go){
-        score += 5;
-    }
-
-    public void missKey(){
-        score -= 5;
-    }
-
     IEnumerator TakeDamage(int damage, float delay) {
         yield return new WaitForSeconds(delay);
         _playerAnim.SetTrigger("_damaged");
@@ -194,8 +143,5 @@ public class CombatManager : MonoBehaviour {
         }
     }
 
-    public float keyCant
-    {
-        get { return _keyCant; }
-    }
+
 }

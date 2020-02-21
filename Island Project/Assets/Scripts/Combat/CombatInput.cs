@@ -7,21 +7,22 @@ public class CombatInput : MonoBehaviour {
 
     enum InputCombo { NONE, ATTACK, SPECIAL, DEFENSE, RUN, ITEM };
     enum State { STARTTURN, COMBO, SENT, MISSED, ENDTURN, DDR };
+    public enum DDRInput { NONE, KILL, MISS, LOSE };
     [SerializeField] private float _limitTime;
     [SerializeField] private Sprite _arrowFilled;
     [SerializeField] private Sprite _arrowCommon;
     [SerializeField] private Sprite _blueBox;
     [SerializeField] private Image[] _attackArrows;
     [SerializeField] private Image[] _defenseArrows;
-    [SerializeField] private Image[] _specialArrows;
     [SerializeField] private Image _timerBarFill;
     [SerializeField] private Image _missedBox;
     [SerializeField] private Animator _missedAnim;
     [SerializeField] [Range(0.0f, 1.0f)] private float _arrowOpacity;
     [SerializeField] Animator _UiAnimator;
+    
+    private float score = 0;
 
     private int[] _attackCombo = new int[10] { 1, 1, 2, 1, 3, 4, 3, 4, 2, 2 };
-    private int[] _specialCombo = new int[10] { 3, 3, 4, 2, 2, 1, 3, 1, 3, 4 };
     private int[] _defenseCombo = new int[10] { 4, 4, 1, 1, 4, 4, 3, 3, 2, 2 };
     private int[] _actualCombo = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
@@ -32,12 +33,14 @@ public class CombatInput : MonoBehaviour {
     private bool _blocked = false;
     private float _time;
     private int _multiplyFactor = 0;
-    private bool _paused = false;
 
     private int _damageDone = 0;
 
     private Color _opacityBack;
     private Color _opacityHeld;
+
+    //DDR------------------------
+    KeySpawner _kSpawner;
 
     public static CombatInput Instance { get; private set; }
     void Awake() {
@@ -49,6 +52,7 @@ public class CombatInput : MonoBehaviour {
     }
     private void Start() {
         _level = CharacterStats.Instance.Level;
+        _kSpawner = KeySpawner.Instance;
         _time = _limitTime;
         _opacityBack = _opacityHeld = Color.white;
         _opacityBack.a = _arrowOpacity;
@@ -57,13 +61,11 @@ public class CombatInput : MonoBehaviour {
             for (int i = _level; i < 10; i++) {
                 _attackArrows[i].gameObject.SetActive(false);
                 _defenseArrows[i].gameObject.SetActive(false);
-                _specialArrows[i].gameObject.SetActive(false);
             }
         }
 
         for (int i = 0; i < _level; i++) {
             _attackArrows[i].color = _opacityBack;
-            _specialArrows[i].color = _opacityBack;
             _defenseArrows[i].color = _opacityBack;
         }
     }
@@ -81,7 +83,9 @@ public class CombatInput : MonoBehaviour {
         }
         switch (_state) {
             case State.COMBO:
-                Timer();
+                if (_iCombo != InputCombo.SPECIAL) {
+                    Timer();
+                }
                 break;
             case State.SENT:
                 Send();
@@ -123,26 +127,13 @@ public class CombatInput : MonoBehaviour {
                 ComboCheck();
             }
         } else {
-            _state = State.SENT;
+            if (_iCombo != InputCombo.SPECIAL) {
+                _state = State.SENT;
+            }
         }
 
         if (Input.GetButtonDown("Space")) {
             _state = State.SENT;
-        }
-    }
-
-    void DDRInput(){
-        if (Input.GetButtonDown("Up")){
-            CombatManager.Instance.checkKey(1);
-        }
-        if (Input.GetButtonDown("Down")){
-            CombatManager.Instance.checkKey(2);
-        }
-        if (Input.GetButtonDown("Left")){
-            CombatManager.Instance.checkKey(3);
-        }
-        if (Input.GetButtonDown("Right")){
-            CombatManager.Instance.checkKey(4);
         }
     }
 
@@ -171,16 +162,15 @@ public class CombatInput : MonoBehaviour {
                     _multiplyFactor = 1;
                 } else { _state = State.MISSED; _multiplyFactor = 0; }
                 break;
+            case InputCombo.SPECIAL:
+                _blocked = true;
+                StartDDR();
+                Debug.Log("special, nothing should happen");
+                break;
             case InputCombo.DEFENSE:
                 if (_actualCombo[_cont] == _defenseCombo[_cont]) {
                     _cont++;
                     _multiplyFactor = 1;
-                } else { _state = State.MISSED; _multiplyFactor = 0; }
-                break;
-            case InputCombo.SPECIAL:
-                if (_actualCombo[_cont] == _specialCombo[_cont]) {
-                    _cont++;
-                    _multiplyFactor = 2;
                 } else { _state = State.MISSED; _multiplyFactor = 0; }
                 break;
         }
@@ -230,6 +220,43 @@ public class CombatInput : MonoBehaviour {
         }
     }
 
+    //DDR---------------------------------------------------------------------
+    public void StartDDR() {
+        _kSpawner.StartGame();
+    }
+
+    public void CheckDDRKey(int input) {
+        switch (input) {
+            case 1:
+                _kSpawner.InputAttack(DDRKey.KeyTypes.UP);
+                break;
+            case 2:
+                _kSpawner.InputAttack(DDRKey.KeyTypes.DOWN);
+                break;
+            case 3:
+                _kSpawner.InputAttack(DDRKey.KeyTypes.LEFT);
+                break;
+            case 4:
+                _kSpawner.InputAttack(DDRKey.KeyTypes.RIGHT);
+                break;
+        }
+    }
+
+    public void GetDDRInput(DDRInput key, GameObject go) {
+        switch (key) {
+            case DDRInput.KILL:
+                score += 5;
+                break;
+            case DDRInput.MISS:
+                score -= 5;
+                break;
+            case DDRInput.LOSE:
+                _kSpawner.RemoveKey(go);
+                score -= 10;
+                break;
+        }
+    }
+
     //Visual UI-------------------------------
     void UpdateArrows() {
         switch (_state) {
@@ -240,7 +267,6 @@ public class CombatInput : MonoBehaviour {
                 _UiAnimator.SetBool("Special", false);
                 for (int i = 0; i < 10; i++) {
                     _attackArrows[i].sprite = _arrowCommon;
-                    _specialArrows[i].sprite = _arrowCommon;
                     _defenseArrows[i].sprite = _arrowCommon;
                 }
                 break;
@@ -296,9 +322,6 @@ public class CombatInput : MonoBehaviour {
             case InputCombo.ATTACK:
                 _attackArrows[_cont - 1].color = _opacityHeld;
                 break;
-            case InputCombo.SPECIAL:
-                _specialArrows[_cont - 1].color = _opacityHeld;
-                break;
             case InputCombo.DEFENSE:
                 _defenseArrows[_cont - 1].color = _opacityHeld;
                 break;
@@ -309,11 +332,6 @@ public class CombatInput : MonoBehaviour {
             case InputCombo.ATTACK:
                 for (int i = 0; i < _level; i++) {
                     _attackArrows[i].color = _opacityBack;
-                }
-                break;
-            case InputCombo.SPECIAL:
-                for (int i = 0; i < _level; i++) {
-                    _specialArrows[i].color = _opacityBack;
                 }
                 break;
             case InputCombo.DEFENSE:
@@ -330,11 +348,6 @@ public class CombatInput : MonoBehaviour {
                     _attackArrows[i].sprite = _arrowFilled;
                 }
                 break;
-            case InputCombo.SPECIAL:
-                for (int i = 0; i < _cont; i++) {
-                    _specialArrows[i].sprite = _arrowFilled;
-                }
-                break;
             case InputCombo.DEFENSE:
                 for (int i = 0; i < _cont; i++) {
                     _defenseArrows[i].sprite = _arrowFilled;
@@ -347,11 +360,6 @@ public class CombatInput : MonoBehaviour {
             case InputCombo.ATTACK:
                 for (int i = 0; i < _level; i++) {
                     _attackArrows[i].color = _opacityBack;
-                }
-                break;
-            case InputCombo.SPECIAL:
-                for (int i = 0; i < _level; i++) {
-                    _specialArrows[i].color = _opacityBack;
                 }
                 break;
             case InputCombo.DEFENSE:
