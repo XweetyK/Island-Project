@@ -158,7 +158,6 @@ public class CombatManager : MonoBehaviour {
     }
 
     public void killKey(GameObject go){
-        _kSpawner.removeKey(go);
         score += 5;
     }
 

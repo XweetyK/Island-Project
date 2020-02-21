@@ -18,6 +18,7 @@ public class KeySpawner : MonoBehaviour
     }
     public void startGame(float initDelay ,float keyDelay, float keySpeed)
     {
+        stopGame();
         _active = true;
         StartCoroutine(DDRUpdate(initDelay,keyDelay,keySpeed));
     }
@@ -60,6 +61,7 @@ public class KeySpawner : MonoBehaviour
         if (target != null && target.KeyType == type)
         {
             CombatManager.Instance.killKey(target.gameObject);
+            removeKey(target.gameObject);
         }
         else
         {
