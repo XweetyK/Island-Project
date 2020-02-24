@@ -8,7 +8,7 @@ public class DDRKey : MonoBehaviour
     public enum KeyTypes { UP = 0, DOWN, LEFT, RIGHT };
 
     [SerializeField] KeyTypes _type;
-    float _speed;
+    float _speed = 1.0f;
     GameObject _target;
 
     private void LateUpdate()
