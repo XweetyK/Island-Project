@@ -132,7 +132,7 @@ public class CombatInput : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Space")) {
+        if (Input.GetButtonDown("Space") && _iCombo != InputCombo.SPECIAL) {
             _state = State.SENT;
         }
     }

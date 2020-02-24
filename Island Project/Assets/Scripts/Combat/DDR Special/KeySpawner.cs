@@ -53,11 +53,11 @@ public class KeySpawner : MonoBehaviour
         {
             rand = Random.Range(0, _keyPrefab.Length - 1);
             keycont++;
-            GameObject go = Instantiate(_keyPrefab[rand], transform);
-            _keys.Add(go);
+            GameObject go = Instantiate(_keyPrefab[rand], _SpawnPoint.transform);
             DDRKey key = go.GetComponent<DDRKey>();
             key.speed = _keySpeed;
             key.setTarget(_EndZone);
+            _keys.Add(go);
             yield return new WaitForSeconds(_keyDelay);
             if(_keyCant == keycont && _keys.Count == 0){
                 StopGame();
