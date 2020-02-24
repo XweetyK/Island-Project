@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\EnemyMov.cs" />
     <Compile Include="Assets\Scripts\Events\CinematicController.cs" />
     <Compile Include="Assets\Scripts\Events\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Events\InCutsceneDialog.cs" />
     <Compile Include="Assets\Scripts\Events\IntroManager.cs" />
     <Compile Include="Assets\Scripts\Events\ZoneEventsController.cs" />
     <Compile Include="Assets\Scripts\FacesReferences.cs" />

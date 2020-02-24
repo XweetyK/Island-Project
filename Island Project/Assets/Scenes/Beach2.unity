@@ -5194,6 +5194,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8173435373473658926, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8173435372058662233, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -5233,11 +5238,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.17222223
-      objectReference: {fileID: 0}
-    - target: {fileID: 8173435373473658926, guid: 178717b3cec425c4d9d22efe1bd5e2e8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 178717b3cec425c4d9d22efe1bd5e2e8, type: 3}
@@ -8256,6 +8256,16 @@ PrefabInstance:
       propertyPath: _combatCam
       value: 
       objectReference: {fileID: 1994812829}
+    - target: {fileID: 1890402594883568603, guid: 7b22aade569ca1a4899496d6e0d84454,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.0899963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890402594883568603, guid: 7b22aade569ca1a4899496d6e0d84454,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 17.200005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b22aade569ca1a4899496d6e0d84454, type: 3}
 --- !u!95 &913051127 stripped
@@ -12143,7 +12153,7 @@ MonoBehaviour:
   - {fileID: 7566744698581994310, guid: 0fffb3d1ddaf7b24b9c73376e6a59a33, type: 3}
   _EndZone: {fileID: 632141114}
   _SpawnPoint: {fileID: 1960155176}
-  _keySpeed: 1
+  _keySpeed: 200
   _keyDelay: 2
   _initDelay: 1
   _keyCant: 10

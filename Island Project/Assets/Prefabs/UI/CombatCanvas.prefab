@@ -2416,6 +2416,7 @@ MonoBehaviour:
   _combatCam: {fileID: 0}
   _playerFace: {fileID: 1890402593982711027}
   _playerAnim: {fileID: 5641671809937376104}
+  _kSpawner: {fileID: 0}
 --- !u!95 &5818919707813058994
 Animator:
   serializedVersion: 3
@@ -3449,17 +3450,6 @@ MonoBehaviour:
   - {fileID: 1890402594240851061}
   - {fileID: 1890402593445400102}
   - {fileID: 1890402594230099246}
-  _specialArrows:
-  - {fileID: 1890402593115143844}
-  - {fileID: 1890402593351002189}
-  - {fileID: 1890402593196018765}
-  - {fileID: 1890402593329136457}
-  - {fileID: 1890402594980721113}
-  - {fileID: 1890402593798941729}
-  - {fileID: 1890402594877858396}
-  - {fileID: 1890402593593184735}
-  - {fileID: 1890402593144751822}
-  - {fileID: 1890402593783381234}
   _timerBarFill: {fileID: 1890402593458050017}
   _missedBox: {fileID: 1962989764763118257}
   _missedAnim: {fileID: 1312902265266457732}
