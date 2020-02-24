@@ -7,6 +7,7 @@ public class EnemyMov : MonoBehaviour {
     [SerializeField] float _maxDistance;
     [SerializeField] GameObject _head;
     [SerializeField] float _runningSpeed;
+    [SerializeField] bool _justAnim;
     private Animator _anim;
     private GameObject _playerPos;
     private enum State { PATROL, ALERT, DETECTED, DEAD, COMBAT };
@@ -75,27 +76,29 @@ public class EnemyMov : MonoBehaviour {
     }
 
     private void Animations() {
-        switch (_state) {
-            case State.PATROL:
-                PatrolBehavior();
-                break;
-            case State.ALERT:
-                AlertBehavior();
-                break;
-            case State.DETECTED:
-                DetectedBehavior();
-                break;
-            case State.COMBAT:
-                Debug.Log("Combat");
-                break;
-            case State.DEAD:
-                GameManager.Instance.RemoveEnemy(this.gameObject);
-                _anim.SetBool("_walking", false);
-                _anim.SetBool("_running", false);
-                _anim.SetBool("_dead", true);
-                _anim.SetBool("_dissolve", true);
-                _nma.isStopped = true;
-                break;
+        if (!_justAnim) {
+            switch (_state) {
+                case State.PATROL:
+                    PatrolBehavior();
+                    break;
+                case State.ALERT:
+                    AlertBehavior();
+                    break;
+                case State.DETECTED:
+                    DetectedBehavior();
+                    break;
+                case State.COMBAT:
+                    Debug.Log("Combat");
+                    break;
+                case State.DEAD:
+                    GameManager.Instance.RemoveEnemy(this.gameObject);
+                    _anim.SetBool("_walking", false);
+                    _anim.SetBool("_running", false);
+                    _anim.SetBool("_dead", true);
+                    _anim.SetBool("_dissolve", true);
+                    _nma.isStopped = true;
+                    break;
+            }
         }
         if (_nma.velocity == Vector3.zero) {
             _anim.SetBool("_walking", false);
@@ -190,7 +193,9 @@ public class EnemyMov : MonoBehaviour {
         if (!_alreadyDead) {
             transform.LookAt(_playerPos.transform);
         }
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        if (!_justAnim) {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
         _state = State.DEAD;
         Invoke("Dead", 3.5f);
         if (_alreadyDead) {
