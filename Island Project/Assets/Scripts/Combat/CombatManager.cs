@@ -60,7 +60,7 @@ public class CombatManager : MonoBehaviour {
             //The enemy is defending--------------
             return -1;
         } else {
-            int _d = damage - defense;
+            int _d = Mathf.RoundToInt(damage * damage / (damage + defense));
             return _d;
         }
     }
