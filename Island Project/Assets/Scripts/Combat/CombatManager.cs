@@ -129,7 +129,9 @@ public class CombatManager : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         if (!_endGame) {
             _endGame = true;
-            GameManager.Instance.EndCombat(true);
+            int exp = 3;
+            bool didLevelUp = CharacterStats.Instance.sumXP(exp);
+            GameManager.Instance.EndCombat(true, "ORDER" , exp, didLevelUp);
         }
     }
 

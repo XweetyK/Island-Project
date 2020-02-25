@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public enum GameMode { EXPLORE, COMBAT };
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour {
     List<GameObject> _mapEnemies;
     [SerializeField] Animator _effectTransition;
     [SerializeField] Animator _combatCanvasAnim;
+
+    //UI elements
+    [Header("Ui elements")]
+    [SerializeField] GameObject winnerText;
 
     bool _readyCombat = false;
     bool _readyExplore = false;
@@ -138,6 +143,25 @@ public class GameManager : MonoBehaviour {
         switch (won) {
             case true:
                 _effectTransition.SetBool("_win", true);
+                break;
+            case false:
+                break;
+        }
+    }
+
+    public void EndCombat(bool won, string name, int exp, bool levelUp)
+    {
+        switch (won)
+        {
+            case true:
+                _effectTransition.SetBool("_win", true);
+                Text winText = winnerText.GetComponent<Text>();
+                if(winText != null){
+                    winText.text = name + " was defeated." + "\n" + exp + " experience obtained.";
+                }
+                if (levelUp){
+                    //LEVEL UP NOTIFICATION
+                }
                 break;
             case false:
                 break;
