@@ -15,6 +15,10 @@ public class PlayerMov : MonoBehaviour {
     [SerializeField] float _rotSpeed;
 
     [SerializeField] string _interactLayer = "Interactable";
+
+    [SerializeField] AudioSource _audioSrc;
+    [SerializeField] AudioClip _walk;
+    [SerializeField] AudioClip _run;
     Vector3 MovementDirection;
     Rigidbody _rb;
     float _angle;
@@ -109,6 +113,21 @@ public class PlayerMov : MonoBehaviour {
     void UpdateAnimator() {
         _animator.SetBool("Walking", _isWalking);
         _animator.SetBool("Running", _isRunning);
+        if (_isWalking && !_isRunning) {
+            _audioSrc.clip = _walk;
+            if (!_audioSrc.isPlaying) {
+                _audioSrc.Play();
+            }
+        }
+        if (_isWalking && _isRunning) {
+            _audioSrc.clip = _run;
+            if (!_audioSrc.isPlaying) {
+                _audioSrc.Play();
+            }
+        }
+        if(!_isWalking && !_isRunning) {
+            _audioSrc.Stop();
+        }
     }
 
     void WaterAnim() {

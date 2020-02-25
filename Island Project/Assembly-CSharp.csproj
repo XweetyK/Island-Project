@@ -95,9 +95,14 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlitchFace.cs" />
     <Compile Include="Assets\Scripts\InSceneTeleporter.cs" />
+    <Compile Include="Assets\Scripts\NPC\DJ.cs" />
     <Compile Include="Assets\Scripts\NPC\FollowUsername.cs" />
     <Compile Include="Assets\Scripts\NPC\NpcBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SaveLoader.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SaveSystem.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SettingsData.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SettingsManager.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

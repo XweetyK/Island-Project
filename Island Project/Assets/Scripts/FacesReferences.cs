@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Characters { HERO, CRIS, ORDER };
+public enum Characters { HERO, CRIS, ORDER, ICON };
 public class FacesReferences : MonoBehaviour {
     [SerializeField] private Sprite[] _crisFaces;
     [SerializeField] private Sprite[] _heroFaces;
     [SerializeField] private Sprite[] _orderFaces;
+    [SerializeField] private Sprite[] _icons;
 
     public static FacesReferences Instance { get; private set; }
     void Awake() {

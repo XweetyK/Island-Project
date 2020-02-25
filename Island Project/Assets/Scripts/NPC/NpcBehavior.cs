@@ -8,6 +8,9 @@ public class NpcBehavior : MonoBehaviour {
     [SerializeField] private State _state;
     [SerializeField] private bool _talking;
     [SerializeField] private bool _fem;
+    [SerializeField] AudioClip _walkSfx;
+    [SerializeField] AudioClip _stopWalkSfx;
+    [SerializeField] AudioSource _audioSrc;
     private Animator _anim;
     private NavMeshAgent _nma;
     float _timer=0;
@@ -36,12 +39,19 @@ public class NpcBehavior : MonoBehaviour {
         switch (_state) {
             case State.ROAMING:
                 if (_nma.velocity.x != 0 && _nma.velocity.z != 0) {
+                    _audioSrc.clip = _walkSfx;
+                    _audioSrc.loop = true;
+                    if (!_audioSrc.isPlaying) {
+                        _audioSrc.Play();
+                    }
                     if (_fem) {
                         _anim.SetBool("FemWalk", true);
                     } else {
                         _anim.SetBool("Walk", true);
                     }
-                } else { _anim.SetBool("Walk", false); _anim.SetBool("FemWalk", false); }
+                } else {
+                    _anim.SetBool("Walk", false); _anim.SetBool("FemWalk", false);
+                    _audioSrc.clip = _stopWalkSfx; _audioSrc.loop = false; }
                 break;
             case State.SITTING:
                 if (_fem) {

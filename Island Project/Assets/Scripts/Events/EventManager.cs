@@ -20,6 +20,7 @@ public class EventManager : MonoBehaviour
         events.Add("crisDialog2", false);
         events.Add("orderInit", false);
         events.Add("orderInitEnd", false);
+        events.Add("DJCoffeeChat", false);
     }
 
     public void UpdateEvent(string key, bool value) {
