@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
     [Header("Character Stats")]
-    [SerializeField] private int _maxLife;
-    [SerializeField] private int _attack;
-    [SerializeField] private int _defense;
-    [SerializeField] private int _specialAttack;
-    [SerializeField] private int _specialDefense;
-    [SerializeField] private int _speed;
+    [SerializeField] private int _baseMaxLife;
+    [SerializeField] private int _baseAttack;
+    [SerializeField] private int _baseDefense;
+    [SerializeField] private int _baseSpecialAttack;
+    [SerializeField] private int _baseSpecialDefense;
+    [SerializeField] private int _baseSpeed;
+
+    private int _maxLife;
+    private int _attack;
+    private int _defense;
+    private int _specialAttack;
+    private int _specialDefense;
+    private int _speed;
 
     [Header("Current State")]
     [SerializeField] private int _level;
     [SerializeField] private int _missChance;
-    [SerializeField] private int _health;
+    private int _health;
 
     [Header("Stat Growth")]
     [SerializeField] [Range(0.0f, 1.0f)] private float _maxLifeGrowth;
@@ -34,6 +41,12 @@ public class CharacterStats : MonoBehaviour {
         } else {
             Destroy(this.gameObject);
         }
+    }
+
+    public void Start()
+    {
+        updateStats();
+        _health = _maxLife;
     }
 
     public int Health{
@@ -73,23 +86,35 @@ public class CharacterStats : MonoBehaviour {
     public void SumDefense(int plusDefense) {
         _defense += plusDefense;
     }
-    public void sumXP (int plusXP) {
+    public bool sumXP (int plusXP) {
+        bool didLevelUp = false;
         _xp += plusXP;
         if(_xp > _xpLimit){
             _xp = _xpLimit;
+            LevelUp();
+            didLevelUp = true;
         }
-        LevelUp();
+        return didLevelUp;
+    }
+
+    private void updateStats(){
+        _maxLife = Mathf.FloorToInt(_baseMaxLife + _level * _maxLifeGrowth);
+        _attack = Mathf.FloorToInt(_baseAttack + _level * _attackGrowth);
+        _defense = Mathf.FloorToInt(_baseDefense + _level * _defenseGrowth);
+        _specialAttack = Mathf.FloorToInt(_baseAttack + _level * _specialAttackGrowth);
+        _specialDefense = Mathf.FloorToInt(_baseDefense + _level * _specialDefense);
+        _speed = Mathf.FloorToInt(_baseSpeed + _level * _speedGrowth);
+        _xpLimit = nextLevel(_level);
     }
 
     private void LevelUp() {
         _level++;
-        _maxLife = Mathf.FloorToInt(_level * _maxLifeGrowth);
-        _attack = Mathf.FloorToInt(_level * _attackGrowth);
-        _defense = Mathf.FloorToInt(_level * _defenseGrowth);
-        _specialAttack = Mathf.FloorToInt(_level * _specialAttackGrowth);
-        _specialDefense = Mathf.FloorToInt(_level * _specialDefense);
-        _speed = Mathf.FloorToInt(_level * _speedGrowth);
+        updateStats();
         _xp = 0;
-        _xpLimit = Mathf.FloorToInt(_xpLimit * 1.2f);
+        _health = _maxLife;
+    }
+
+    private int nextLevel(int level){
+        return Mathf.RoundToInt(0.04f * (level ^ 3) + 0.8f * (level ^ 2) + 2 * level);
     }
 }

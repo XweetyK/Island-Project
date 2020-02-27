@@ -52,7 +52,7 @@ public class CommonOrderEnemy : Enemy
         _messageAnim.SetTrigger("_enemyTurn");
         int rand = Random.Range(0, 100);
         if (rand > _missChance) {
-            int _a = _attack * 5;
+            int _a = _attack * 3;
             Invoke("CamShake", 1.2f);
             return _a;
         } else { return Miss(); }
