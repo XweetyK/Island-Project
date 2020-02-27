@@ -26,6 +26,7 @@ public class IntroManager : MonoBehaviour
     private void Start()
     {
         if (!EventManager.Instance.GetEvent("initIntro")) {
+            _director.Play();
             StartCoroutine(Writting());
             _hero.transform.position = _initialTarget.position;
             _hero.transform.rotation = _initialTarget.rotation;
@@ -33,6 +34,7 @@ public class IntroManager : MonoBehaviour
             _cris.SetActive(false);
             _canvas.enabled = false;
             //GameManager.Instance.PlayerInput = false;
+            GameManager.Instance.Pausable = false;
 
             Invoke("StartGame", 46.2f);
         } else {
@@ -66,6 +68,7 @@ public class IntroManager : MonoBehaviour
     void StartGame() {
         if (!EventManager.Instance.GetEvent("initIntro")) {
             _director.Stop();
+            GameManager.Instance.Pausable = true;
             Destroy(_director.gameObject);
             foreach (GameObject dlt in _delete) {
                 Destroy(dlt);

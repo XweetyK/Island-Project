@@ -14,7 +14,7 @@ public class SettingsManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (SaveSystem.LoadSettings() != null) {
-            settings = new SettingsData(1,1);
+            settings = new SettingsData(0.7f,0.7f,true,true,1);
         } else {settings= SaveSystem.LoadSettings(); }
     }
 
@@ -25,7 +25,6 @@ public class SettingsManager : MonoBehaviour
         if (_audio != null) {
             UpdateAudio();
         }
-        Debug.Log(_audio);
     }
 
     public void UpdateSources() {

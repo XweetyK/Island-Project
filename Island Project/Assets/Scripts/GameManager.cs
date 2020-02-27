@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Animator _effectTransition;
     [SerializeField] Animator _combatCanvasAnim;
 
+    bool _pausable = true;
+
     bool _readyCombat = false;
     bool _readyExplore = false;
 
@@ -106,7 +108,7 @@ public class GameManager : MonoBehaviour {
         _combatCanvasAnim.SetTrigger("_combatStart");
     }
 
-    public bool PlayerInput{
+    public bool PlayerInput {
         get { return _playerInput; }
         set { _playerInput = value; }
     }
@@ -115,11 +117,11 @@ public class GameManager : MonoBehaviour {
         _contactEnemy = enemy;
     }
 
-    public void ChangeGameMode (GameMode mode){
+    public void ChangeGameMode(GameMode mode) {
         _gameMode = mode;
     }
 
-    public void ChangeGameMode (int mode){
+    public void ChangeGameMode(int mode) {
         switch (mode) {
             case 1:
                 _gameMode = GameMode.COMBAT;
@@ -149,5 +151,10 @@ public class GameManager : MonoBehaviour {
     }
     public void RemoveEnemy(GameObject enemy) {
         _mapEnemies.Remove(enemy);
+    }
+
+   public bool Pausable {
+        get { return _pausable; }
+        set { _pausable = value; }
     }
 }

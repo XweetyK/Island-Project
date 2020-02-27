@@ -24,17 +24,30 @@ public class SceneLoader : MonoBehaviour {
     public void LoadScene(string sceneName) {
         _bar.fillAmount = 0;
         switch (sceneName) {
-            case "City":
+            case "FirstCity":
                 _portal.text = "Now entering [C I T Y]";
+                _sceneName = "City";
+                break;
+            case "FirstBeach2":
+                _portal.text = "Now entering [B E A C H]";
+                _sceneName = "Beach2";
+                break;
+            case "City":
+                _portal.text = "Now returning to [P A R A D I S E]";
                 _sceneName = sceneName;
                 break;
             case "Beach2":
-                _portal.text = "Now entering [B E A C H]";
+                _portal.text = "Now returning to [P A R A D I S E]";
                 _sceneName = sceneName;
                 break;
-            case "StartGame":
+            case "NewGame":
                 _portal.text = "Now entering [P A R A D I S E]";
+                EventManager.Instance.ResetEvents();
                 _sceneName = "Beach2";
+                break;
+            case "MainMenu":
+                _portal.text = "You're now leaving [P A R A D I S E]";
+                _sceneName = "MainMenu";
                 break;
             default:
                 _portal.text = "Now entering [? ? ?]";
@@ -59,10 +72,8 @@ public class SceneLoader : MonoBehaviour {
                 UpdateProgressUI(_operation.progress);
                 yield return null;
             }
+            UpdateProgressUI(_operation.progress);
         }
-        UpdateProgressUI(_operation.progress);
-        _operation = null;
-        _anim.SetBool("Loading", false);
     }
 
     private void UpdateProgressUI(float progress) {

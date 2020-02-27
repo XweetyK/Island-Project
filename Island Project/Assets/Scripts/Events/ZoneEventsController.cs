@@ -20,6 +20,12 @@ public class ZoneEventsController : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+    private void Start() {
+        if (EventManager.Instance.GetEvent("loadedGame")) {
+            GameObject.FindObjectOfType<PlayerMov>().transform.position = new Vector3(SaveGameManager.Instance.gameData._playerPos[0], SaveGameManager.Instance.gameData._playerPos[1], SaveGameManager.Instance.gameData._playerPos[2]);
+            EventManager.Instance.UpdateEvent("loadedGame", false);
+        }
+    }
 
     private void Update() {
         CheckEvents();

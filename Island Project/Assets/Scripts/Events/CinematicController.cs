@@ -26,12 +26,14 @@ public class CinematicController : MonoBehaviour {
             if (EventManager.Instance.GetEvent(_activatedBy)) {
                 if (!_active) {
                     _dir.Play();
+                    GameManager.Instance.Pausable = false;
                     _active = true;
                 }
             }
         } else {
             if (!_active) {
                 _dir.Play();
+                GameManager.Instance.Pausable = false;
                 _active = true;
             }
         }
@@ -45,6 +47,7 @@ public class CinematicController : MonoBehaviour {
                     }
                 }
                 if (_duration >= _animDuration) {
+                    GameManager.Instance.Pausable = true;
                     EventManager.Instance.UpdateEvent(_event, true);
                     Destroy(this.gameObject);
                 }

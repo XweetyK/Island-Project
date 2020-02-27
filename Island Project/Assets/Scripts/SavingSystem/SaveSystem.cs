@@ -28,4 +28,29 @@ public static class SaveSystem {
         }
         return null;
     }
+
+    //GAME---------------------------------------------------------------
+    public static void SaveGame(SaveData data) {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/gamedata.ftw";
+
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        SaveData game = data;
+        formatter.Serialize(stream, game);
+        stream.Close();
+    }
+
+    public static SaveData LoadGame() {
+        string path = Application.persistentDataPath + "/gamedata.ftw";
+        if (File.Exists(path)) {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            SaveData game = formatter.Deserialize(stream) as SaveData;
+            stream.Close();
+            return game;
+        }
+        return null;
+    }
 }

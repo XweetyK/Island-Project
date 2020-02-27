@@ -98,7 +98,11 @@
     <Compile Include="Assets\Scripts\NPC\DJ.cs" />
     <Compile Include="Assets\Scripts\NPC\FollowUsername.cs" />
     <Compile Include="Assets\Scripts\NPC\NpcBehavior.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SaveData.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SaveGameManager.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem\SaveGameUpdater.cs" />
     <Compile Include="Assets\Scripts\SavingSystem\SaveLoader.cs" />
     <Compile Include="Assets\Scripts\SavingSystem\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\SavingSystem\SettingsData.cs" />
