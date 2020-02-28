@@ -41,8 +41,8 @@ public class CharacterStats : MonoBehaviour {
         } else {
             Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
-
     public void Start()
     {
         updateStats();
@@ -116,5 +116,31 @@ public class CharacterStats : MonoBehaviour {
 
     private int nextLevel(int level){
         return Mathf.RoundToInt(0.04f * (level ^ 3) + 0.8f * (level ^ 2) + 2 * level);
+    }
+    public void SetStats(int[] stats) {
+        _baseMaxLife = stats[0];
+        _baseAttack = stats[1];
+        _baseDefense = stats[2];
+        _baseSpecialAttack = stats[3];
+        _baseSpecialDefense = stats[4];
+        _baseSpeed = stats[5];
+
+        _level = stats[6];
+        _xp = stats[7];
+
+        updateStats();
+    }
+    public int[] GetStats() {
+        int[] stats = new int[8];
+        stats[0] = _baseMaxLife;
+        stats[1] = _baseAttack;
+        stats[2] = _baseDefense;
+        stats[3] = _baseSpecialAttack;
+        stats[4] = _baseSpecialDefense;
+        stats[5] = _baseSpeed;
+        stats[6] = _level;
+        stats[7] = _xp;
+
+        return stats;
     }
 }

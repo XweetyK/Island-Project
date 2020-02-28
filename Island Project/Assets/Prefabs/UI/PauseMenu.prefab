@@ -1143,7 +1143,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6011692319417321832
 MonoBehaviour:
@@ -1198,6 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 1691445429602516005}
   _animLenght: 0.5
+  _canvas: {fileID: 3113208298933519736}
 --- !u!1 &6270452700707346873
 GameObject:
   m_ObjectHideFlags: 0

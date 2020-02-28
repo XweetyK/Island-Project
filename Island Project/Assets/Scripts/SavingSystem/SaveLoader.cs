@@ -79,7 +79,7 @@ public class SaveLoader : MonoBehaviour {
     public void SaveGame() {
         Debug.Log("Game saved");
         SaveGameManager.Instance.gameData = new SaveData(EventManager.Instance.Events, 
-            GameObject.FindObjectOfType<PlayerMov>().transform, SceneManager.GetActiveScene().name);
+            GameObject.FindObjectOfType<PlayerMov>().transform,CharacterStats.Instance.GetStats(), SceneManager.GetActiveScene().name);
         SaveSystem.SaveGame(SaveGameManager.Instance.gameData);
     }
     public void LoadGame() {
