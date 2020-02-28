@@ -66,14 +66,14 @@ public class CombatManager : MonoBehaviour {
     }
 
     private void UiUpdate() {
-        _playerHealth.fillAmount = ((CharacterStats.Instance.Health * 100) / CharacterStats.Instance.Life) * 0.01f;
+        _playerHealth.fillAmount = ((CharacterStats.Instance.Health * 100) / CharacterStats.Instance.MaxLife) * 0.01f;
         _enemyHealth.fillAmount = ((_enemy.Health() * 100) / _enemy.MaxLife()) * 0.01f;
         if (CharacterStats.Instance.Health > 0) {
             _lifePercent.text = CharacterStats.Instance.Health.ToString();
         } else {
             _lifePercent.text = "0";
         }
-        if (CharacterStats.Instance.Health < CharacterStats.Instance.Life/3) {
+        if (CharacterStats.Instance.Health < CharacterStats.Instance.MaxLife/3) {
             _playerAnim.SetBool("_lowHealth", true);
         }
         if (CharacterStats.Instance.Health <= 0) {

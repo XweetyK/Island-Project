@@ -19,6 +19,7 @@ public class Dialog {
     public DialogTrigger[] activateChat;
     public string[] activateEvents;
     public string[] deactivateByEvent;
+    public string mission;
 
     private DialogTrigger _trigger;
     public DialogTrigger Trigger {

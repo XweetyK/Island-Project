@@ -59,6 +59,10 @@ public class SceneLoader : MonoBehaviour {
     }
 
     private void InitAnimation() {
+        AudioSource[] sounds = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource item in sounds) {
+            item.volume = 0.0f;
+        }
         StartCoroutine(BeginLoad(_sceneName));
         _sceneName = null;
     }

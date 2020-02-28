@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour {
     private Dictionary<string, bool> events = new Dictionary<string, bool>();
+    private string _currentMission="";
 
     public static EventManager Instance { get; private set; }
     private void Awake() {
@@ -28,6 +29,13 @@ public class EventManager : MonoBehaviour {
     }
     public bool GetEvent(string key) {
         return (events[key]);
+    }
+    public void UpdateMission(string mission) {
+        _currentMission = mission;
+        PlayerCanvasUpdater.Instance.NewMission();
+    }
+    public string GetMission {
+        get { return _currentMission; }
     }
     public void ResetEvents() {
         Dictionary<string, bool> temp = new Dictionary<string, bool>();

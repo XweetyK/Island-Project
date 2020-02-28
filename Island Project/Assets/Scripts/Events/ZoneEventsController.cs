@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ZoneEvents {
     public GameObject eventObject;
+    public string mission;
     public string eventTrigger;
     public bool shouldActivate;
 }
@@ -35,7 +36,12 @@ public class ZoneEventsController : MonoBehaviour {
     private void CheckEvents() {
         foreach (var item in _zoneEvents) {
             if (EventManager.Instance.GetEvent(item.eventTrigger)) {
-                item.eventObject.SetActive(item.shouldActivate);
+                if (item.eventObject != null) {
+                    item.eventObject.SetActive(item.shouldActivate);
+                }
+                if (item.mission != null) {
+                    EventManager.Instance.UpdateMission(item.mission);
+                }
             }
         }
     }

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveData
-{
+public class SaveData {
     public string[] _key;
     public bool[] _value;
     public float[] _playerPos;
     public float[] _playerRot;
     public int[] _stats;
     public string _sceneName;
+    public string _mission;
 
-    public SaveData(Dictionary<string, bool> events, Transform player, int[] stats, string scene) {
+    public SaveData(Dictionary<string, bool> events, string mission, Transform player, int[] stats, string scene) {
         int cont = 0;
         if (events != null) {
-        _key = new string[events.Count];
-        _value = new bool[events.Count];
+            _key = new string[events.Count];
+            _value = new bool[events.Count];
             foreach (KeyValuePair<string, bool> item in events) {
                 _key[cont] = item.Key;
                 _value[cont] = item.Value;
@@ -38,7 +38,7 @@ public class SaveData
         if (stats != null) {
             _stats = stats;
         }
-
+        _mission = mission;
         _sceneName = scene;
     }
 

@@ -18,6 +18,7 @@ public class DialogManager : MonoBehaviour {
     private Queue<Sprite> _faces;
     private DialogTrigger[] _activate;
     private DialogTrigger[] _deactivate;
+    private string _mission;
     private string[] _activateEvents;
     public bool _init = false;
     NavMeshAgent _nma = null;
@@ -67,6 +68,9 @@ public class DialogManager : MonoBehaviour {
             if (dial.activateEvents.Length > 0) {
                 _activateEvents = dial.activateEvents;
             }
+            if (dial.mission != null) {
+                _mission = dial.mission;
+            }
         }
         DisplayNext();
     }
@@ -109,10 +113,13 @@ public class DialogManager : MonoBehaviour {
                 EventManager.Instance.UpdateEvent(key, true);
             }
         }
-
+        if (!string.IsNullOrWhiteSpace(_mission)) {
+            EventManager.Instance.UpdateMission(_mission);
+        }
         _activate = null;
         _deactivate = null;
         _activateEvents = null;
+        _mission = null;
     }
 
     public void PromptActive(bool active) {

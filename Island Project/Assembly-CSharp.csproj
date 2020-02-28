@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Events\EventManager.cs" />
     <Compile Include="Assets\Scripts\Events\InCutsceneDialog.cs" />
     <Compile Include="Assets\Scripts\Events\IntroManager.cs" />
+    <Compile Include="Assets\Scripts\Events\MissionUpdater.cs" />
     <Compile Include="Assets\Scripts\Events\ZoneEventsController.cs" />
     <Compile Include="Assets\Scripts\FacesReferences.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\Scripts\NPC\FollowUsername.cs" />
     <Compile Include="Assets\Scripts\NPC\NpcBehavior.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\PlayerCanvasUpdater.cs" />
     <Compile Include="Assets\Scripts\PlayerMov.cs" />
     <Compile Include="Assets\Scripts\SavingSystem\SaveData.cs" />
     <Compile Include="Assets\Scripts\SavingSystem\SaveGameManager.cs" />

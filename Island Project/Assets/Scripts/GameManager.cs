@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     private GameMode _gameMode = GameMode.EXPLORE;
     [SerializeField] GameObject _combatCanvas;
     [SerializeField] GameObject _dialogCanvas;
+    [SerializeField] GameObject _playerCanvas;
     [SerializeField] GameObject _exploreTerrain;
     [SerializeField] GameObject _combatTerrain;
     [SerializeField] GameObject _playerCamera;
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
         _combatCanvas.SetActive(false);
+        _dialogCanvas.SetActive(true);
+        _playerCanvas.SetActive(true);
         _mapEnemies = new List<GameObject>();
     }
 
@@ -67,6 +70,8 @@ public class GameManager : MonoBehaviour {
         if (!_readyExplore) {
             _combatTerrain.SetActive(false);
             _combatCanvas.SetActive(false);
+            _dialogCanvas.SetActive(true);
+            _playerCanvas.SetActive(true);
             _combatCamera.SetActive(false);
             _exploreTerrain.SetActive(true);
             _player.SetActive(true);
@@ -105,6 +110,8 @@ public class GameManager : MonoBehaviour {
             enemy.SetActive(false);
         }
         _combatCanvas.SetActive(true);
+        _dialogCanvas.SetActive(false);
+        _playerCanvas.SetActive(false);
         _combatCamera.SetActive(true);
         _effectTransition.SetTrigger("_loaded");
     }

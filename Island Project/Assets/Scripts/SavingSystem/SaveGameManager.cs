@@ -14,7 +14,7 @@ public class SaveGameManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
         if (SaveSystem.LoadGame() != null) {
-            gameData = new SaveData(null,null,null, "scene");
+            gameData = new SaveData(null,null,null,null, "scene");
         } else { gameData = SaveSystem.LoadGame(); }
     }
 }

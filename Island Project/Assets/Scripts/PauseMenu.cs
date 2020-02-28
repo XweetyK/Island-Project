@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
     [SerializeField] Animator _anim;
     [SerializeField] float _animLenght;
     [SerializeField] Canvas _canvas;
+    [SerializeField] Text _missionText;
     bool _active;
     bool _stopped = false;
 
@@ -15,6 +17,7 @@ public class PauseMenu : MonoBehaviour {
             Invoke("ZaWarudo", _animLenght);
             StartPause();
         }
+        _missionText.text = EventManager.Instance.GetMission;
     }
 
     void StartPause() {

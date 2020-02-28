@@ -1199,6 +1199,7 @@ MonoBehaviour:
   _anim: {fileID: 1691445429602516005}
   _animLenght: 0.5
   _canvas: {fileID: 3113208298933519736}
+  _missionText: {fileID: 2734525713773243694}
 --- !u!1 &6270452700707346873
 GameObject:
   m_ObjectHideFlags: 0

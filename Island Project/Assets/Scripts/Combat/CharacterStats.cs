@@ -53,7 +53,7 @@ public class CharacterStats : MonoBehaviour {
         get { return _health; }
         set { _health = value; }
     }
-    public int Life {
+    public int MaxLife {
         get { return _maxLife; }
     }
     public int Attack {
@@ -79,6 +79,8 @@ public class CharacterStats : MonoBehaviour {
     }
     public int XP {
         get { return _xp; }
+    }public int MaxXP {
+        get { return _xpLimit; }
     }
     public void GetDamage(int damage) {
         _health -= damage;

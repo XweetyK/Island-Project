@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 88885122126996498}
   - component: {fileID: 88885122126996499}
   - component: {fileID: 9041875095247487688}
+  - component: {fileID: 8446210603416063885}
   m_Layer: 0
   m_Name: EVENTMANAGER
   m_TagString: Untagged
@@ -63,3 +64,17 @@ MonoBehaviour:
     _playerRot: []
     _stats: 
     _sceneName: 
+--- !u!114 &8446210603416063885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88885122126996492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa66939a49beac142bf6b51247a49a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _missionText: {fileID: 0}
+  _missionTextPause: {fileID: 0}

@@ -78,7 +78,7 @@ public class SaveLoader : MonoBehaviour {
     //GAME-------------------------------------------------------------------
     public void SaveGame() {
         Debug.Log("Game saved");
-        SaveGameManager.Instance.gameData = new SaveData(EventManager.Instance.Events, 
+        SaveGameManager.Instance.gameData = new SaveData(EventManager.Instance.Events, EventManager.Instance.GetMission, 
             GameObject.FindObjectOfType<PlayerMov>().transform,CharacterStats.Instance.GetStats(), SceneManager.GetActiveScene().name);
         SaveSystem.SaveGame(SaveGameManager.Instance.gameData);
     }
@@ -92,6 +92,7 @@ public class SaveLoader : MonoBehaviour {
             }
         }
         EventManager.Instance.UpdateEvent("loadedGame", true);
+        EventManager.Instance.UpdateMission(SaveGameManager.Instance.gameData._mission);
         SceneLoader.Instance.LoadScene(SaveGameManager.Instance.gameData._sceneName);
     }
 }
