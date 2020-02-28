@@ -74,6 +74,10 @@ public class CombatInput : MonoBehaviour {
         if (_state == State.STARTTURN || _state == State.COMBO) {
             InputCheck();
         }
+        if (_kSpawner.Active)
+        {
+            DDRUpdate();
+        }
 
         UpdateArrows();
         Debug.Log(_state);
@@ -225,24 +229,11 @@ public class CombatInput : MonoBehaviour {
         _kSpawner.StartGame();
     }
 
-    public void CheckDDRKey(int input) {
-        switch (input) {
-            case 1:
-                _kSpawner.InputAttack(DDRKey.KeyTypes.UP);
-                break;
-            case 2:
-                _kSpawner.InputAttack(DDRKey.KeyTypes.DOWN);
-                break;
-            case 3:
-                _kSpawner.InputAttack(DDRKey.KeyTypes.LEFT);
-                break;
-            case 4:
-                _kSpawner.InputAttack(DDRKey.KeyTypes.RIGHT);
-                break;
-        }
+    public void StopDDR(){
+        _kSpawner.OnStopGame();
     }
 
-    public void GetDDRInput(DDRInput key, GameObject go) {
+    public void GetDDRInput(DDRInput key) {
         switch (key) {
             case DDRInput.KILL:
                 score += 5;
@@ -251,12 +242,26 @@ public class CombatInput : MonoBehaviour {
                 score -= 5;
                 break;
             case DDRInput.LOSE:
-                _kSpawner.RemoveKey(go);
                 score -= 10;
+                StopDDR();
                 break;
         }
     }
 
+    private void DDRUpdate(){
+            if (Input.GetButtonDown("Up")){
+                _kSpawner.InputAttack(DDRKey.KeyTypes.UP);
+            }
+            if (Input.GetButtonDown("Down")){
+                _kSpawner.InputAttack(DDRKey.KeyTypes.DOWN);
+            }
+            if (Input.GetButtonDown("Left")){
+                _kSpawner.InputAttack(DDRKey.KeyTypes.LEFT);
+            }
+            if (Input.GetButtonDown("Right")){
+                _kSpawner.InputAttack(DDRKey.KeyTypes.RIGHT);
+            }
+    }
     //Visual UI-------------------------------
     void UpdateArrows() {
         switch (_state) {

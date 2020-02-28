@@ -12,10 +12,13 @@ public class KeySpawner : MonoBehaviour
 
     //DDR game
     [Header("DDR Config")]
-    [SerializeField] float _keySpeed = 1.0f;
-    [SerializeField] float _keyDelay = 2.0f;
+
+    [SerializeField] float _defaultKeySpeed = 200.0f;
+    [SerializeField] float _defaultKeyDelay = 2.0f;
     [SerializeField] float _initDelay = 1.0f;
     [SerializeField] int _keyCant = 10;
+    float _keySpeed = 1.0f;
+    float _keyDelay = 2.0f;
 
     bool _active = false;
 
@@ -31,16 +34,17 @@ public class KeySpawner : MonoBehaviour
     private void Start()
     {
         _keys = new List<GameObject>();
-        //startGame(1.0f,2.0f,1.0f);
     }
     public void StartGame()
     {
         Debug.Log("DDRSTART   " + gameObject.name);
-        StopGame();
+        OnStopGame();
         _active = true;
+        _keySpeed = _defaultKeySpeed;
+        _keyDelay = _defaultKeyDelay;
         StartCoroutine(DDRUpdate());
     }
-    public void StopGame(){
+    public void OnStopGame(){
         _active = false;
         _keys.Clear();
     }
@@ -60,7 +64,7 @@ public class KeySpawner : MonoBehaviour
             _keys.Add(go);
             yield return new WaitForSeconds(_keyDelay);
             if(_keyCant == keycont && _keys.Count == 0){
-                StopGame();
+                CombatInput.Instance.StopDDR();
             }
         }
         yield return null;
@@ -75,15 +79,18 @@ public class KeySpawner : MonoBehaviour
         }
     }
     public void InputAttack(DDRKey.KeyTypes type){
+        if(_keys.Count == 0) {
+            return;
+        }
         DDRKey target = _keys[0].GetComponent<DDRKey>();
         if (target != null && target.KeyType == type)
         {
-            CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.KILL,target.gameObject);
+            CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.KILL);
             RemoveKey(target.gameObject);
         }
         else
         {
-            CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.MISS, null);
+            CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.MISS);
         }
     }
 
@@ -91,5 +98,11 @@ public class KeySpawner : MonoBehaviour
     {
         get { return _active; }
         set { _active = value; }
+    }
+
+    public float KeySpeed
+    {
+        get { return _keySpeed; }
+        set { _keySpeed = value; }
     }
 }

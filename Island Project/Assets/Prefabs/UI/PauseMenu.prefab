@@ -131,7 +131,7 @@ MonoBehaviour:
           m_StringArgument: SettingsOut
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7804586698320772916}
+      - m_Target: {fileID: 0}
         m_MethodName: SaveSettings
         m_Mode: 1
         m_Arguments:
@@ -1690,7 +1690,7 @@ MonoBehaviour:
           m_StringArgument: SettingsOut
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7804586698320772916}
+      - m_Target: {fileID: 0}
         m_MethodName: SaveSettings
         m_Mode: 1
         m_Arguments:
@@ -2722,7 +2722,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7804586698320772917}
-  - component: {fileID: 7804586698320772916}
   - component: {fileID: 1691445429602516005}
   m_Layer: 0
   m_Name: PauseMenu
@@ -2752,23 +2751,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7804586698320772916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7804586698320772914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7421a2282b722144e94c4d2b4b53b812, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _musicVol: {fileID: 6270452701088048886}
-  _sfxVol: {fileID: 6270452700794391754}
-  _musicEnabled: {fileID: 6270452700721907542}
-  _sfxEnabled: {fileID: 6270452700786564171}
-  _quality: {fileID: 0}
 --- !u!95 &1691445429602516005
 Animator:
   serializedVersion: 3
