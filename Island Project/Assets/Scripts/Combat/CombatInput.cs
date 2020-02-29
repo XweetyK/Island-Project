@@ -209,7 +209,7 @@ public class CombatInput : MonoBehaviour {
     }
 
     void Send() {
-        _damageDone = _cont * CharacterStats.Instance.Attack * _multiplyFactor;
+        _damageDone = _cont / 2 * CharacterStats.Instance.Attack + CharacterStats.Instance.Attack * _multiplyFactor;
         _blocked = false;
         _cont = 0;
         CombatManager.Instance.SendPlayerAttack(_damageDone);
@@ -217,7 +217,11 @@ public class CombatInput : MonoBehaviour {
     }
 
     void SendSpecial(){
-        _damageDone = score * CharacterStats.Instance.SpecialAttack;
+        _damageDone = score * CharacterStats.Instance.SpecialAttack / 5 + CharacterStats.Instance.SpecialAttack;
+        if(score <= 0) {
+            Missed();
+            return;
+        }
         _blocked = false;
         CombatManager.Instance.SendPlayerAttack(_damageDone);
         _state = State.ENDTURN;
@@ -245,13 +249,13 @@ public class CombatInput : MonoBehaviour {
     public void GetDDRInput(DDRInput key) {
         switch (key) {
             case DDRInput.KILL:
-                score += 5;
+                score += 1;
                 break;
             case DDRInput.MISS:
-                score -= 5;
+                _kSpawner.KeySpeed += 25;
+                _kSpawner.KeyDelay -= 0.25f;
                 break;
             case DDRInput.LOSE:
-                score -= 10;
                 StopDDR();
                 break;
         }

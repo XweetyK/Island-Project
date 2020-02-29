@@ -15,6 +15,7 @@ public class KeySpawner : MonoBehaviour
 
     [SerializeField] float _defaultKeySpeed = 200.0f;
     [SerializeField] float _defaultKeyDelay = 2.0f;
+    [SerializeField] float _minimumKeyDelay = 1.0f;
     [SerializeField] float _initDelay = 1.0f;
     [SerializeField] int _keyCant = 10;
     float _keySpeed = 1.0f;
@@ -45,6 +46,9 @@ public class KeySpawner : MonoBehaviour
     }
     public void OnStopGame(){
         _active = false;
+        for (int i = 0; i < _keys.Count; i++){
+            Destroy(_keys[i].gameObject);
+        }
         _keys.Clear();
     }
 
@@ -85,6 +89,7 @@ public class KeySpawner : MonoBehaviour
         for (int i = 0; i < _keys.Count; i++){
             if (_keys[i].activeInHierarchy){
                 target = _keys[i].GetComponent<DDRKey>();
+                break;
             }
         }
         if (target != null && target.KeyType == type)
@@ -108,5 +113,16 @@ public class KeySpawner : MonoBehaviour
     {
         get { return _keySpeed; }
         set { _keySpeed = value; }
+    }
+
+    public float KeyDelay
+    {
+        get { return _keyDelay; }
+        set { _keyDelay = value;
+            if(_keyDelay < _minimumKeyDelay)
+            {
+                _keyDelay = _minimumKeyDelay;
+            }
+        }
     }
 }

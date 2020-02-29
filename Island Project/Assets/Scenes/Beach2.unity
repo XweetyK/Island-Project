@@ -12217,7 +12217,8 @@ MonoBehaviour:
   _EndZone: {fileID: 632141114}
   _SpawnPoint: {fileID: 1960155176}
   _defaultKeySpeed: 200
-  _defaultKeyDelay: 2
+  _defaultKeyDelay: 1
+  _minimumKeyDelay: 0.5
   _initDelay: 1
   _keyCant: 10
 --- !u!1001 &1368942793

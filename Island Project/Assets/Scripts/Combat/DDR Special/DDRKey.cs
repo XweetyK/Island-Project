@@ -43,8 +43,4 @@ public class DDRKey : MonoBehaviour
         CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.LOSE);
         gameObject.SetActive(false);
     }
-
-    void kill(){
-        //stuff
-    }
 }
