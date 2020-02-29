@@ -40,7 +40,8 @@ public class DDRKey : MonoBehaviour
 
 
     void detonate(){
-        Destroy(gameObject);
+        CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.LOSE);
+        gameObject.SetActive(false);
     }
 
     void kill(){

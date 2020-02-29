@@ -20,7 +20,7 @@ public class CombatInput : MonoBehaviour {
     [SerializeField] [Range(0.0f, 1.0f)] private float _arrowOpacity;
     [SerializeField] Animator _UiAnimator;
     
-    private float score = 0;
+    private int score = 0;
 
     private int[] _attackCombo = new int[10] { 1, 1, 2, 1, 3, 4, 3, 4, 2, 2 };
     private int[] _defenseCombo = new int[10] { 4, 4, 1, 1, 4, 4, 3, 3, 2, 2 };
@@ -216,6 +216,13 @@ public class CombatInput : MonoBehaviour {
         _state = State.ENDTURN;
     }
 
+    void SendSpecial(){
+        _damageDone = score * CharacterStats.Instance.SpecialAttack;
+        _blocked = false;
+        CombatManager.Instance.SendPlayerAttack(_damageDone);
+        _state = State.ENDTURN;
+    }
+
     public bool EndTurn {
         get {
             if (_state == State.ENDTURN) {
@@ -227,10 +234,12 @@ public class CombatInput : MonoBehaviour {
     //DDR---------------------------------------------------------------------
     public void StartDDR() {
         _kSpawner.StartGame();
+        score = 0;
     }
 
     public void StopDDR(){
         _kSpawner.OnStopGame();
+        SendSpecial();
     }
 
     public void GetDDRInput(DDRInput key) {

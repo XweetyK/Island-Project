@@ -38,7 +38,6 @@ public class KeySpawner : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("DDRSTART   " + gameObject.name);
-        OnStopGame();
         _active = true;
         _keySpeed = _defaultKeySpeed;
         _keyDelay = _defaultKeyDelay;
@@ -51,38 +50,43 @@ public class KeySpawner : MonoBehaviour
 
     IEnumerator DDRUpdate(){
         yield return new WaitForSeconds(_initDelay);
-        int keycont = 0;
         int rand;
+        bool spawning = true;
         while (_active)
         {
-            rand = Random.Range(0, _keyPrefab.Length - 1);
-            keycont++;
-            GameObject go = Instantiate(_keyPrefab[rand], _SpawnPoint.transform);
-            DDRKey key = go.GetComponent<DDRKey>();
-            key.speed = _keySpeed;
-            key.setTarget(_EndZone);
-            _keys.Add(go);
+            if (spawning)
+            {
+                rand = Random.Range(0, _keyPrefab.Length - 1);
+                GameObject go = Instantiate(_keyPrefab[rand], _SpawnPoint.transform);
+                DDRKey key = go.GetComponent<DDRKey>();
+                key.speed = _keySpeed;
+                key.setTarget(_EndZone);
+                _keys.Add(go);
+            }
             yield return new WaitForSeconds(_keyDelay);
-            if(_keyCant == keycont && _keys.Count == 0){
-                CombatInput.Instance.StopDDR();
+            if(_keyCant <= _keys.Count){
+                spawning = false;
+                if (!_keys[_keys.Count - 1].activeInHierarchy){
+                    CombatInput.Instance.StopDDR();
+                }
             }
         }
         yield return null;
     }
 
     public void RemoveKey(GameObject go){
-        foreach (GameObject key in _keys){
-            if(key == go){
-                _keys.Remove(key);
-                Destroy(go);
-            }
-        }
+        go.SetActive(false);
     }
     public void InputAttack(DDRKey.KeyTypes type){
-        if(_keys.Count == 0) {
+        if(_keys.Count == 0 || !_keys[_keys.Count - 1].activeInHierarchy) {
             return;
         }
-        DDRKey target = _keys[0].GetComponent<DDRKey>();
+        DDRKey target = null;
+        for (int i = 0; i < _keys.Count; i++){
+            if (_keys[i].activeInHierarchy){
+                target = _keys[i].GetComponent<DDRKey>();
+            }
+        }
         if (target != null && target.KeyType == type)
         {
             CombatInput.Instance.GetDDRInput(CombatInput.DDRInput.KILL);

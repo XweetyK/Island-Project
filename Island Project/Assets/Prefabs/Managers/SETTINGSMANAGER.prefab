@@ -47,6 +47,9 @@ MonoBehaviour:
   settings:
     music: 0
     sfx: 0
+    musicToggle: 0
+    sfxToggle: 0
+    quality: 0
 --- !u!114 &3027830208203129290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,3 +64,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicVol: {fileID: 0}
   _sfxVol: {fileID: 0}
+  _musicEnabled: {fileID: 0}
+  _sfxEnabled: {fileID: 0}
+  _quality: {fileID: 0}
