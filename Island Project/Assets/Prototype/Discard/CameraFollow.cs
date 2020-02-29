@@ -13,6 +13,9 @@ public class CameraFollow : MonoBehaviour {
     float _rotY;
     float _limitAngle = 25;
 
+    //Collision
+    bool blockedSight = false;
+
     void Start() {
         _childX = transform.GetChild(0);
         _camera = transform.GetChild(0).GetChild(0);
@@ -20,6 +23,7 @@ public class CameraFollow : MonoBehaviour {
     void Update() {
         CamMouseLook();
         gameObject.transform.position = _target.position;
+        checkSight();
     }
 
     void CamMouseLook() {
@@ -45,6 +49,23 @@ public class CameraFollow : MonoBehaviour {
             }else if ((_dist < 25.0f && Input.GetAxis("JoystickY") < 0) || (_dist > 7.0f && Input.GetAxis("JoystickY") > 0)) {
                 _camera.transform.position += Input.GetAxis("JoystickY") * _camera.forward*0.5f;
             }
+        }
+    }
+
+    void checkSight(){
+        RaycastHit hit;
+        Vector3 dir = (transform.position - _camera.transform.position).normalized;
+        if (Physics.Raycast(transform.position + new Vector3(0, 5.0f,0), dir, out hit, Mathf.Infinity))
+        {
+            if(hit.collider.gameObject != _camera && hit.collider.tag != "Player"){
+                Debug.Log("BLOCKED by " + hit.collider.gameObject.name);
+                blockedSight = true;
+                _camera.transform.position = hit.point;
+            }
+        }
+        else
+        {
+            blockedSight = false;
         }
     }
 }
