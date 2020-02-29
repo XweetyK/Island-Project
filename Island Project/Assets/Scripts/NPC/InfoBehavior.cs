@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class InfoBehavior : MonoBehaviour
-{
-    enum State {IDLE, COFFEE, WALKING }
-    enum Activity {WORKING, BREAK }
-    [SerializeField] Animator _anim;
-    [SerializeField] Transform _coffeeTarget;
-    [SerializeField] Transform _workTarget;
-    [SerializeField] DialogTrigger _dialog;
-    [SerializeField] GameObject _mesh;
-    [SerializeField] GameObject _sittingMesh;
+public class InfoBehavior : MonoBehaviour {
+    enum State { IDLE, COFFEE, WALKING }
+    enum Activity { WORKING, BREAK }
+    [SerializeField] Transform[] _targets;
+    [SerializeField] DialogTrigger _dialogTrigger;
+    Animator _anim;
     NavMeshAgent _nma;
     Dialogue[] _tired;
     Dialogue[] _backtowork;
     Dialogue[] _idleInfo;
     Dialogue[] _restingCafe;
     Dialogue[] _crying;
-    int _randChat = 0;
+    int _randChat = 3;
     int _randCrying = 0;
+    bool _activeCrying = false;
+    float _timer = 0;
+    float _coffeeTime = 0;
+    int _actualTarget = 0;
     State _state = State.IDLE;
     Activity _act = Activity.WORKING;
+
+
+    private void Awake() {
+        _anim = gameObject.GetComponent<Animator>();
+        _nma = gameObject.GetComponent<NavMeshAgent>();
+    }
 
     private void Start() {
         _tired = new Dialogue[1];
@@ -36,50 +42,87 @@ public class InfoBehavior : MonoBehaviour
         SetCharacterDialogue(_idleInfo);
         SetCharacterDialogue(_restingCafe);
         SetCharacterDialogue(_crying);
-    }
-    void UpdateDialog() {
-        _dialog._dialog.conversations = new Dialogue[3];
+        DialoguesStartUp();
+        UpdateDialog(_idleInfo);
     }
 
-    void SetCharacterDialogue(Dialogue[] dial) {
-        foreach (Dialogue item in dial) {
-            item._name = "INFO";
-            item._character = Characters.ORDER;
-            item._face = 10;
-            item._chat = "";
-        }
+    void UpdateDialog(Dialogue[] dial) {
+        _dialogTrigger._dialog.conversations = dial;
+    }
+
+    private void Update() {
+        Behavior();
+        UpdateAnim();
+        UpdateRandomThought();
     }
 
     void Behavior() {
         switch (_state) {
             case State.IDLE:
-                _randCrying = Random.Range(1, 100);
-                if (_randCrying > 90) {
-                    _state = State.WALKING;
+                _timer += Time.deltaTime;
+                if (_timer > 5) {
+                    _randCrying = Random.Range(1, 100);
+                    _randChat = Random.Range(1, 7);
+                    _timer = 0;
+                }
+                if (_randCrying > 10 && _activeCrying != true) {
+                    UpdateDialog(_crying);
+                    Crying();
+                }
+                if (_randCrying < 70) {
+                    UpdateDialog(_idleInfo);
                 }
                 break;
             case State.COFFEE:
-                _mesh.SetActive(false);
-                _sittingMesh.SetActive(true);
+                _coffeeTime += Time.deltaTime;
+                UpdateDialog(_restingCafe);
+                transform.rotation = _targets[3].transform.rotation;
+                if (_coffeeTime >= 180) {
+                    _state = State.WALKING;
+                }
                 break;
             case State.WALKING:
                 switch (_act) {
                     case Activity.WORKING:
-                        _nma.SetDestination(_coffeeTarget.position);
-                        if (_nma.remainingDistance<=0.5f) {
-                            _act = Activity.BREAK;
+                        if (_nma.remainingDistance == 0.0f) {
+                            UpdateDialog(_tired);
+                            if (_actualTarget < _targets.Length - 1) {
+                                _actualTarget++;
+                                _nma.SetDestination(_targets[_actualTarget].position);
+                            }
+                        }
+                        if (Vector3.Distance(transform.position, _targets[3].position)<0.8f) {
                             _state = State.COFFEE;
+                            _act = Activity.BREAK;
                         }
                         break;
                     case Activity.BREAK:
-                        _nma.SetDestination(_workTarget.position);
-                        if (_nma.remainingDistance <= 0.5f) {
-                            _act = Activity.WORKING;
-                            _state = State.IDLE;
+                        _coffeeTime = 0;
+                        _activeCrying = false;
+                        if (_nma.remainingDistance == 0) {
+                            UpdateDialog(_backtowork);
+                            if (_actualTarget > 1) {
+                                _actualTarget--;
+                                _nma.SetDestination(_targets[_actualTarget].position);
+                            }
+                            if (Vector3.Distance(transform.position, _targets[0].position) < 0.8f) {
+                                _state = State.IDLE;
+                                _act = Activity.WORKING;
+                            }
                         }
                         break;
                 }
                 break;
+        }
+    }
+
+    void SetCharacterDialogue(Dialogue[] dial) {
+        for (int i = 0; i < dial.Length; i++) {
+            dial[i] = new Dialogue();
+            dial[i]._name = "INFO";
+            dial[i]._character = Characters.ORDER;
+            dial[i]._face = 10;
+            dial[i]._chat = "";
         }
     }
 
@@ -134,6 +177,20 @@ public class InfoBehavior : MonoBehaviour
             _anim.SetBool("Walking", true);
         } else {
             _anim.SetBool("Walking", false);
+        }
+        if (_state == State.COFFEE) {
+            _anim.SetBool("Sitting", true);
+        } else {
+            _anim.SetBool("Sitting", false);
+        }
+    }
+    void Crying() {
+        if (!_activeCrying) {
+            _anim.SetTrigger("Crying");
+            Invoke("Crying", 6.5f);
+            _activeCrying = true;
+        } else {
+            _state = State.WALKING;
         }
     }
 }

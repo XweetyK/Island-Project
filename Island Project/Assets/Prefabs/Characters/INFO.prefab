@@ -696,7 +696,7 @@ Transform:
   - {fileID: 6409928446414480404}
   - {fileID: 8515889908616644819}
   m_Father: {fileID: 8213624481185214451}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2869883568899621344
 GameObject:
@@ -782,12 +782,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3109330564073689303}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8213624481185214451}
-  m_RootOrder: 5
+  m_Father: {fileID: 4895170582233337088}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &2665085397667837109
 SkinnedMeshRenderer:
@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 8213624481185214451}
   - component: {fileID: 2267180001401733769}
   - component: {fileID: 810162718235528132}
+  - component: {fileID: 7031693900288512582}
   m_Layer: 0
   m_Name: INFO
   m_TagString: Untagged
@@ -1340,9 +1341,7 @@ Transform:
   - {fileID: 8780676112125847888}
   - {fileID: 3814771567033373944}
   - {fileID: 1842667397681347787}
-  - {fileID: 4895170582233337088}
   - {fileID: 8504613710768934261}
-  - {fileID: 2125271069822605406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1387,6 +1386,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7031693900288512582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5163374955234713056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd293688cd870c4448f8a0e2d1ae4994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targets: []
+  _dialogTrigger: {fileID: 5225828856670654306}
+  _mesh: {fileID: 8338767315073731945}
+  _sittingMesh: {fileID: 0}
 --- !u!1 &5585478725142127236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,12 +1488,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5754293146687058829}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8213624481185214451}
-  m_RootOrder: 3
+  m_Children:
+  - {fileID: 2125271069822605406}
+  m_Father: {fileID: 8780676112125847888}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &2901948665917567259
 SkinnedMeshRenderer:
@@ -1959,7 +1975,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4895170582233337088}
   m_Father: {fileID: 8213624481185214451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2311,6 +2328,11 @@ PrefabInstance:
       propertyPath: _dialog.conversations.Array.data[0]._name
       value: INFO
       objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _nma
+      value: 
+      objectReference: {fileID: 810162718235528132}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ccd6a87ec3245547a33da4cf4aebb38, type: 3}
 --- !u!4 &3814771567033373944 stripped
@@ -2319,3 +2341,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 893380246933815549}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5225828856670654306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+    type: 3}
+  m_PrefabInstance: {fileID: 893380246933815549}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02345f3e0170e464b96c021628a482e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

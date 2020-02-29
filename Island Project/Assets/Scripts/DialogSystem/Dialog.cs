@@ -9,7 +9,6 @@ public class Dialogue {
     public int _face;
     [TextArea(3, 10)]
     public string _chat;
-
 }
 [System.Serializable]
 public class Dialog {
