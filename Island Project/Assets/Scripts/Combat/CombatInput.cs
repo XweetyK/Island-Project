@@ -14,8 +14,10 @@ public class CombatInput : MonoBehaviour {
     [SerializeField] private Sprite _blueBox;
     [SerializeField] private Image[] _attackArrows;
     [SerializeField] private Image[] _defenseArrows;
+    [SerializeField] private Image _specialArrow;
     [SerializeField] private Image _timerBarFill;
     [SerializeField] private Image _missedBox;
+    [SerializeField] private Image _ddrFullCombo;
     [SerializeField] private Animator _missedAnim;
     [SerializeField] [Range(0.0f, 1.0f)] private float _arrowOpacity;
     [SerializeField] Animator _UiAnimator;
@@ -67,6 +69,7 @@ public class CombatInput : MonoBehaviour {
             _attackArrows[i].color = _opacityBack;
             _defenseArrows[i].color = _opacityBack;
         }
+        _specialArrow.color = _opacityBack;
     }
 
     void Update() {
@@ -241,6 +244,10 @@ public class CombatInput : MonoBehaviour {
     }
 
     public void StopDDR(){
+        _UiAnimator.SetBool("Attack", false);
+        _UiAnimator.SetBool("Defense", false);
+        _UiAnimator.SetBool("Special", false);
+        _UiAnimator.SetBool("EndTurn", true);
         _kSpawner.OnStopGame();
         SendSpecial();
     }
@@ -282,6 +289,8 @@ public class CombatInput : MonoBehaviour {
                 _UiAnimator.SetBool("Attack", false);
                 _UiAnimator.SetBool("Defense", false);
                 _UiAnimator.SetBool("Special", false);
+                score = 0;
+                _ddrFullCombo.fillAmount = 0;
                 for (int i = 0; i < 10; i++) {
                     _attackArrows[i].sprite = _arrowCommon;
                     _defenseArrows[i].sprite = _arrowCommon;
@@ -330,7 +339,7 @@ public class CombatInput : MonoBehaviour {
             default:
                 break;
         }
-
+        _ddrFullCombo.fillAmount = ((float)score / (float)10);
         _timerBarFill.fillAmount = ((_time * 100) / _limitTime) * 0.01f;
     }
 
@@ -341,6 +350,9 @@ public class CombatInput : MonoBehaviour {
                 break;
             case InputCombo.DEFENSE:
                 _defenseArrows[_cont - 1].color = _opacityHeld;
+                break;
+            case InputCombo.SPECIAL:
+                _specialArrow.color = _opacityHeld;
                 break;
         }
     }
@@ -355,6 +367,9 @@ public class CombatInput : MonoBehaviour {
                 for (int i = 0; i < _level; i++) {
                     _defenseArrows[i].color = _opacityBack;
                 }
+                break;
+            case InputCombo.SPECIAL:
+                _specialArrow.color = _opacityBack;
                 break;
         }
     }
@@ -384,6 +399,9 @@ public class CombatInput : MonoBehaviour {
                     _defenseArrows[i].color = _opacityBack;
                 }
                 break;
+            case InputCombo.SPECIAL:
+                _specialArrow.color = _opacityBack;
+                break;
         }
     }
 
@@ -410,5 +428,6 @@ public class CombatInput : MonoBehaviour {
             _attackArrows[i].color = _opacityBack;
             _defenseArrows[i].color = _opacityBack;
         }
+        _specialArrow.color = _opacityBack;
     }
 }

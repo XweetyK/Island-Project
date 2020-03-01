@@ -11,7 +11,6 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] CameraShake _combatCam;
     [SerializeField] Image _playerFace;
     [SerializeField] Animator _playerAnim;
-    [SerializeField] KeySpawner _kSpawner;
 
     private Enemy _enemy;
     enum Turn { ENEMY, PLAYER };
