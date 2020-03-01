@@ -18,21 +18,25 @@ public class CommonOrderEnemy : Enemy
         _anim.SetBool("_dead",_dead);
     }
 
-    public override int Act() {
+    public override CombatManager.DamageType Act() {
+        CombatManager.DamageType damage;
+        damage.special = false;
+        damage.dmg = 0;
         int _rand= Random.Range(0, 100);
         if (_rand<60) {
             Debug.Log("enemy attacks!");
-            return Attack();
+            damage.dmg = Attack();
         }
-        if (_rand >= 60 && _rand <= 90) {
+        else if (_rand >= 60 && _rand <= 90) {
             Debug.Log("enemy's special!");
-            return Special();
+            damage.dmg = Special();
+            damage.special = true;
         }
-        if (_rand > 90) {
+        else if (_rand > 90) {
             Debug.Log("enemy blocked!");
-            return Defense();
+            damage.dmg = Defense();
         }
-        return -1;
+        return damage;
     }
 
     private int Attack() {

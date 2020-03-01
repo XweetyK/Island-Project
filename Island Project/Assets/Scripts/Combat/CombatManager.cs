@@ -12,6 +12,11 @@ public class CombatManager : MonoBehaviour {
     [SerializeField] Image _playerFace;
     [SerializeField] Animator _playerAnim;
 
+    public struct DamageType {
+        public int dmg;
+        public bool special;
+    }
+
     private Enemy _enemy;
     enum Turn { ENEMY, PLAYER };
     Turn _turn;
@@ -82,9 +87,16 @@ public class CombatManager : MonoBehaviour {
 
     IEnumerator EnemyTurn(float time) {
         //enemy actions
-        int _dmg = Combat(_enemy.Act(), CharacterStats.Instance.Defense);
-        if (_dmg > 0) {
-            StartCoroutine(TakeDamage(_dmg, 1.1f));
+        DamageType attack = _enemy.Act();
+        int damageDone;
+        if (!attack.special){
+            damageDone = Combat(attack.dmg, CharacterStats.Instance.Defense);
+        }
+        else{
+            damageDone = Combat(attack.dmg, CharacterStats.Instance.SpecialDefense); ;
+        }
+        if (damageDone > 0) {
+            StartCoroutine(TakeDamage(damageDone, 1.1f));
         }
         yield return new WaitForSeconds(time);
         //other turn

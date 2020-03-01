@@ -22,7 +22,7 @@ public abstract class Enemy : MonoBehaviour{
     protected bool _protect;
     protected bool _dead;
 
-    public abstract int Act();
+    public abstract CombatManager.DamageType Act();
     public abstract void GetDamage(int damage);
     public abstract int Health();
     public abstract int MaxLife();

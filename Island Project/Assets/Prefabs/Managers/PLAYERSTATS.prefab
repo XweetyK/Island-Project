@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseMaxLife: 40
   _baseAttack: 9
-  _baseDefense: 6
+  _baseDefense: 4
   _baseSpecialAttack: 12
   _baseSpecialDefense: 9
   _baseSpeed: 3
