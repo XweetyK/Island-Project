@@ -647,10 +647,8 @@ MonoBehaviour:
   _head: {fileID: 2932110895792578845}
   _runningSpeed: 7
   _justAnim: 0
-  _mats:
-  - {fileID: 2100000, guid: f38da560795756a4eae8978a44095b42, type: 2}
-  - {fileID: 2100000, guid: 286bdb20a4b41fc4f8b4dad0127bf02e, type: 2}
-  _dissolveSpeed: 0.5
+  _mat: {fileID: 2100000, guid: 286bdb20a4b41fc4f8b4dad0127bf02e, type: 2}
+  _mesh: {fileID: 2089493882}
   _angle: 0
   _distance: 0
 --- !u!195 &9223150397836548762

@@ -962,7 +962,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 3.59
-  m_BaseOffset: 0
+  m_BaseOffset: -0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &5376769750702417594
@@ -1410,6 +1410,10 @@ MonoBehaviour:
     - {fileID: 5297540283057946832}
     activateChat:
     - {fileID: 5444626157327296148}
+    activateEvents: []
+    deactivateByEvent: []
+    mission: 
+    heal: 0
 --- !u!114 &5444626157327296148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,6 +1444,10 @@ MonoBehaviour:
       _chat: Is as beautiful and calm as this beach.
     deactivateChat: []
     activateChat: []
+    activateEvents: []
+    deactivateByEvent: []
+    mission: 
+    heal: 0
 --- !u!1 &6802212926071613413
 GameObject:
   m_ObjectHideFlags: 0

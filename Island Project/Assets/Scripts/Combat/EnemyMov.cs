@@ -8,8 +8,8 @@ public class EnemyMov : MonoBehaviour {
     [SerializeField] GameObject _head;
     [SerializeField] float _runningSpeed;
     [SerializeField] bool _justAnim;
-    [SerializeField] Material[] _mats;
-    [SerializeField] float _dissolveSpeed;
+    [SerializeField] Material _mat;
+    [SerializeField] SkinnedMeshRenderer _mesh;
     private Animator _anim;
     private GameObject _playerPos;
     private enum State { PATROL, ALERT, DETECTED, DEAD, COMBAT };
@@ -47,10 +47,7 @@ public class EnemyMov : MonoBehaviour {
         _state = State.PATROL;
         _origSpeed = _nma.speed;
         _init = true;
-        Material dissolve = new Material(_mats[0]);
-        dissolve.SetFloat("Time", 1f);
-        gameObject.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material = dissolve;
-        //StartCoroutine(SpawnMaterial(dissolve));
+        _mesh.materials[0] = _mat;
         GameManager.Instance.AddEnemy(this.gameObject);
     }
 
@@ -226,20 +223,6 @@ public class EnemyMov : MonoBehaviour {
             GameManager.Instance.SetActualEnemy(this);
             _state = State.COMBAT;
         }
-    }
-
-    IEnumerator SpawnMaterial(Material dissolve) {
-
-        if (dissolve.GetFloat("Time") != -1) {
-            dissolve.SetFloat("Time", (dissolve.GetFloat("Time") - 0.01f));
-            Debug.Log("dissolving!");
-            yield return new WaitForSeconds(_dissolveSpeed);
-        } else {
-            gameObject.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material = _mats[1];
-            Debug.Log("set mat!");
-        }
-
-        yield return null;
     }
 
     public void IsFrozen(bool froze) {

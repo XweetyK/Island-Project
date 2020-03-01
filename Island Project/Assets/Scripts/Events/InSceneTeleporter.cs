@@ -9,6 +9,7 @@ public class InSceneTeleporter : MonoBehaviour {
 
     [SerializeField] Transform _destination;
     [SerializeField] bool _isActive;
+    [SerializeField] string _enableTrigger;
     Animator _canvas;
     Transform _player;
     Transform _camSys;
@@ -24,6 +25,9 @@ public class InSceneTeleporter : MonoBehaviour {
     }
 
     private void Update() {
+        if (!string.IsNullOrWhiteSpace(_enableTrigger)) {
+            _isActive = EventManager.Instance.GetEvent(_enableTrigger);
+        }
         if (_isActive) {
             _dt.enabled = false;
         } else {

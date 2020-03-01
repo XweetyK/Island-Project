@@ -27,6 +27,7 @@ public class EventManager : MonoBehaviour {
         events.Add("MuseumStart", false);
         events.Add("Ephiphany", false);
         events.Add("CrisAnnoyed", false);
+        events.Add("MuseumDoor", false);
     }
 
     public void UpdateEvent(string key, bool value) {
