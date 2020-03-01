@@ -127,8 +127,12 @@ public class CombatManager : MonoBehaviour {
 
     IEnumerator TakeDamage(int damage, float delay) {
         yield return new WaitForSeconds(delay);
-        _playerAnim.SetTrigger("_damaged");
-        CharacterStats.Instance.GetDamage(damage);
+        if (!_player._protected) {
+            _playerAnim.SetTrigger("_damaged");
+            CharacterStats.Instance.GetDamage(damage);
+        } else {
+            _player.Protected();
+        }
     }
 
     private void GameOver() {

@@ -19,6 +19,7 @@ public class CombatInput : MonoBehaviour {
     [SerializeField] private Image _missedBox;
     [SerializeField] private Image _ddrFullCombo;
     [SerializeField] private Animator _missedAnim;
+    [SerializeField] private Animator _protectedAnim;
     [SerializeField] [Range(0.0f, 1.0f)] private float _arrowOpacity;
     [SerializeField] Animator _UiAnimator;
     
@@ -37,6 +38,7 @@ public class CombatInput : MonoBehaviour {
     private int _multiplyFactor = 0;
 
     private int _damageDone = 0;
+    public bool _protected = false;
 
     private Color _opacityBack;
     private Color _opacityHeld;
@@ -75,6 +77,7 @@ public class CombatInput : MonoBehaviour {
     void Update() {
         if (_state == State.STARTTURN || _state == State.COMBO) {
             InputCheck();
+            _protected = false;
         }
         if (_kSpawner.Active)
         {
@@ -98,10 +101,6 @@ public class CombatInput : MonoBehaviour {
                 break;
             case State.MISSED:
                 Missed();
-                break;
-            case State.ENDTURN:
-                break;
-            case State.DDR:
                 break;
 
         }
@@ -171,12 +170,11 @@ public class CombatInput : MonoBehaviour {
             case InputCombo.SPECIAL:
                 _blocked = true;
                 StartDDR();
-                Debug.Log("special, nothing should happen");
                 break;
             case InputCombo.DEFENSE:
                 if (_actualCombo[_cont] == _defenseCombo[_cont]) {
                     _cont++;
-                    _multiplyFactor = 1;
+                    _multiplyFactor = -1;
                 } else { _state = State.MISSED; _multiplyFactor = 0; }
                 break;
         }
@@ -211,10 +209,16 @@ public class CombatInput : MonoBehaviour {
     }
 
     void Send() {
-        _damageDone = _cont / 2 * CharacterStats.Instance.Attack + CharacterStats.Instance.Attack * _multiplyFactor;
+        if (_multiplyFactor == -1) {
+            _protected = true;
+            CombatManager.Instance.SendPlayerAttack(0);
+            Protected();
+        } else {
+            _damageDone = _cont / 2 * CharacterStats.Instance.Attack + CharacterStats.Instance.Attack * _multiplyFactor;
+            CombatManager.Instance.SendPlayerAttack(_damageDone);
+        }
         _blocked = false;
         _cont = 0;
-        CombatManager.Instance.SendPlayerAttack(_damageDone);
         _state = State.ENDTURN;
     }
 
@@ -429,5 +433,8 @@ public class CombatInput : MonoBehaviour {
             _defenseArrows[i].color = _opacityBack;
         }
         _specialArrow.color = _opacityBack;
+    }
+    public void Protected() {
+        _protectedAnim.SetTrigger("_missed");
     }
 }

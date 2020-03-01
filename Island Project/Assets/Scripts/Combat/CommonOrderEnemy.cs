@@ -63,7 +63,7 @@ public class CommonOrderEnemy : Enemy
     }
     private int Defense() {
         _anim.SetTrigger("_block");
-        _messageText.text = "Enemy ORDER is ready!";
+        _messageText.text = "Enemy ORDER is protecting himself!";
         _messageAnim.SetTrigger("_enemyTurn");
         _protect = true; 
         return 4943;
