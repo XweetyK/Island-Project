@@ -54,7 +54,7 @@ public class CameraFollow : MonoBehaviour {
         dir = -(transform.position    - _camera.transform.position).normalized;
         float dist = (transform.position - _camera.transform.position).magnitude;
         if (Physics.Raycast(transform.position, dir, out hit, dist)){
-            if (hit.collider.tag != "Player")
+            if (hit.collider.tag != "Player" && hit.collider.tag != "IgnoreCamCol")
             {
                 Debug.Log(hit.collider.name);
                 _camera.position = hit.point;
