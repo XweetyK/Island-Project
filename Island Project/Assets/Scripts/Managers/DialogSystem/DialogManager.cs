@@ -19,6 +19,7 @@ public class DialogManager : MonoBehaviour {
     private DialogTrigger[] _activate;
     private DialogTrigger[] _deactivate;
     private string _mission;
+    private bool _heal;
     private string[] _activateEvents;
     public bool _init = false;
     NavMeshAgent _nma = null;
@@ -34,13 +35,6 @@ public class DialogManager : MonoBehaviour {
         _names = new Queue<string>();
         _faces = new Queue<Sprite>();
     }
-    //private void Update() {
-    //    if (_init) {
-    //        if (Input.GetKeyDown(KeyCode.E)) {
-    //            DisplayNext();
-    //        }
-    //    }
-    //}
     public void StartDialog(Dialog dial, NavMeshAgent nma, Transform camRefPoint) {
         if (!_init) {
             GameManager.Instance.PlayerInput = false;
@@ -71,6 +65,7 @@ public class DialogManager : MonoBehaviour {
             if (dial.mission != null) {
                 _mission = dial.mission;
             }
+            _heal = dial.heal;
         }
         DisplayNext();
     }
@@ -115,6 +110,9 @@ public class DialogManager : MonoBehaviour {
         }
         if (!string.IsNullOrWhiteSpace(_mission)) {
             EventManager.Instance.UpdateMission(_mission);
+        }
+        if (_heal) {
+            CharacterStats.Instance.Health = CharacterStats.Instance.MaxLife;
         }
         _activate = null;
         _deactivate = null;

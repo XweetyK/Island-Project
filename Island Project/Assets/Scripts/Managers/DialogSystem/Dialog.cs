@@ -19,7 +19,7 @@ public class Dialog {
     public string[] activateEvents;
     public string[] deactivateByEvent;
     public string mission;
-
+    public bool heal;
     private DialogTrigger _trigger;
     public DialogTrigger Trigger {
         get { return (_trigger); }

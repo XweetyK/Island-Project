@@ -41,6 +41,13 @@ public class FacesReferences : MonoBehaviour {
                     Debug.Log("index out of array range");
                     return null;
                 }
+            case Characters.ICON:
+                if (faceIndex < _icons.Length) {
+                    return _icons[faceIndex];
+                } else {
+                    Debug.Log("index out of array range");
+                    return null;
+                }
         }
         return null;
     }
