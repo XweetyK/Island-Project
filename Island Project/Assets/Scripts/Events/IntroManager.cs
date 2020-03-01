@@ -14,6 +14,7 @@ public class IntroManager : MonoBehaviour
     [SerializeField] Text _typewritter;
     [SerializeField] float _charTime;
     [SerializeField] PlayableDirector _director;
+    [SerializeField] Canvas _playerCanvas;
     string _currentText;
     string[] _introduction = {
         " Welcome to " + System.Environment.NewLine + "[P A R A D I S E]" + System.Environment.NewLine + "         ",
@@ -47,6 +48,7 @@ public class IntroManager : MonoBehaviour
     }
     private void Update() {
         if (Input.GetButtonDown("Submit")) {
+            _playerCanvas.enabled = true;
             CancelInvoke();
             StartGame();
         }

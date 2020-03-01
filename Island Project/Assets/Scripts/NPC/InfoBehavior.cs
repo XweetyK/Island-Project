@@ -65,7 +65,7 @@ public class InfoBehavior : MonoBehaviour {
                     _randChat = Random.Range(1, 7);
                     _timer = 0;
                 }
-                if (_randCrying > 10 && _activeCrying != true) {
+                if (_randCrying > 90 && _activeCrying != true) {
                     UpdateDialog(_crying);
                     Crying();
                 }

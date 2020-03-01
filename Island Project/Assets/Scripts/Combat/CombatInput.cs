@@ -51,12 +51,11 @@ public class CombatInput : MonoBehaviour {
         }
     }
     private void Start() {
-        _level = CharacterStats.Instance.Level;
         _kSpawner = KeySpawner.Instance;
         _time = _limitTime;
         _opacityBack = _opacityHeld = Color.white;
         _opacityBack.a = _arrowOpacity;
-
+        _level = CharacterStats.Instance.Level;
         if (_level < 10) {
             for (int i = _level; i < 10; i++) {
                 _attackArrows[i].gameObject.SetActive(false);
@@ -390,5 +389,26 @@ public class CombatInput : MonoBehaviour {
 
     public void Restart() {
         _state = State.STARTTURN;
+    }
+
+    private void OnEnable() {
+        Debug.Log("Fight!");
+        _level = CharacterStats.Instance.Level;
+        if (_level < 10) {
+            for (int i = 0; i < 10; i++) {
+                if (i < _level) {
+                    _attackArrows[i].gameObject.SetActive(true);
+                    _defenseArrows[i].gameObject.SetActive(true);
+                } else {
+                    _attackArrows[i].gameObject.SetActive(false);
+                    _defenseArrows[i].gameObject.SetActive(false);
+                }
+            }
+        }
+
+        for (int i = 0; i < 10; i++) {
+            _attackArrows[i].color = _opacityBack;
+            _defenseArrows[i].color = _opacityBack;
+        }
     }
 }

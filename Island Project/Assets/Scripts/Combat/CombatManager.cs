@@ -124,6 +124,7 @@ public class CombatManager : MonoBehaviour {
         if (!_endGame) {
             _endGame = true;
         }
+        GameManager.Instance.EndCombat(false);
     }
     IEnumerator EndCombat() {
         yield return new WaitForSeconds(2.0f);

@@ -125,7 +125,7 @@ public class PlayerMov : MonoBehaviour {
                 _audioSrc.Play();
             }
         }
-        if(!_isWalking && !_isRunning) {
+        if(!_isWalking) {
             _audioSrc.Stop();
         }
     }

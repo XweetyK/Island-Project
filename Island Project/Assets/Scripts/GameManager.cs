@@ -149,12 +149,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void EndCombat(bool won) {
-        switch (won) {
-            case true:
-                _effectTransition.SetBool("_win", true);
-                break;
-            case false:
-                break;
+        if (!won) {
+            _effectTransition.SetBool("_lose", true);
         }
     }
 
@@ -169,7 +165,7 @@ public class GameManager : MonoBehaviour {
                     winText.text = name + " was defeated." + "\n" + exp + " experience obtained.";
                 }
                 if (levelUp){
-                    //LEVEL UP NOTIFICATION
+                    winText.text += System.Environment.NewLine + "Level Up!";
                 }
                 break;
             case false:
@@ -187,5 +183,9 @@ public class GameManager : MonoBehaviour {
    public bool Pausable {
         get { return _pausable; }
         set { _pausable = value; }
+    }
+
+    public int EnemiesInMap() {
+        return _mapEnemies.Count;
     }
 }
