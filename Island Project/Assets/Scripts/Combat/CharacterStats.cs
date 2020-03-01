@@ -104,7 +104,7 @@ public class CharacterStats : MonoBehaviour {
         _attack = Mathf.FloorToInt(_baseAttack + _level * _attackGrowth);
         _defense = Mathf.FloorToInt(_baseDefense + _level * _defenseGrowth);
         _specialAttack = Mathf.FloorToInt(_baseAttack + _level * _specialAttackGrowth);
-        _specialDefense = Mathf.FloorToInt(_baseDefense + _level * _specialDefense);
+        _specialDefense = Mathf.FloorToInt(_baseSpecialDefense + _level * _specialDefense);
         _speed = Mathf.FloorToInt(_baseSpeed + _level * _speedGrowth);
         _xpLimit = nextLevel(_level);
     }
