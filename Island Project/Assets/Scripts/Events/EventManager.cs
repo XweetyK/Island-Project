@@ -22,6 +22,11 @@ public class EventManager : MonoBehaviour {
         events.Add("orderInit", false);
         events.Add("orderInitEnd", false);
         events.Add("DJCoffeeChat", false);
+        events.Add("FuckedItUp", false);
+        events.Add("CrisLeaveCity", false);
+        events.Add("MuseumStart", false);
+        events.Add("Ephiphany", false);
+        events.Add("CrisAnnoyed", false);
     }
 
     public void UpdateEvent(string key, bool value) {
@@ -32,7 +37,9 @@ public class EventManager : MonoBehaviour {
     }
     public void UpdateMission(string mission) {
         _currentMission = mission;
-        PlayerCanvasUpdater.Instance.NewMission();
+        if (PlayerCanvasUpdater.Instance != null) {
+            PlayerCanvasUpdater.Instance.NewMission();
+        }
     }
     public string GetMission {
         get { return _currentMission; }

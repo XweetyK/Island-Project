@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
 
     //Global inputs
     bool _playerInput = true;
+    bool _playerInteract = true;
 
     public static GameManager Instance { get; private set; }
     void Awake() {
@@ -124,6 +125,10 @@ public class GameManager : MonoBehaviour {
         get { return _playerInput; }
         set { _playerInput = value; }
     }
+    public bool PlayerInteract {
+        get { return _playerInteract; }
+        set { _playerInteract = value; }
+    }
 
     public void SetActualEnemy(EnemyMov enemy) {
         _contactEnemy = enemy;
@@ -141,7 +146,9 @@ public class GameManager : MonoBehaviour {
             case 2:
                 Debug.Log("button working");
                 _gameMode = GameMode.EXPLORE;
-                _contactEnemy.Dead();
+                if (_contactEnemy != null) {
+                    _contactEnemy.Dead();
+                }
                 //_mapEnemies.Remove(_contactEnemy.gameObject);
                 _contactEnemy = null;
                 break;

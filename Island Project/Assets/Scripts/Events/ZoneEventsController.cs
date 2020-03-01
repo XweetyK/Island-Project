@@ -39,7 +39,7 @@ public class ZoneEventsController : MonoBehaviour {
                 if (item.eventObject != null) {
                     item.eventObject.SetActive(item.shouldActivate);
                 }
-                if (item.mission != null) {
+                if (!string.IsNullOrWhiteSpace(item.mission)) {
                     EventManager.Instance.UpdateMission(item.mission);
                 }
             }

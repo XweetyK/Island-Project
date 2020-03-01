@@ -89,18 +89,21 @@ public class PlayerMov : MonoBehaviour {
         } else {
             _isWalking = false;
         }
-
-        if (Physics.Raycast(transform.position + new Vector3(0.0f, 2.0f, 0.0f), transform.TransformDirection(Vector3.forward), out hit, 5.0f, _layerMask)) {
-            foreach (var item in hit.collider.gameObject.GetComponents<DialogTrigger>()) {
-                if (item.enabled) {
-                    if (Input.GetButtonDown("Submit")) {
-                        item.Trigger();
+        if (GameManager.Instance.PlayerInteract) {
+            if (Physics.Raycast(transform.position + new Vector3(0.0f, 2.0f, 0.0f), transform.TransformDirection(Vector3.forward), out hit, 5.0f, _layerMask)) {
+                foreach (var item in hit.collider.gameObject.GetComponents<DialogTrigger>()) {
+                    if (item.enabled) {
+                        if (Input.GetButtonDown("Submit")) {
+                            item.Trigger();
+                        }
+                        if (FindObjectOfType<DialogManager>() != null) {
+                            FindObjectOfType<DialogManager>().PromptActive(true);
+                        }
+                    } else {
                     }
-                    if (FindObjectOfType<DialogManager>() != null) {
-                        FindObjectOfType<DialogManager>().PromptActive(true);
-                    }
-                } else {
                 }
+            } else {
+                FindObjectOfType<DialogManager>().PromptActive(false);
             }
         } else {
             FindObjectOfType<DialogManager>().PromptActive(false);

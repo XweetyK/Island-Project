@@ -97,7 +97,6 @@ public class EnemyMov : MonoBehaviour {
                     Debug.Log("Combat");
                     break;
                 case State.DEAD:
-                    GameManager.Instance.RemoveEnemy(this.gameObject);
                     _anim.SetBool("_walking", false);
                     _anim.SetBool("_running", false);
                     _anim.SetBool("_dead", true);
@@ -202,7 +201,9 @@ public class EnemyMov : MonoBehaviour {
         if (!_justAnim) {
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }
+        GameManager.Instance.RemoveEnemy(this.gameObject);
         _state = State.DEAD;
+        Debug.Log("Dead!");
         Invoke("Dead", 3.5f);
         if (_alreadyDead) {
             Destroy(this.gameObject);

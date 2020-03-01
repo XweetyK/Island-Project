@@ -11,9 +11,11 @@ public class Teleporter : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (!_init) {
-            _init = true;
-            SceneLoader.Instance.LoadScene(_sceneName);
+        if (other.tag == "Player") {
+            if (!_init) {
+                _init = true;
+                SceneLoader.Instance.LoadScene(_sceneName);
+            }
         }
     }
     public void Teleport() {

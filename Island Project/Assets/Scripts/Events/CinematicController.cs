@@ -10,6 +10,8 @@ public class CinematicController : MonoBehaviour {
     [SerializeField] bool _startCombatAtEnd;
     [SerializeField] EnemyMov _enemy;
     [SerializeField] float _combatStart;
+    [SerializeField] Canvas _playerCanvas;
+    [SerializeField] InCutsceneDialog _dial;
     PlayableDirector _dir;
     float _duration = 0;
     bool _active = false;
@@ -25,17 +27,33 @@ public class CinematicController : MonoBehaviour {
         if (!string.IsNullOrWhiteSpace(_activatedBy)) {
             if (EventManager.Instance.GetEvent(_activatedBy)) {
                 if (!_active) {
+                    if (_dial != null) {
+                        _dial.StartDialog();
+                    }
                     _dir.Play();
+                    _playerCanvas.enabled = false;
                     GameManager.Instance.Pausable = false;
                     GameManager.Instance.PlayerInput = false;
+                    GameManager.Instance.PlayerInteract = false;
+                    if (_enemy != null) {
+                        _enemy.gameObject.SetActive(true);
+                    }
                     _active = true;
                 }
             }
         } else {
             if (!_active) {
+                if (_dial != null) {
+                    _dial.StartDialog();
+                }
                 _dir.Play();
+                _playerCanvas.enabled = false;
                 GameManager.Instance.Pausable = false;
                 GameManager.Instance.PlayerInput = false;
+                GameManager.Instance.PlayerInteract = false;
+                if (_enemy!=null) {
+                    _enemy.gameObject.SetActive(true);
+                }
                 _active = true;
             }
         }
@@ -49,8 +67,10 @@ public class CinematicController : MonoBehaviour {
                     }
                 }
                 if (_duration >= _animDuration) {
+                    _playerCanvas.enabled = true;
                     GameManager.Instance.Pausable = true;
                     GameManager.Instance.PlayerInput = true;
+                    GameManager.Instance.PlayerInteract = true;
                     EventManager.Instance.UpdateEvent(_event, true);
                     Destroy(this.gameObject);
                 }
