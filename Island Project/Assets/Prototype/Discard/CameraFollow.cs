@@ -8,18 +8,18 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField] float _speedY;
     [SerializeField] float _scale;
     private Transform _childX;
-    private Transform _camera;
+    [SerializeField] Transform _camera;
     float _rotX;
     float _rotY;
     float _limitAngle = 25;
 
     void Start() {
         _childX = transform.GetChild(0);
-        _camera = transform.GetChild(0).GetChild(0);
     }
     void Update() {
         CamMouseLook();
         gameObject.transform.position = _target.position;
+        checkSight();
     }
 
     void CamMouseLook() {
@@ -46,5 +46,27 @@ public class CameraFollow : MonoBehaviour {
                 _camera.transform.position += Input.GetAxis("JoystickY") * _camera.forward*0.5f;
             }
         }
+    }
+
+    void checkSight(){
+        RaycastHit hit;
+        Vector3 dir = new Vector3();
+        dir = -(transform.position    - _camera.transform.position).normalized;
+        float dist = (transform.position - _camera.transform.position).magnitude;
+        if (Physics.Raycast(transform.position, dir, out hit, dist)){
+            if (hit.collider.tag != "Player" && hit.collider.tag != "IgnoreCamCol")
+            {
+                Debug.Log(hit.collider.name);
+                _camera.position = hit.point;
+            }
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Vector3 dir = new Vector3();
+        dir = -(transform.position - _camera.transform.position).normalized;
+        float dist = (transform.position - _camera.transform.position).magnitude;
+        Gizmos.DrawRay(transform.position, dir * dist);
     }
 }

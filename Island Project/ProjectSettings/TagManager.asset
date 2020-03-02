@@ -15,6 +15,7 @@ TagManager:
   - TransitionCanvas
   - MusicPlayer
   - SFXPlayer
+  - IgnoreCamCol
   layers:
   - Default
   - TransparentFX
