@@ -13631,7 +13631,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b641ea80752a74590afaf8f5d8dfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 0
   _target: {fileID: 1664809964}
+  _oldDialogue: {fileID: 0}
+  _newDialogue: {fileID: 0}
 --- !u!4 &544393564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9037018463853632613, guid: 2713d0309dd4e524e96d622e6d0a071b,
@@ -39679,6 +39682,174 @@ MonoBehaviour:
     mission: 
     eventTrigger: CrisLeaveCity
     shouldActivate: 1
+  - eventObject: {fileID: 6654192653292283197}
+    mission: 
+    eventTrigger: FoundItem
+    shouldActivate: 0
+  - eventObject: {fileID: 1616989841}
+    mission: 
+    eventTrigger: FoundItem
+    shouldActivate: 1
+--- !u!1001 &1616989840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 597551073}
+    m_Modifications:
+    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_Name
+      value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9404666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0707903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.366955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70711
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70710367
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8318965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.64173514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6674459
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853725285046372332, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8853725285046372332, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[0]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649591610201000757, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649591610201000757, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821245004385781907, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703065074344535151, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703065074344535147, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703065074344535145, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _destination
+      value: 
+      objectReference: {fileID: 2968014351278714387}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 757090891}
+    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+        type: 3}
+      propertyPath: _enableTrigger
+      value: MuseumDoor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1155aa2687b1f4d43babbcef9f7aa90f, type: 3}
+--- !u!1 &1616989841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1616989840}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620056765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43678,11 +43849,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6733475307597764630, guid: 2713d0309dd4e524e96d622e6d0a071b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44152,11 +44318,6 @@ PrefabInstance:
       propertyPath: _dialog.conversations.Array.data[2]._chat
       value: Or else you could ask INFO for some tips.
       objectReference: {fileID: 0}
-    - target: {fileID: 8864239720551262599, guid: 2713d0309dd4e524e96d622e6d0a071b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6365142847831088263, guid: 2713d0309dd4e524e96d622e6d0a071b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44171,6 +44332,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.2275882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733475307597764630, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864239720551262599, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7336164709037017124, guid: 2713d0309dd4e524e96d622e6d0a071b,
         type: 3}
@@ -45828,7 +45999,7 @@ MonoBehaviour:
     activateEvents:
     - CrisLeaveCity
     deactivateByEvent: []
-    mission: 
+    mission: Investigate what's wrong with the ORDER
     heal: 0
 --- !u!114 &1963858279
 MonoBehaviour:
@@ -58965,6 +59136,12 @@ PrefabInstance:
 --- !u!4 &6654192653292283196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3315465672957559238, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6654192653292283195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6654192653292283197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
     type: 3}
   m_PrefabInstance: {fileID: 6654192653292283195}
   m_PrefabAsset: {fileID: 0}

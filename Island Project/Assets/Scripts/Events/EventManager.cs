@@ -28,6 +28,10 @@ public class EventManager : MonoBehaviour {
         events.Add("Ephiphany", false);
         events.Add("CrisAnnoyed", false);
         events.Add("MuseumDoor", false);
+        events.Add("CrisSearching", false);
+        events.Add("ToMuseum", false);
+        events.Add("InTheMuseum", false);
+        events.Add("FoundItem", false);
     }
 
     public void UpdateEvent(string key, bool value) {
