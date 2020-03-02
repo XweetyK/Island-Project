@@ -49,7 +49,7 @@ public class CombatManager : MonoBehaviour {
             if (_endTurn && _enemy.Health() > 0) {
                 _turn = Turn.ENEMY;
                 StartCoroutine("PlayerTurn", 2.0f);
-            } else if (_enemy.Health() < 0) {
+            } else if (_enemy.Health() <= 0) {
                 StartCoroutine(EndCombat());
             }
         }

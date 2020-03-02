@@ -260,6 +260,8 @@ public class CombatInput : MonoBehaviour {
         switch (key) {
             case DDRInput.KILL:
                 score += 1;
+                _kSpawner.KeySpeed += 15;
+                _kSpawner.KeyDelay -= 0.15f;
                 break;
             case DDRInput.MISS:
                 _kSpawner.KeySpeed += 25;
