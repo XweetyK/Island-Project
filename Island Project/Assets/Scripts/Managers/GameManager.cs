@@ -158,7 +158,12 @@ public class GameManager : MonoBehaviour {
     public void EndCombat(bool won) {
         if (!won) {
             _effectTransition.SetBool("_lose", true);
+            Invoke("Gameover",3.0f);
         }
+    }
+
+    public void Gameover(){
+        CharacterStats.Instance.Restart();
     }
 
     public void EndCombat(bool won, string name, int exp, bool levelUp)

@@ -10,6 +10,7 @@ public class CharacterStats : MonoBehaviour {
     [SerializeField] private int _baseSpecialAttack;
     [SerializeField] private int _baseSpecialDefense;
     [SerializeField] private int _baseSpeed;
+    [SerializeField] private int _startingLevel;
 
     private int _maxLife;
     private int _attack;
@@ -19,7 +20,7 @@ public class CharacterStats : MonoBehaviour {
     private int _speed;
 
     [Header("Current State")]
-    [SerializeField] private int _level;
+    private int _level;
     [SerializeField] private int _missChance;
     private int _health;
 
@@ -45,6 +46,12 @@ public class CharacterStats : MonoBehaviour {
     }
     public void Start()
     {
+        Restart();
+    }
+
+    public void Restart(){
+        _xp = 0;
+        _level = _startingLevel;
         updateStats();
         _health = _maxLife;
     }

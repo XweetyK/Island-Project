@@ -44,12 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxLife: 40
-  _baseAttack: 9
+  _baseAttack: 5
   _baseDefense: 4
-  _baseSpecialAttack: 12
+  _baseSpecialAttack: 8
   _baseSpecialDefense: 9
   _baseSpeed: 3
-  _level: 3
+  _startingLevel: 3
   _missChance: 0
   _maxLifeGrowth: 1
   _attackGrowth: 0.6
