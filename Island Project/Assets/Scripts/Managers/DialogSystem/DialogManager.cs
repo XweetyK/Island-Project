@@ -20,6 +20,7 @@ public class DialogManager : MonoBehaviour {
     private DialogTrigger[] _deactivate;
     private string _mission;
     private bool _heal;
+    private bool _save;
     private string[] _activateEvents;
     public bool _init = false;
     NavMeshAgent _nma = null;
@@ -66,6 +67,7 @@ public class DialogManager : MonoBehaviour {
                 _mission = dial.mission;
             }
             _heal = dial.heal;
+            _save = dial.save;
         }
         DisplayNext();
     }
@@ -113,6 +115,9 @@ public class DialogManager : MonoBehaviour {
         }
         if (_heal) {
             CharacterStats.Instance.Health = CharacterStats.Instance.MaxLife;
+        }
+        if (_save) {
+            SaveLoader.Instance.SaveGame();
         }
         _activate = null;
         _deactivate = null;

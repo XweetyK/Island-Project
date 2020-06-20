@@ -20,6 +20,7 @@ public class Dialog {
     public string[] deactivateByEvent;
     public string mission;
     public bool heal;
+    public bool save;
     private DialogTrigger _trigger;
     public DialogTrigger Trigger {
         get { return (_trigger); }

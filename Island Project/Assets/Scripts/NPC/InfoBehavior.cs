@@ -65,7 +65,7 @@ public class InfoBehavior : MonoBehaviour {
                     _randChat = Random.Range(1, 7);
                     _timer = 0;
                 }
-                if (_randCrying > 90 && _activeCrying != true) {
+                if (_randCrying > 95 && _activeCrying != true) {
                     UpdateDialog(_crying);
                     Crying();
                 }
@@ -99,7 +99,7 @@ public class InfoBehavior : MonoBehaviour {
                     case Activity.BREAK:
                         _coffeeTime = 0;
                         _activeCrying = false;
-                        if (_nma.remainingDistance == 0) {
+                        if (_nma.remainingDistance < 0.008f) {
                             UpdateDialog(_backtowork);
                             if (_actualTarget > 1) {
                                 _actualTarget--;
@@ -108,6 +108,7 @@ public class InfoBehavior : MonoBehaviour {
                             if (Vector3.Distance(transform.position, _targets[0].position) < 0.8f) {
                                 _state = State.IDLE;
                                 _act = Activity.WORKING;
+                                _randCrying = 0;
                             }
                         }
                         break;

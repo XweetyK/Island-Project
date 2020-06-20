@@ -16,6 +16,7 @@ TagManager:
   - MusicPlayer
   - SFXPlayer
   - IgnoreCamCol
+  - DEBUG
   layers:
   - Default
   - TransparentFX

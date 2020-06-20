@@ -3634,12 +3634,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: 
     heal: 0
---- !u!1 &288131600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4541495691887270778, guid: bb8c6855d03a111489a20541a1985538,
-    type: 3}
-  m_PrefabInstance: {fileID: 6160043195011128137}
-  m_PrefabAsset: {fileID: 0}
+    save: 0
 --- !u!1 &288209334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6760,6 +6755,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: 
     heal: 0
+    save: 0
 --- !u!1001 &391886701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6849,6 +6845,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: cfbcbbd13a5cb56449c462f84384523f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4989794ac0be82429029705ee7a9f5e, type: 3}
+--- !u!95 &393450895 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 288131601, guid: bb8c6855d03a111489a20541a1985538,
+    type: 3}
+  m_PrefabInstance: {fileID: 6160043195011128137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &396023986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13240,6 +13242,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: 
     heal: 0
+    save: 0
 --- !u!1001 &498257209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17851,6 +17854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
         type: 3}
+      propertyPath: _dialog.conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
       propertyPath: _dialog.conversations.Array.data[0]._name
       value: Message
       objectReference: {fileID: 0}
@@ -17872,6 +17880,26 @@ PrefabInstance:
     - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
         type: 3}
       propertyPath: _dialog.heal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._name
+      value: Message
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._chat
+      value: --The Game was saved--
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.save
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7859446962717870183, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
@@ -20218,6 +20246,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: 
     heal: 0
+    save: 0
 --- !u!4 &737329003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5146315369219707026, guid: 7a289f47b47958e42ace0cf05e2aa532,
@@ -22307,7 +22336,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 8ae936ec43830d14dbeee6151094928f, type: 2}
   m_InitialState: 0
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -22322,11 +22351,13 @@ PlayableDirector:
   - key: {fileID: 7933524414649885208, guid: 8ae936ec43830d14dbeee6151094928f, type: 2}
     value: {fileID: 267316876}
   - key: {fileID: 3596581664832762505, guid: 8ae936ec43830d14dbeee6151094928f, type: 2}
-    value: {fileID: 288131601}
+    value: {fileID: 0}
   - key: {fileID: 7837807840096465399, guid: 8ae936ec43830d14dbeee6151094928f, type: 2}
     value: {fileID: 881765481}
   - key: {fileID: 1995646042682879277, guid: 8ae936ec43830d14dbeee6151094928f, type: 2}
     value: {fileID: 6861065102569683030}
+  - key: {fileID: 2611346549577118370, guid: 8ae936ec43830d14dbeee6151094928f, type: 2}
+    value: {fileID: 393450895}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &881765483
@@ -25912,6 +25943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 1.7000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890402593982711026, guid: 7b22aade569ca1a4899496d6e0d84454,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b22aade569ca1a4899496d6e0d84454, type: 3}
@@ -36511,6 +36547,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: 
     heal: 0
+    save: 0
 --- !u!1001 &1362454794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39673,174 +39710,6 @@ MonoBehaviour:
     mission: 
     eventTrigger: CrisLeaveCity
     shouldActivate: 1
-  - eventObject: {fileID: 6654192653292283197}
-    mission: 
-    eventTrigger: FoundItem
-    shouldActivate: 0
-  - eventObject: {fileID: 1616989841}
-    mission: 
-    eventTrigger: FoundItem
-    shouldActivate: 1
---- !u!1001 &1616989840
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 597551073}
-    m_Modifications:
-    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_Name
-      value: Door (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.9404666
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.0707903
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.366955
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.70711
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.70710367
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8318965
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.64173514
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739967927412455599, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6674459
-      objectReference: {fileID: 0}
-    - target: {fileID: 8853725285046372332, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._character
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8853725285046372332, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: _dialog.conversations.Array.data[0]._face
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649591610201000757, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3649591610201000757, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821245004385781907, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8703065074344535151, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8703065074344535147, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8703065074344535145, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: _destination
-      value: 
-      objectReference: {fileID: 2968014351278714387}
-    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: _isActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 757090891}
-    - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-        type: 3}
-      propertyPath: _enableTrigger
-      value: MuseumDoor
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1155aa2687b1f4d43babbcef9f7aa90f, type: 3}
---- !u!1 &1616989841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1616989840}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620056765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42913,6 +42782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
         type: 3}
+      propertyPath: _dialog.conversations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
       propertyPath: _dialog.conversations.Array.data[0]._name
       value: Hero
       objectReference: {fileID: 0}
@@ -42935,6 +42809,87 @@ PrefabInstance:
         type: 3}
       propertyPath: _dialog.activateEvents.Array.data[0]
       value: Epiphany
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._name
+      value: -MESSAGE-
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._chat
+      value: CONGRATULATIONS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._name
+      value: -MESSAGE-
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._chat
+      value: YOU HAVE REACHED THE END OF THE DEMO!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[3]._name
+      value: -MESSAGE-
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[3]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[3]._chat
+      value: THE GAME IS STILL ON DEVELOPMENT, BUT WE HOPE YOU HAVE LIKED IT THIS
+        FAR :)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._name
+      value: -MESSAGE-
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._face
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._chat
+      value: 'THANKS FOR PLAYING! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[1]._character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[2]._character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[3]._character
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963023078012506015, guid: 1ccd6a87ec3245547a33da4cf4aebb38,
+        type: 3}
+      propertyPath: _dialog.conversations.Array.data[4]._character
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ccd6a87ec3245547a33da4cf4aebb38, type: 3}
@@ -43840,6 +43795,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6733475307597764630, guid: 2713d0309dd4e524e96d622e6d0a071b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8103874548288195895, guid: 2713d0309dd4e524e96d622e6d0a071b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44323,11 +44283,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.2275882
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733475307597764630, guid: 2713d0309dd4e524e96d622e6d0a071b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8864239720551262599, guid: 2713d0309dd4e524e96d622e6d0a071b,
         type: 3}
@@ -45992,6 +45947,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: Investigate what's wrong with the ORDER
     heal: 0
+    save: 0
 --- !u!114 &1963858279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46166,6 +46122,7 @@ MonoBehaviour:
     deactivateByEvent: []
     mission: 
     heal: 0
+    save: 0
 --- !u!65 &1963858280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58471,7 +58428,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5117171108395015486}
-  m_LocalRotation: {x: 0.060694076, y: -0.004990527, z: 0.05355341, w: 0.9967063}
+  m_LocalRotation: {x: 0.0782893, y: -0.45234656, z: 0.020568896, w: 0.88816124}
   m_LocalPosition: {x: -0, y: 0.5045046, z: -0.000000005770337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -58673,6 +58630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675453064539370238, guid: bb8c6855d03a111489a20541a1985538,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb8c6855d03a111489a20541a1985538, type: 3}
@@ -59095,19 +59057,13 @@ PrefabInstance:
     - target: {fileID: 794109669502038562, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
         type: 3}
       propertyPath: _enableTrigger
-      value: MuseumDoor
+      value: FoundItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1155aa2687b1f4d43babbcef9f7aa90f, type: 3}
 --- !u!4 &6654192653292283196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3315465672957559238, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6654192653292283195}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6654192653292283197 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2481085043113507733, guid: 1155aa2687b1f4d43babbcef9f7aa90f,
     type: 3}
   m_PrefabInstance: {fileID: 6654192653292283195}
   m_PrefabAsset: {fileID: 0}
@@ -59346,6 +59302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861065102468607147, guid: f6e24699a0cafca4e8cd9779880029d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.37001038
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e24699a0cafca4e8cd9779880029d7, type: 3}

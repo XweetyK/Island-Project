@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 13c261fc983ef4d4db4980d851e4f622,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1463,6 +1463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TransitionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623361858840681130, guid: 593a3a1b07477b04781a7bac76cbaaab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6623361858840681142, guid: 593a3a1b07477b04781a7bac76cbaaab,
         type: 3}
@@ -2861,7 +2866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38425466, y: 0.46976748}
   m_AnchorMax: {x: 1, y: 0.67600006}
-  m_AnchoredPosition: {x: -9.299988, y: 3.699997}
+  m_AnchoredPosition: {x: -14, y: 10}
   m_SizeDelta: {x: -23.207, y: -8.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324378924
@@ -2940,7 +2945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38425466, y: 0.46976748}
   m_AnchorMax: {x: 1, y: 0.67600006}
-  m_AnchoredPosition: {x: -5.8963013, y: 0.29174805}
+  m_AnchoredPosition: {x: -10.596298, y: 6.591728}
   m_SizeDelta: {x: -23.207153, y: -8.174637}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329218445
@@ -11986,8 +11991,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "--Follow the [WAVE] by Chikori Team\n\n*Game Designer: Leo Perugini\n*Tech
-    Lead: Gaspar Nu\xF1ez\n*3D Art: Flor Tassara, Tomas , Leo Perugini\n*Music: Maximiliano
-    Abel Duarte"
+    Lead: Gaspar Nu\xF1ez\n*3D Art: Flor Tassara, Tomas Rubianes, Leo Perugini\n*Music:
+    Maximiliano Abel Duarte"
 --- !u!222 &1807873094
 CanvasRenderer:
   m_ObjectHideFlags: 0

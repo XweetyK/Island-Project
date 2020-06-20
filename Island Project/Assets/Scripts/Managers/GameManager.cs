@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start() {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Protagonist");
     }
 
     // Update is called once per frame
@@ -144,7 +144,6 @@ public class GameManager : MonoBehaviour {
                 _gameMode = GameMode.COMBAT;
                 break;
             case 2:
-                Debug.Log("button working");
                 _gameMode = GameMode.EXPLORE;
                 if (_contactEnemy != null) {
                     _contactEnemy.Dead();

@@ -27,6 +27,7 @@ public class EventManager : MonoBehaviour {
         events.Add("MuseumStart", false);
         events.Add("Ephiphany", false);
         events.Add("CrisAnnoyed", false);
+        events.Add("NewMission", false);
         events.Add("MuseumDoor", false);
         events.Add("CrisSearching", false);
         events.Add("ToMuseum", false);

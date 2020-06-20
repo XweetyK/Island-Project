@@ -16,7 +16,13 @@ public class Cris : MonoBehaviour
 
     private void Start() {
         if (_state == State.CITYANNOYED) {
-            if (EventManager.Instance.GetEvent("CrisAnnoyed")) {
+            if (EventManager.Instance.GetEvent("NewMission")) {
+                Destroy(this.gameObject);
+            }
+
+        }
+        if (_state != State.CITYANNOYED) {
+            if (EventManager.Instance.GetEvent("MuseumStart")) {
                 Destroy(this.gameObject);
             }
         }
@@ -29,12 +35,12 @@ public class Cris : MonoBehaviour
             case State.CITYANNOYED:
                 if (EventManager.Instance.GetEvent("CrisLeaveCity")) {
                     _nma.SetDestination(_target.position);
-                    if (_nma.remainingDistance > 0 && _nma.remainingDistance < 0.005f) {
                         EventManager.Instance.UpdateEvent("CrisAnnoyed", true);
+                        EventManager.Instance.UpdateEvent("NewMission", true);
+                    if (_nma.remainingDistance > 0 && _nma.remainingDistance < 0.005f) {
+
+                        Destroy(this.gameObject);
                     }
-                }
-                if (EventManager.Instance.GetEvent("CrisAnnoyed")) {
-                    Destroy(this.gameObject);
                 }
                 break;
             case State.BEACHSEARCHING:
@@ -46,10 +52,12 @@ public class Cris : MonoBehaviour
                     }
                     if (EventManager.Instance.GetEvent("FoundItem")) {
                         Destroy(_oldDialogue);
+                        _newDialogue.gameObject.SetActive(true);
                         _newDialogue.enabled = true;
                     }
                 }
-                break;
+                if (EventManager.Instance.GetEvent("ToMuseum")) { _state = State.TOTHEMUSEUM; }
+                    break;
             case State.TOTHEMUSEUM:
                 if (EventManager.Instance.GetEvent("ToMuseum")) {
                     _nma.SetDestination(_target.position);
@@ -57,9 +65,6 @@ public class Cris : MonoBehaviour
                     if (_nma.remainingDistance > 0 && _nma.remainingDistance < 0.005f) {
                         Destroy(this.gameObject);
                     }
-                }
-                if (EventManager.Instance.GetEvent("MuseumStart")) {
-                    Destroy(this.gameObject);
                 }
                 break;
         }

@@ -11,7 +11,16 @@ public class SaveLoader : MonoBehaviour {
     [SerializeField] Toggle _sfxEnabled;
     [SerializeField] Dropdown _quality;
 
-    private void Start() {
+    public static SaveLoader Instance { get; private set; }
+    private void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
+
+        private void Start() {
         LoadSettings();
     }
 
@@ -39,9 +48,9 @@ public class SaveLoader : MonoBehaviour {
                 SettingsManager.Instance.settings.quality = _quality.value;
             }
         } else { Debug.Log("null settings"); }
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            SaveGame();
-        }
+        //if (Input.GetKeyDown(KeyCode.Y)) {
+        //    SaveGame();
+        //}
     }
     //SETTINGS------------------------------------------------------------------
     public void SaveSettings() {

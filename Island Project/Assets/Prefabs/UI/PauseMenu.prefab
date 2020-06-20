@@ -292,9 +292,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 3a65499f4a969904e96364e5d55f1d37, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 15
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -608,9 +608,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 3a65499f4a969904e96364e5d55f1d37, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 15
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
