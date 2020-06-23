@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Events\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Events\Teleporter.cs" />
     <Compile Include="Assets\Scripts\Events\ZoneEventsController.cs" />
+    <Compile Include="Assets\Scripts\Managers\ButtonSfx.cs" />
     <Compile Include="Assets\Scripts\Managers\DialogSystem\Dialog.cs" />
     <Compile Include="Assets\Scripts\Managers\DialogSystem\DialogManager.cs" />
     <Compile Include="Assets\Scripts\Managers\DialogSystem\DialogTrigger.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Scripts\Managers\SavingSystem\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Managers\SavingSystem\SettingsData.cs" />
     <Compile Include="Assets\Scripts\Managers\SavingSystem\SettingsManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SfxManager.cs" />
     <Compile Include="Assets\Scripts\NPC\DJ.cs" />
     <Compile Include="Assets\Scripts\NPC\DolphinMov.cs" />
     <Compile Include="Assets\Scripts\NPC\DolphinSpawn.cs" />

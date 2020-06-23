@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour {
 
     private void Update() {
         if (Input.GetButtonDown("Esc") && !_active && GameManager.Instance.Pausable) {
+            SfxManager.Instance.Player(null, SFX.UI, 1, true);
             _stopped = true;
             Invoke("ZaWarudo", _animLenght);
             StartPause();

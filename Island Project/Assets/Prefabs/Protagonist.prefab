@@ -47,7 +47,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8952148899848533665}
-  - component: {fileID: 288131601}
   m_Layer: 0
   m_Name: Protagonist
   m_TagString: Protagonist
@@ -71,25 +70,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &288131601
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4541495691887270778}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6160043195023903390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,11 +153,6 @@ PrefabInstance:
       propertyPath: _cameraSystem
       value: 
       objectReference: {fileID: 1912767632063665209}
-    - target: {fileID: 152924214961096423, guid: fb436660ca5738a4799af445f19ea731,
-        type: 3}
-      propertyPath: _rotSpeed
-      value: 300
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb436660ca5738a4799af445f19ea731, type: 3}
 --- !u!4 &6160043196313337031 stripped

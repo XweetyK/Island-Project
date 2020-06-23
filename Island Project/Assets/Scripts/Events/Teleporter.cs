@@ -24,4 +24,7 @@ public class Teleporter : MonoBehaviour {
             SceneLoader.Instance.LoadScene(_sceneName);
         }
     }
+    public void Quit() {
+        Application.Quit();
+    }
 }

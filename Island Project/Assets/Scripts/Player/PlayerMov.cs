@@ -17,8 +17,8 @@ public class PlayerMov : MonoBehaviour {
     [SerializeField] string _interactLayer = "Interactable";
 
     [SerializeField] AudioSource _audioSrc;
-    [SerializeField] AudioClip _walk;
-    [SerializeField] AudioClip _run;
+    //[SerializeField] AudioClip _walk;
+    //[SerializeField] AudioClip _run;
     Vector3 MovementDirection;
     Rigidbody _rb;
     float _angle;
@@ -95,6 +95,7 @@ public class PlayerMov : MonoBehaviour {
                     if (item.enabled) {
                         if (Input.GetButtonDown("Submit")) {
                             item.Trigger();
+                            SfxManager.Instance.Player(null, SFX.UI, 1, true);
                         }
                         if (FindObjectOfType<DialogManager>() != null) {
                             FindObjectOfType<DialogManager>().PromptActive(true);
@@ -116,20 +117,17 @@ public class PlayerMov : MonoBehaviour {
     void UpdateAnimator() {
         _animator.SetBool("Walking", _isWalking);
         _animator.SetBool("Running", _isRunning);
+        //walking
         if (_isWalking && !_isRunning) {
-            _audioSrc.clip = _walk;
-            if (!_audioSrc.isPlaying) {
-                _audioSrc.Play();
-            }
+            SfxManager.Instance.Player(_audioSrc, SFX.PLAYER, 0, false);
         }
+        //running
         if (_isWalking && _isRunning) {
-            _audioSrc.clip = _run;
-            if (!_audioSrc.isPlaying) {
-                _audioSrc.Play();
-            }
+            SfxManager.Instance.Player(_audioSrc, SFX.PLAYER, 1, false);
         }
+        //stop
         if(!_isWalking) {
-            _audioSrc.Stop();
+            SfxManager.Instance.Stop(_audioSrc);
         }
     }
 

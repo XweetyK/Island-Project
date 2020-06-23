@@ -78,11 +78,9 @@ MonoBehaviour:
   _waterRateMax: 10
   _splash: {fileID: 2125336532}
   _movSpeed: 5.5
-  _rotSpeed: 250
+  _rotSpeed: 300
   _interactLayer: Interactable
   _audioSrc: {fileID: 4133582897332627091}
-  _walk: {fileID: 8300000, guid: 7623829ce76135a40949a5785a644b74, type: 3}
-  _run: {fileID: 8300000, guid: 757cc24195f81b34ebc135d1afb876c5, type: 3}
 --- !u!54 &2074018066690284674
 Rigidbody:
   m_ObjectHideFlags: 0

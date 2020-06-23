@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettingsManager : MonoBehaviour
-{
+public class SettingsManager : MonoBehaviour {
     AudioSource[] _audio;
     public SettingsData settings;
     public static SettingsManager Instance { get; private set; }
@@ -14,8 +13,8 @@ public class SettingsManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (SaveSystem.LoadSettings() != null) {
-            settings = new SettingsData(0.7f,0.7f,true,true,1);
-        } else {settings= SaveSystem.LoadSettings(); }
+            settings = new SettingsData(0.7f, 0.7f, true, true, 1);
+        } else { settings = SaveSystem.LoadSettings(); }
     }
 
     private void Start() {
@@ -33,14 +32,12 @@ public class SettingsManager : MonoBehaviour
     }
 
     void UpdateAudio() {
-        if (_audio != null) {
-            foreach (AudioSource clip in _audio) {
-                if (clip.gameObject.tag == "MusicPlayer") {
-                    clip.volume = settings.music;
-                }
-                if (clip.gameObject.tag == "SFXPlayer") {
-                    clip.volume = settings.sfx;
-                }
+        foreach (AudioSource clip in _audio) {
+            if (clip != null && clip.gameObject.tag == "MusicPlayer") {
+                clip.volume = settings.music;
+            }
+            if (clip != null && clip.gameObject.tag == "SFXPlayer" && clip != null) {
+                clip.volume = settings.sfx;
             }
         }
     }

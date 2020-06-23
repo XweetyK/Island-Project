@@ -156,6 +156,7 @@ public class EnemyMov : MonoBehaviour {
         }
     }
     private void AlertBehavior() {
+        SfxManager.Instance.Stop(this.gameObject.GetComponent<AudioSource>());
         _timerDet = 0;
         _timerAlert += Time.deltaTime;
         _nma.speed = _origSpeed;
@@ -181,6 +182,7 @@ public class EnemyMov : MonoBehaviour {
         _timerDet += Time.deltaTime;
         _nma.speed = _runningSpeed;
         _nma.SetDestination(_playerPos.transform.position);
+        SfxManager.Instance.Player(this.gameObject.GetComponent<AudioSource>(), SFX.COMBAT, 0, false);
         if (!_isStop) {
             _nma.isStopped = false;
         }
@@ -192,6 +194,7 @@ public class EnemyMov : MonoBehaviour {
     }
 
     public void Dead() {
+        SfxManager.Instance.Stop(this.gameObject.GetComponent<AudioSource>());
         if (!_alreadyDead) {
             transform.LookAt(_playerPos.transform);
         }
@@ -209,6 +212,7 @@ public class EnemyMov : MonoBehaviour {
     }
 
     private Vector3 RandomWalk(Vector3 areaPos) {
+        SfxManager.Instance.Stop(this.gameObject.GetComponent<AudioSource>());
         Vector3 _dest = new Vector3(
                Random.Range(areaPos.x - 30, areaPos.x + 30),
                areaPos.y + 2,
